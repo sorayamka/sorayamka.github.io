@@ -1,0 +1,162 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactCta from "../../components/ContactCta.astro";
+import Icon from "../../components/Icon.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import { englishCategories, englishProducts } from "../../lib/english-products";
+import { formatCount } from "../../lib/i18n";
+import { siteImages } from "../../data/site";
+
+const productSource = (slug: string) => englishProducts.find((product) => product.categorySlug === slug && product.image);
+const featured = englishCategories.map((category) => productSource(category.slug)).filter((product): product is (typeof englishProducts)[number] => Boolean(product));
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Seventh Legion",
+  url: "https://7legion.com/en/",
+  logo: "https://7legion.com/images/site/logo.png",
+  telephone: "+7 495 232-36-52",
+  email: "info@myaso.msk.ru",
+  foundingDate: "2003",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Leningradskoye Highway, 64, building 3, office 3-2",
+    addressLocality: "Moscow",
+    addressCountry: "RU",
+  },
+};
+---
+
+<BaseLayout
+  title="Seventh Legion — wholesale frozen meat supply"
+  description="Wholesale pork, beef, poultry, offal and semi-finished products supplied from our cold-storage warehouse across Russia."
+  image={siteImages.hero}
+  schema={schema}
+>
+  <section class="home-hero">
+    <div class="shell home-hero__inner">
+      <div class="home-hero__copy">
+        <span class="eyebrow">Wholesale supplier since 2003</span>
+        <h1>Meat that<br /><em>arrives cold.</em></h1>
+        <p class="home-hero__lead">Frozen pork, beef, poultry and semi-finished products from trusted manufacturers. Our own warehouse, stable shipments and delivery across Russia.</p>
+        <div class="home-hero__actions">
+          <a class="button button--red" href="/en/shop/">Open catalog <Icon name="arrow" size={18} /></a>
+          <a class="button button--ghost" href="/en/price/">Request prices</a>
+        </div>
+        <div class="home-hero__facts">
+          <div class="home-hero__fact"><strong>23+</strong><span>years in the market</span></div>
+          <div class="home-hero__fact"><strong>{formatCount(englishProducts.length, "en")}</strong><span>catalog items</span></div>
+          <div class="home-hero__fact"><strong>RU</strong><span>delivery geography</span></div>
+        </div>
+      </div>
+      <div class="home-hero__visual">
+        <img src={siteImages.hero} srcset={`${siteImages["hero-small"]} 800w, ${siteImages.hero} 1600w`} sizes="(max-width: 1024px) 100vw, 52vw" alt="Cold-storage warehouse complex" width="1600" height="1927" loading="eager" fetchpriority="high" />
+        <div class="home-hero__stamp"><span>−18° C<br />continuous<br />cold chain</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker__track" aria-hidden="true">
+      {[0, 1].map(() => (
+        <div class="ticker__item">
+          <span>Pork</span><span>Beef</span><span>Poultry</span><span>Offal</span><span>Semi-finished</span><span>Lamb</span><span>Rabbit</span>
+        </div>
+      ))}
+    </div>
+    <button class="ticker__pause" type="button" data-ticker-toggle aria-label="Stop motion">Ⅱ</button>
+  </div>
+
+  <section class="section category-index-section">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Supply categories</span>
+          <h2>One supplier.<br />Seven categories.</h2>
+        </div>
+        <p>We can match the assortment to processors, HoReCa businesses, retail chains and public procurement customers.</p>
+      </header>
+      <div class="category-index">
+        {englishCategories.map((category, index) => {
+          const source = productSource(category.slug);
+          return (
+            <a class="category-index__card" href={`/en/shop/${category.slug}/`} data-reveal style={`--delay:${index * 45}ms`}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{category.name}</h3>
+              <p>{formatCount(category.count, "en")} items</p>
+              {source?.image && <img src={source.thumbnail || source.image} srcset={source.thumbnail ? `${source.thumbnail} 480w, ${source.image} 1200w` : undefined} sizes="(max-width: 720px) 44vw, (max-width: 1200px) 30vw, 22vw" alt="" width="480" height="480" loading="lazy" decoding="async" />}
+              <Icon name="arrow" size={20} />
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Start your order</span>
+          <h2>Products buyers<br />choose first.</h2>
+        </div>
+        <a class="button button--outline" href="/en/shop/">View all {formatCount(englishProducts.length, "en")} <Icon name="arrow" size={18} /></a>
+      </header>
+      <div class="product-grid">
+        {featured.map((product, index) => <ProductCard product={product} index={index} locale="en" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="split-feature">
+    <div class="split-feature__media" data-reveal>
+      <img src={siteImages.storage} srcset={`${siteImages["storage-small"]} 800w, ${siteImages.storage} 1600w`} sizes="(max-width: 1024px) 100vw, 50vw" alt="Frozen products on cold-storage racks" width="1600" height="1067" loading="lazy" decoding="async" />
+    </div>
+    <div class="split-feature__content" data-reveal>
+      <span class="eyebrow">Cold infrastructure</span>
+      <h2>Temperature should not be a risk area.</h2>
+      <p>Receiving, storage and handling follow veterinary regulations and manufacturer requirements.</p>
+      <ul class="feature-list">
+        <li><span>01</span>Incoming temperature control</li>
+        <li><span>02</span>Refrigerated storage and transport</li>
+        <li><span>03</span>Regular warehouse equipment maintenance</li>
+        <li><span>04</span>Staff training and process control</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Delivery geography</span>
+          <h2>We deliver where<br />the cold chain matters.</h2>
+        </div>
+        <p>Our refrigerated transport and shipment organization support deliveries to railcars, container terminals and consolidated trucks.</p>
+      </header>
+      <div class="home-logistics" data-reveal>
+        <figure class="home-logistics__visual">
+          <img src={siteImages.logistics} srcset={`${siteImages["logistics-small"]} 800w, ${siteImages.logistics} 1600w`} sizes="(max-width: 720px) 100vw, 45vw" alt="Refrigerated trucks at a logistics terminal" width="1600" height="1067" loading="lazy" decoding="async" />
+          <figcaption><span>Cold infrastructure</span><strong>From warehouse to loading point</strong></figcaption>
+        </figure>
+        <div class="home-logistics__copy">
+          <span>Delivery and handling</span>
+          <h3>From transport to reload</h3>
+          <ul>
+            <li>Delivery in Moscow and the region from 3 tonnes</li>
+            <li>Pickup from the warehouse from 500 kg of one product</li>
+            <li>Palletizing, recounting and weighing</li>
+            <li>Forwarding and Mercury documentation</li>
+          </ul>
+          <a class="button button--ghost" href="/en/logisticheskie-uslugi/">All services <Icon name="arrow" size={18} /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactCta
+    title="Need a quote or a sample shipment?"
+    text="Leave a product list in the cart or contact our commercial team. We will help you choose the format, volume and shipping terms."
+    primaryLabel="Contact our sales team"
+  />
+</BaseLayout>

@@ -1,0 +1,40 @@
+---
+import Icon from "./Icon.astro";
+import { company } from "../data/site";
+import { getLocale } from "../lib/i18n";
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  text: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const locale = getLocale(Astro.url.pathname);
+const {
+  eyebrow = locale === "en" ? "Talk to us directly" : "Связаться напрямую",
+  title,
+  text,
+  primaryLabel = locale === "en" ? "Call us" : "Позвонить",
+  primaryHref = `tel:${company.salesPhone.replace(/[^+\d]/g, "")}`,
+  secondaryLabel = locale === "en" ? "Message us on Telegram" : "Написать в Telegram",
+  secondaryHref = company.telegram,
+} = Astro.props;
+---
+
+<section class="contact-cta" data-reveal>
+  <div class="shell contact-cta__inner">
+    <div class="contact-cta__copy">
+      <span>{eyebrow}</span>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="contact-cta__actions">
+      <a class="button button--light" href={primaryHref}>{primaryLabel}<Icon name="arrow" size={18} /></a>
+      <a class="button button--ghost" href={secondaryHref} target="_blank" rel="noreferrer">{secondaryLabel}</a>
+    </div>
+  </div>
+</section>

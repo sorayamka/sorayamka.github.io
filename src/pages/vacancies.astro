@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactCta from "../components/ContactCta.astro";
+
+const vacancies = [
+  { title: "Диспетчер на холодные звонки", type: "Операционная работа", pay: "Оклад + премия", schedule: "5/2", subject: "Отклик: диспетчер на холодные звонки" },
+  { title: "Менеджер по продажам замороженных полуфабрикатов", type: "Продажи", pay: "Оклад + премия", schedule: "5/2", subject: "Отклик: менеджер по продажам полуфабрикатов" },
+  { title: "Водитель на грузовик", type: "Логистика", pay: "Оклад + премия", schedule: "Сменный", note: "Категория С", subject: "Отклик: водитель на грузовик" },
+  { title: "Кладовщик на склад", type: "Склад", pay: "Оклад + премия", schedule: "Сменный", subject: "Отклик: кладовщик на склад" },
+  { title: "Менеджер по продажам мяса", type: "Продажи", pay: "Оклад + премия", schedule: "5/2", subject: "Отклик: менеджер по продажам мяса" },
+];
+---
+
+<BaseLayout title="Вакансии — Седьмой Легион" description="Работа в оптовой компании Седьмой Легион: продажи, логистика, склад и операционная работа.">
+  <PageHero
+    eyebrow="Команда растёт"
+    title="Вакансии"
+    lead="Ищем специалистов, которым важны стабильность, понятные процессы и результат."
+    statValue={vacancies.length}
+    statLabel="открытых вакансий"
+    statNote="по текущему списку"
+    breadcrumb="Вакансии"
+  />
+  <section class="section"><div class="shell"><div class="vacancy-list">{vacancies.map((vacancy) => <a class="vacancy-item" href={`mailto:info@myaso.msk.ru?subject=${encodeURIComponent(vacancy.subject)}`} data-reveal><span class="vacancy-item__type">{vacancy.type}</span><div><h2>{vacancy.title}</h2><p>{vacancy.pay} · График {vacancy.schedule}{vacancy.note ? ` · ${vacancy.note}` : ""}</p></div><span>Откликнуться →</span></a>)}</div></div></section>
+  <ContactCta title="Не нашли подходящую роль?" text="Отправьте резюме и коротко расскажите о своём опыте. Мы рассматриваем сильных специалистов вне вакансий." primaryLabel="Отправить резюме" primaryHref="mailto:info@myaso.msk.ru" />
+</BaseLayout>

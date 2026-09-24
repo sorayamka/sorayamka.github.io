@@ -1,0 +1,203 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import CatalogExplorer from "../../../components/CatalogExplorer.astro";
+import ContactCta from "../../../components/ContactCta.astro";
+import Icon from "../../../components/Icon.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import { englishCategories, englishProducts } from "../../../lib/english-products";
+import { formatCount } from "../../../lib/i18n";
+import type { Product } from "../../../data/types";
+
+interface CategoryRoute {
+  path: string;
+  name: string;
+  categorySlug: string;
+  items: Product[];
+}
+
+export const getStaticPaths = (() => {
+  const categoryRoutes = new Map<string, CategoryRoute>();
+  for (const product of englishProducts) {
+    const parts = product.path.replace(/^\/en\/shop\//, "").split("/").filter(Boolean);
+    const sourceCategory = parts[0];
+    if (!sourceCategory) continue;
+    const path = `/en/shop/${sourceCategory}/`;
+    if (!categoryRoutes.has(path)) {
+      categoryRoutes.set(path, {
+        path,
+        name: product.category,
+        categorySlug: product.categorySlug,
+        items: englishProducts.filter((item) => item.path.startsWith(path)),
+      });
+    }
+  }
+  return [
+    ...englishProducts.map((product) => ({
+      params: { slug: product.path.replace(/^\/en\/shop\/?/, "").replace(/\/$/, "") },
+      props: { product },
+    })),
+    ...[...categoryRoutes.values()].map((categoryRoute) => ({
+      params: { slug: categoryRoute.path.replace(/^\/en\/shop\/?/, "").replace(/\/$/, "") },
+      props: { categoryRoute },
+    })),
+  ];
+}) satisfies GetStaticPaths;
+
+interface Props {
+  product?: Product;
+  categoryRoute?: CategoryRoute;
+}
+
+const { product, categoryRoute } = Astro.props;
+const related = product
+  ? englishProducts.filter((item) => item.categorySlug === product.categorySlug && item.id !== product.id).slice(0, 4)
+  : [];
+const pageTitle = categoryRoute
+  ? `${categoryRoute.name} wholesale — catalog | Seventh Legion`
+  : `${product?.name ?? "Product"} — wholesale | Seventh Legion`;
+const pageDescription = categoryRoute
+  ? `${categoryRoute.name} wholesale from our warehouse: ${formatCount(categoryRoute.items.length, "en")} products. Frozen meat supply across Russia.`
+  : product?.description || `${product?.name ?? "Frozen meat product"} supplied wholesale by Seventh Legion.`;
+const pageImage = categoryRoute?.items.find((item) => item.image)?.image || product?.image;
+const schema = categoryRoute
+  ? {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: categoryRoute.name,
+      description: pageDescription,
+      url: new URL(categoryRoute.path, Astro.site).href,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: categoryRoute.items.length,
+        itemListElement: categoryRoute.items.slice(0, 100).map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: new URL(item.path, Astro.site).href,
+          name: item.name,
+        })),
+      },
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: product?.name,
+      description: product?.description || `${product?.name} — wholesale supply from Seventh Legion.`,
+      image: product?.image ? new URL(product.image, Astro.site).href : undefined,
+      sku: product?.sku || undefined,
+      category: product?.subcategory || product?.category,
+      url: new URL(product?.path ?? "/en/shop/", Astro.site).href,
+      brand: {
+        "@type": "Organization",
+        name: "Seventh Legion",
+      },
+      offers: {
+        "@type": "Offer",
+        availability: product?.inStock ? "https://schema.org/InStock" : "https://schema.org/BackOrder",
+        priceCurrency: "RUB",
+        url: new URL(product?.path ?? "/en/shop/", Astro.site).href,
+        seller: {
+          "@type": "Organization",
+          name: "LLC Seventh Legion",
+        },
+      },
+    };
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage || undefined} schema={schema}>
+  {!categoryRoute && product && (
+    <nav class="breadcrumbs product-breadcrumbs" aria-label="Breadcrumbs">
+      <div class="shell">
+        <a href="/en/">Home</a><span>/</span><a href="/en/shop/">Catalog</a><span>/</span>
+        <a href={`/en/shop/${product.categorySlug}/`}>{product.category}</a><span>/</span>
+        <span aria-current="page">{product.name}</span>
+      </div>
+    </nav>
+  )}
+
+  {categoryRoute ? (
+    <>
+      <PageHero
+        eyebrow="Wholesale category"
+        title={categoryRoute.name}
+        lead={`${formatCount(categoryRoute.items.length, "en")} products. Price depends on volume and commercial terms — select products and build a working list.`}
+        statValue={String(categoryRoute.items.length).padStart(2, "0")}
+        statLabel="products in this category"
+        statNote="prices and availability on request"
+        breadcrumb={categoryRoute.name}
+        parentHref="/en/shop/"
+        parentLabel="Catalog"
+      />
+      <CatalogExplorer
+        products={categoryRoute.items}
+        activeCategory={categoryRoute.categorySlug}
+        heading={categoryRoute.name}
+        intro={`${formatCount(categoryRoute.items.length, "en")} products in the “${categoryRoute.name}” category. Supply from our Khimiki warehouse.`}
+        locale="en"
+        categoryList={englishCategories}
+        catalogIndex="/en/catalog-index.json"
+      />
+      <ContactCta title="Need a calculation for this category?" text="Add products to the cart and send the list to your sales contact for a volume and delivery calculation." primaryLabel="Request a commercial offer" />
+    </>
+  ) : product ? (
+    <>
+      <section class="section product-page-section">
+        <div class="shell product-page">
+          <div class="product-gallery" data-reveal>
+            <div class="product-gallery__frame">
+              <span class="product-gallery__index">{product.sku ? `Item / ${product.sku}` : "Cold shipment"}</span>
+              {product.image ? (
+                <img src={product.image} alt={product.name} width="1200" height="1200" loading="eager" fetchpriority="high" />
+              ) : (
+                <span class="product-card__placeholder">Photo coming soon</span>
+              )}
+            </div>
+          </div>
+          <div class="product-detail" data-reveal>
+            <span class="product-detail__category">{product.subcategory || product.category}</span>
+            <h1 translate="no">{product.name}</h1>
+            {product.sku && <p class="product-detail__sku">Item: {product.sku}</p>}
+            <p class="product-detail__description">{product.description || "Product information is provided on the consumer packaging. Contact our sales team for specifications, weight and batch details."}</p>
+            <div class="product-detail__price">Price on request</div>
+            <form class="product-buy" data-product-form>
+              <label for="product-quantity">Quantity</label>
+              <input id="product-quantity" name="quantity" type="number" min="1" max="9999" step="1" value="1" inputmode="numeric" autocomplete="off" />
+              <button
+                class="button button--red"
+                type="submit"
+                data-add-to-cart
+                data-open-after-add="true"
+                data-product-id={product.id}
+                data-product-name={product.name}
+                data-product-path={product.path}
+                data-product-image={product.thumbnail || product.image}
+              >
+                Add to cart <Icon name="plus" size={18} />
+              </button>
+            </form>
+            <div class="product-detail__meta">
+              <div><span>Availability</span><strong>{product.inStock ? "In stock" : "On order"}</strong></div>
+              <div><span>Dispatch</span><strong>From our Khimiki warehouse</strong></div>
+              <div><span>Delivery</span><strong>Across Russia</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {related.length > 0 && (
+        <section class="section section--white related-section">
+          <div class="shell">
+            <header class="section-head">
+              <div><span class="eyebrow">In this category</span><h2>Related products</h2></div>
+              <a class="button button--outline" href={`/en/shop/${product.categorySlug}/`}>View category <Icon name="arrow" size={18} /></a>
+            </header>
+            <div class="product-grid">
+              {related.map((item, index) => <ProductCard product={item} index={index} locale="en" />)}
+            </div>
+          </div>
+        </section>
+      )}
+      <ContactCta title="Need terms and pricing?" text="The cart is a convenient way to prepare a working list. Contact our sales team with your product list for a calculation." primaryLabel="Contact our sales team" />
+    </>
+  ) : null}
+</BaseLayout>

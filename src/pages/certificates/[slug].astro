@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactCta from "../../components/ContactCta.astro";
+import Icon from "../../components/Icon.astro";
+import { certificates } from "../../data/site";
+import type { Certificate } from "../../data/types";
+
+export const getStaticPaths = (() =>
+  certificates.map((certificate) => ({
+    params: { slug: certificate.slug },
+    props: { certificate },
+  }))) satisfies GetStaticPaths;
+
+interface Props {
+  certificate: Certificate;
+}
+
+const { certificate } = Astro.props;
+---
+
+<BaseLayout title={`${certificate.name} — сертификат поставщика | Седьмой Легион`} description={certificate.description || `Документ поставщика ${certificate.name}. Седьмой Легион.`} image={certificate.image || undefined}>
+  <nav class="breadcrumbs" aria-label="Хлебные крошки"><div class="shell"><a href="/">Главная</a><span>/</span><a href="/sertifikaty/">Сертификаты</a><span>/</span><span aria-current="page">{certificate.name}</span></div></nav>
+  <section class="section"><div class="shell product-page">
+    <div class="product-gallery" data-reveal><div class="product-gallery__frame" style="aspect-ratio:4/3">{certificate.image ? <img src={certificate.image} alt={certificate.name} width="1200" height="900" loading="eager" /> : <span class="product-card__placeholder">Изображение<br />по запросу</span>}</div></div>
+    <div class="product-detail" data-reveal>
+      <span class="product-detail__category">Документ поставщика</span>
+      <h1 translate="no">{certificate.name}</h1>
+      <p class="product-detail__description">{certificate.description || "Декларация или ветеринарный документ подтверждает происхождение и качество продукции поставщика."}</p>
+      <div class="product-buy"><a class="button button--red" href="/contact-us/">Запросить документ <Icon name="arrow" size={18} /></a><a class="button button--outline" href="/sertifikaty/">Все сертификаты</a></div>
+      <div class="product-detail__meta"><div><span>Статус</span><strong>Архив компании</strong></div><div><span>Обновление</span><strong>По запросу</strong></div><div><span>Ответственный</span><strong>Документооборот</strong></div></div>
+    </div>
+  </div></section>
+  <ContactCta title="Нужна актуальная версия документа?" text="Свяжитесь с документооборотом — предоставим файл по конкретному бренду и действующей поставке." primaryLabel="Запросить документ" />
+</BaseLayout>

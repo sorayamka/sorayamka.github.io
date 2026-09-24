@@ -1,0 +1,67 @@
+---
+import Icon from "./Icon.astro";
+import { getLocale, ui, type Locale } from "../lib/i18n";
+import type { Product } from "../data/types";
+
+interface Props {
+  product: Product;
+  index?: number;
+  locale?: Locale;
+}
+
+const { product, index = 0, locale: localeProp } = Astro.props;
+const locale = localeProp ?? getLocale(Astro.url.pathname);
+const t = ui[locale];
+---
+
+<article
+  class="product-card"
+  data-product-card
+  data-id={product.id}
+  data-name={`${product.name} ${product.subcategory} ${product.category}`.toLocaleLowerCase(locale === "en" ? "en-US" : "ru-RU")}
+  data-category={product.categorySlug}
+  data-subcategory={product.subcategorySlug}
+  data-stock={product.inStock ? "true" : "false"}
+  data-path={product.path}
+>
+  <a class="product-card__media" href={product.path} aria-label={`${t.openProduct} ${product.name}, ${product.inStock ? t.inStock.toLocaleLowerCase(locale) : t.onOrder.toLocaleLowerCase(locale)}, number ${String(index + 1).padStart(3, "0")}`}>
+    {product.image ? (
+      <img
+        src={product.thumbnail || product.image}
+        srcset={product.thumbnail ? `${product.thumbnail} 480w, ${product.image} 1200w` : undefined}
+        sizes="(max-width: 720px) 45vw, (max-width: 1280px) 30vw, 23vw"
+        alt={product.name}
+        width="480"
+        height="480"
+        loading={index < 4 ? "eager" : "lazy"}
+        fetchpriority={index === 0 ? "high" : undefined}
+        decoding="async"
+      />
+    ) : (
+      <span class="product-card__placeholder">{t.photoPending}</span>
+    )}
+    <span class:list={["product-card__stock", { "is-out": !product.inStock }]}>
+      {product.inStock ? t.inStock : t.onOrder}
+    </span>
+    <span class="product-card__index">{String(index + 1).padStart(3, "0")}</span>
+  </a>
+  <div class="product-card__body">
+    <span class="product-card__category">{product.subcategory || product.category}</span>
+    <h3><a href={product.path} translate="no">{product.name}</a></h3>
+    <div class="product-card__bottom">
+      <span class="product-card__price">{t.priceOnRequest}</span>
+      <button
+        class="product-card__add"
+        type="button"
+        data-add-to-cart
+        data-product-id={product.id}
+        data-product-name={product.name}
+        data-product-path={product.path}
+        data-product-image={product.thumbnail || product.image}
+        aria-label={`${t.addToCart}: ${product.name}`}
+      >
+        <Icon name="plus" size={19} />
+      </button>
+    </div>
+  </div>
+</article>

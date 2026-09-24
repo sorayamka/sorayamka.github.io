@@ -1,0 +1,338 @@
+[
+  {
+    "name": "Агро-Плюс Agro-plus",
+    "slug": "sert-agro-plus",
+    "image": "/images/certificates/sert-agro-plus.webp",
+    "description": "",
+    "path": "/sert-agro-plus/",
+    "sourceUrl": "https://7legion.com/sert-agro-plus/"
+  },
+  {
+    "name": "Агрокомплекс Agrocomplex",
+    "slug": "sert-agrokompleks",
+    "image": "/images/certificates/sert-agrokompleks.webp",
+    "description": "",
+    "path": "/sert-agrokompleks/",
+    "sourceUrl": "https://7legion.com/sert-agrokompleks/"
+  },
+  {
+    "name": "Акашево Akashevo",
+    "slug": "sert-akashevo",
+    "image": "/images/certificates/sert-akashevo.webp",
+    "description": "",
+    "path": "/sert-akashevo/",
+    "sourceUrl": "https://7legion.com/sert-akashevo/"
+  },
+  {
+    "name": "Актион Агро (Дороничи)",
+    "slug": "sert-aktion-agro",
+    "image": "/images/certificates/sert-aktion-agro.webp",
+    "description": "",
+    "path": "/sert-aktion-agro/",
+    "sourceUrl": "https://7legion.com/sert-aktion-agro/"
+  },
+  {
+    "name": "Мясной Дом Бородина Borodin’s Meat House",
+    "slug": "sert-borodina",
+    "image": "/images/certificates/sert-borodina.webp",
+    "description": "",
+    "path": "/sert-borodina/",
+    "sourceUrl": "https://7legion.com/sert-borodina/"
+  },
+  {
+    "name": "Черкизово Cherkizovo",
+    "slug": "sert-cherkizovo",
+    "image": "/images/certificates/sert-cherkizovo.webp",
+    "description": "",
+    "path": "/sert-cherkizovo/",
+    "sourceUrl": "https://7legion.com/sert-cherkizovo/"
+  },
+  {
+    "name": "Дамате Damate",
+    "slug": "sert-damate",
+    "image": "/images/certificates/sert-damate.webp",
+    "description": "",
+    "path": "/sert-damate/",
+    "sourceUrl": "https://7legion.com/sert-damate/"
+  },
+  {
+    "name": "Дары Подворья Dary Podvoriy",
+    "slug": "sert-dary-podvoriy",
+    "image": "/images/certificates/sert-dary-podvoriy.webp",
+    "description": "",
+    "path": "/sert-dary-podvoriy/",
+    "sourceUrl": "https://7legion.com/sert-dary-podvoriy/"
+  },
+  {
+    "name": "Домашние правила House rules",
+    "slug": "sert-dompravila",
+    "image": "/images/certificates/sert-dompravila.webp",
+    "description": "",
+    "path": "/sert-dompravila/",
+    "sourceUrl": "https://7legion.com/sert-dompravila/"
+  },
+  {
+    "name": "Егорьевская ПФ Egorievskay PF",
+    "slug": "sert-egorievskaya-pf",
+    "image": "/images/certificates/sert-egorievskaya-pf.webp",
+    "description": "",
+    "path": "/sert-egorievskaya-pf/",
+    "sourceUrl": "https://7legion.com/sert-egorievskaya-pf/"
+  },
+  {
+    "name": "ЭкоПтица EcoPticа",
+    "slug": "sert-ekoptica",
+    "image": "/images/certificates/sert-ekoptica.webp",
+    "description": "",
+    "path": "/sert-ekoptica/",
+    "sourceUrl": "https://7legion.com/sert-ekoptica/"
+  },
+  {
+    "name": "Ганна Ganna",
+    "slug": "sert-ganna",
+    "image": "/images/certificates/sert-ganna.webp",
+    "description": "",
+    "path": "/sert-ganna/",
+    "sourceUrl": "https://7legion.com/sert-ganna/"
+  },
+  {
+    "name": "Кролберри Krolberry",
+    "slug": "sert-krolberry",
+    "image": "/images/certificates/sert-krolberry.webp",
+    "description": "",
+    "path": "/sert-krolberry/",
+    "sourceUrl": "https://7legion.com/sert-krolberry/"
+  },
+  {
+    "name": "Лобановская индейка Lobanovskaya turkey",
+    "slug": "sert-lobanovskaya-indeyka",
+    "image": "/images/certificates/sert-lobanovskaya-indeyka.webp",
+    "description": "",
+    "path": "/sert-lobanovskaya-indeyka/",
+    "sourceUrl": "https://7legion.com/sert-lobanovskaya-indeyka/"
+  },
+  {
+    "name": "Байсад Baisad",
+    "slug": "sert-miratorg-2",
+    "image": "/images/certificates/sert-miratorg-2.webp",
+    "description": "",
+    "path": "/sert-miratorg-2/",
+    "sourceUrl": "https://7legion.com/sert-miratorg-2/"
+  },
+  {
+    "name": "Мираторг Miratorg",
+    "slug": "sert-miratorg",
+    "image": "/images/certificates/sert-miratorg.webp",
+    "description": "",
+    "path": "/sert-miratorg/",
+    "sourceUrl": "https://7legion.com/sert-miratorg/"
+  },
+  {
+    "name": "МК Казанский Kazanskiy",
+    "slug": "sert-mk-kazanskiy",
+    "image": "/images/certificates/sert-mk-kazanskiy.webp",
+    "description": "",
+    "path": "/sert-mk-kazanskiy/",
+    "sourceUrl": "https://7legion.com/sert-mk-kazanskiy/"
+  },
+  {
+    "name": "МПК Полянское Polyanskoe",
+    "slug": "sert-mpk-polyanskoe",
+    "image": "/images/certificates/sert-mpk-polyanskoe.webp",
+    "description": "",
+    "path": "/sert-mpk-polyanskoe/",
+    "sourceUrl": "https://7legion.com/sert-mpk-polyanskoe/"
+  },
+  {
+    "name": "Ольховский МК Olkhovsky MK",
+    "slug": "sert-olkhovsky-mk",
+    "image": "/images/certificates/sert-olkhovsky-mk.webp",
+    "description": "",
+    "path": "/sert-olkhovsky-mk/",
+    "sourceUrl": "https://7legion.com/sert-olkhovsky-mk/"
+  },
+  {
+    "name": "Павловская курочка Pavlovskaya chicken",
+    "slug": "sert-pavlovskaya-kurochka",
+    "image": "/images/certificates/sert-pavlovskaya-kurochka.webp",
+    "description": "",
+    "path": "/sert-pavlovskaya-kurochka/",
+    "sourceUrl": "https://7legion.com/sert-pavlovskaya-kurochka/"
+  },
+  {
+    "name": "Петруха Petryha",
+    "slug": "sert-petrukha",
+    "image": "/images/certificates/sert-petrukha.webp",
+    "description": "",
+    "path": "/sert-petrukha/",
+    "sourceUrl": "https://7legion.com/sert-petrukha/"
+  },
+  {
+    "name": "ПФ Чамзинская Chamzinskaya",
+    "slug": "sert-pf-chamzinskaya",
+    "image": "/images/certificates/sert-pf-chamzinskaya.webp",
+    "description": "",
+    "path": "/sert-pf-chamzinskaya/",
+    "sourceUrl": "https://7legion.com/sert-pf-chamzinskaya/"
+  },
+  {
+    "name": "ПФ Ново-Петровская Novo-Petrovskay",
+    "slug": "sert-pf-novo-petrovskaya",
+    "image": "/images/certificates/sert-pf-novo-petrovskaya.webp",
+    "description": "",
+    "path": "/sert-pf-novo-petrovskaya/",
+    "sourceUrl": "https://7legion.com/sert-pf-novo-petrovskaya/"
+  },
+  {
+    "name": "ПФ Славный Край Slavniy kray",
+    "slug": "sert-pf-slavnyy-kray",
+    "image": "/images/certificates/sert-pf-slavnyy-kray.webp",
+    "description": "",
+    "path": "/sert-pf-slavnyy-kray/",
+    "sourceUrl": "https://7legion.com/sert-pf-slavnyy-kray/"
+  },
+  {
+    "name": "Приосколье Prioskolye",
+    "slug": "sert-prioskolye",
+    "image": "/images/certificates/sert-prioskolye.webp",
+    "description": "",
+    "path": "/sert-prioskolye/",
+    "sourceUrl": "https://7legion.com/sert-prioskolye/"
+  },
+  {
+    "name": "Продо-Калужская Prodo-Kaluzhskaya",
+    "slug": "sert-prodo-kaluzhskaya",
+    "image": "/images/certificates/sert-prodo-kaluzhskaya.webp",
+    "description": "",
+    "path": "/sert-prodo-kaluzhskaya/",
+    "sourceUrl": "https://7legion.com/sert-prodo-kaluzhskaya/"
+  },
+  {
+    "name": "Рассвет Rassvet",
+    "slug": "sert-rassvet",
+    "image": "/images/certificates/sert-rassvet.webp",
+    "description": "",
+    "path": "/sert-rassvet/",
+    "sourceUrl": "https://7legion.com/sert-rassvet/"
+  },
+  {
+    "name": "Равис Ravis",
+    "slug": "sert-ravis",
+    "image": "/images/certificates/sert-ravis.webp",
+    "description": "",
+    "path": "/sert-ravis/",
+    "sourceUrl": "https://7legion.com/sert-ravis/"
+  },
+  {
+    "name": "Ресурс Юг Resource south",
+    "slug": "sert-resurs-yug",
+    "image": "/images/certificates/sert-resurs-yug.webp",
+    "description": "",
+    "path": "/sert-resurs-yug/",
+    "sourceUrl": "https://7legion.com/sert-resurs-yug/"
+  },
+  {
+    "name": "Ряба Крымская Ryaba Krymskay",
+    "slug": "sert-ryaba-krymskaya",
+    "image": "/images/certificates/sert-ryaba-krymskaya.webp",
+    "description": "",
+    "path": "/sert-ryaba-krymskaya/",
+    "sourceUrl": "https://7legion.com/sert-ryaba-krymskaya/"
+  },
+  {
+    "name": "Семидаль Semidal",
+    "slug": "sert-semidal",
+    "image": "/images/certificates/sert-semidal.webp",
+    "description": "",
+    "path": "/sert-semidal/",
+    "sourceUrl": "https://7legion.com/sert-semidal/"
+  },
+  {
+    "name": "Ситно Sitno",
+    "slug": "sert-sitno",
+    "image": "/images/certificates/sert-sitno.webp",
+    "description": "",
+    "path": "/sert-sitno/",
+    "sourceUrl": "https://7legion.com/sert-sitno/"
+  },
+  {
+    "name": "Союз м Souz m",
+    "slug": "sert-soyuz-m",
+    "image": "/images/certificates/sert-soyuz-m.webp",
+    "description": "",
+    "path": "/sert-soyuz-m/",
+    "sourceUrl": "https://7legion.com/sert-soyuz-m/"
+  },
+  {
+    "name": "Тамбовский бекон Tambov bacon",
+    "slug": "sert-tambov-bekon",
+    "image": "/images/certificates/sert-tambov-bekon.webp",
+    "description": "",
+    "path": "/sert-tambov-bekon/",
+    "sourceUrl": "https://7legion.com/sert-tambov-bekon/"
+  },
+  {
+    "name": "Верхневолжская Verkhnevolzhskaya",
+    "slug": "sert-verhnevolzhskaya",
+    "image": "/images/certificates/sert-verhnevolzhskaya.webp",
+    "description": "",
+    "path": "/sert-verhnevolzhskaya/",
+    "sourceUrl": "https://7legion.com/sert-verhnevolzhskaya/"
+  },
+  {
+    "name": "Воловский бройлер — Своя Volovsky broiler — svoij",
+    "slug": "sert-volovskiy-broyler",
+    "image": "/images/certificates/sert-volovskiy-broyler.webp",
+    "description": "",
+    "path": "/sert-volovskiy-broyler/",
+    "sourceUrl": "https://7legion.com/sert-volovskiy-broyler/"
+  },
+  {
+    "name": "Волжанин Volzhanin",
+    "slug": "sert-volzhanin",
+    "image": "/images/certificates/sert-volzhanin.webp",
+    "description": "",
+    "path": "/sert-volzhanin/",
+    "sourceUrl": "https://7legion.com/sert-volzhanin/"
+  },
+  {
+    "name": "Ярославский бройлер Yaroslavl broiler",
+    "slug": "sert-yaroslavl-broyler",
+    "image": "/images/certificates/sert-yaroslavl-broyler.webp",
+    "description": "",
+    "path": "/sert-yaroslavl-broyler/",
+    "sourceUrl": "https://7legion.com/sert-yaroslavl-broyler/"
+  },
+  {
+    "name": "Ясные зори Yasnie zory",
+    "slug": "sert-yasnie-zori",
+    "image": "/images/certificates/sert-yasnie-zori.webp",
+    "description": "",
+    "path": "/sert-yasnie-zori/",
+    "sourceUrl": "https://7legion.com/sert-yasnie-zori/"
+  },
+  {
+    "name": "ЙОЛА YOLA",
+    "slug": "sert-yola",
+    "image": "/images/certificates/sert-yola.webp",
+    "description": "",
+    "path": "/sert-yola/",
+    "sourceUrl": "https://7legion.com/sert-yola/"
+  },
+  {
+    "name": "Юрма Jurma",
+    "slug": "sert-yurma",
+    "image": "/images/certificates/sert-yurma.webp",
+    "description": "",
+    "path": "/sert-yurma/",
+    "sourceUrl": "https://7legion.com/sert-yurma/"
+  },
+  {
+    "name": "Старожиловская птица (Союзптицепром)",
+    "slug": "starozhilovskaja-ptica-sojuzpticeprom",
+    "image": "/images/certificates/starozhilovskaja-ptica-sojuzpticeprom.webp",
+    "description": "",
+    "path": "/starozhilovskaja-ptica-sojuzpticeprom/",
+    "sourceUrl": "https://7legion.com/starozhilovskaja-ptica-sojuzpticeprom/"
+  }
+]

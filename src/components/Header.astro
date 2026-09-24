@@ -1,0 +1,99 @@
+---
+import Icon from "./Icon.astro";
+import { brands, company, products, siteImages } from "../data/site";
+import { getLocale, localizedPath, ui } from "../lib/i18n";
+
+const pathname = Astro.url.pathname;
+const locale = getLocale(pathname);
+const t = ui[locale];
+const link = (path: string) => localizedPath(path, locale);
+const isActive = (path: string) => {
+  const localized = link(path);
+  return pathname === localized || pathname.startsWith(localized);
+};
+const hours = locale === "en" ? "Mon–Fri, 9:00–18:00" : company.hours;
+---
+
+<div class="topline">
+  <div class="shell topline__inner">
+    <p>{locale === "en" ? "Wholesale frozen meat supply across Russia" : "Оптовые поставки замороженной мясной продукции по России"}</p>
+    <div class="topline__right">
+      <span>{hours}</span>
+      <a href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}>{company.phone}</a>
+    </div>
+  </div>
+</div>
+<header class="site-header" data-site-header>
+  <div class="shell site-header__inner">
+    <a class="brand" href={link("/")} aria-label={locale === "en" ? "Seventh Legion — home" : "Седьмой Легион — на главную"}>
+      <img src={siteImages.logo} alt={locale === "en" ? "Seventh Legion" : "Седьмой Легион"} width="190" height="70" loading="eager" fetchpriority="high" />
+    </a>
+
+    <nav class="desktop-nav" aria-label={locale === "en" ? "Main navigation" : "Основная навигация"}>
+      <a class:list={["desktop-nav__link", { "is-active": isActive("/shop/") }]} href={link("/shop/")} aria-current={isActive("/shop/") ? "page" : undefined}>{t.catalog}</a>
+      <a class:list={["desktop-nav__link", { "is-active": isActive("/brands/") }]} href={link("/brands/")} aria-current={isActive("/brands/") ? "page" : undefined}>{t.brands}</a>
+      <details class="nav-menu">
+        <summary>{t.services} <Icon name="chevron" size={15} /></summary>
+        <div class="nav-menu__panel">
+          <a href={link("/hranenie/")}><span>01</span>{t.storage}</a>
+          <a href={link("/logisticheskie-uslugi/")}><span>02</span>{t.logistics}</a>
+          <a href={link("/price/")}><span>03</span>{t.price}</a>
+        </div>
+      </details>
+      <details class="nav-menu">
+        <summary>{t.company} <Icon name="chevron" size={15} /></summary>
+        <div class="nav-menu__panel nav-menu__panel--wide">
+          <a href={link("/about-us/")}><span>01</span>{t.about}</a>
+          <a href={link("/postavshhiki/")}><span>02</span>{t.suppliers}</a>
+          <a href={link("/stat-partnerom/")}><span>03</span>{t.partner}</a>
+          <a href={link("/dokumenty/")}><span>04</span>{t.documents}</a>
+          <a href={link("/sertifikaty/")}><span>05</span>{t.certificates}</a>
+          <a href={link("/vacancies/")}><span>06</span>{t.vacancies}</a>
+        </div>
+      </details>
+      <a class:list={["desktop-nav__link", { "is-active": isActive("/contact-us/") }]} href={link("/contact-us/")} aria-current={isActive("/contact-us/") ? "page" : undefined}>{t.contacts}</a>
+    </nav>
+
+    <div class="header-actions">
+      <nav class="language-switch" aria-label={t.language}>
+        <a class:list={{ "is-active": locale === "ru" }} href={localizedPath(pathname, "ru")} hreflang="ru" aria-current={locale === "ru" ? "page" : undefined}>RU</a>
+        <a class:list={{ "is-active": locale === "en" }} href={localizedPath(pathname, "en")} hreflang="en" aria-current={locale === "en" ? "page" : undefined}>EN</a>
+      </nav>
+      <form class="header-search" action={link("/shop/")} method="get" role="search">
+        <label class="sr-only" for="header-search-input">{t.searchCatalog}</label>
+        <input id="header-search-input" name="q" type="search" placeholder={locale === "en" ? "Find a product…" : "Найти продукт…"} autocomplete="off" />
+        <button type="submit" aria-label={t.find}><Icon name="search" size={19} /></button>
+      </form>
+      <a class="header-phone" href={`tel:${company.salesPhone.replace(/[^+\d]/g, "")}`}>{company.salesPhone}</a>
+      <button class="cart-button" type="button" data-cart-open aria-label={locale === "en" ? "Open cart, 0 items" : "Открыть корзину, 0 позиций"}>
+        <Icon name="bag" size={21} />
+        <span data-cart-count aria-live="polite" aria-atomic="true">0</span>
+      </button>
+      <details class="mobile-menu">
+        <summary aria-label={locale === "en" ? "Open menu" : "Открыть меню"} aria-expanded="false"><Icon name="menu" size={23} /></summary>
+        <div class="mobile-menu__panel">
+          <div class="mobile-menu__top">
+            <strong>{locale === "en" ? "Navigation" : "Навигация"}</strong>
+            <button class="icon-button" type="button" data-mobile-menu-close aria-label={locale === "en" ? "Close menu" : "Закрыть меню"}><Icon name="close" size={20} /></button>
+          </div>
+          <a href={link("/shop/")}>{t.catalog} <span>{products.length}</span></a>
+          <a href={link("/brands/")}>{t.brands} <span>{brands.length}</span></a>
+          <a href={link("/hranenie/")}>{t.storage}</a>
+          <a href={link("/logisticheskie-uslugi/")}>{t.logistics}</a>
+          <a href={link("/price/")}>{t.price}</a>
+          <a href={link("/about-us/")}>{t.about}</a>
+          <a href={link("/postavshhiki/")}>{t.suppliers}</a>
+          <a href={link("/stat-partnerom/")}>{t.partner}</a>
+          <a href={link("/dokumenty/")}>{t.documents}</a>
+          <a href={link("/sertifikaty/")}>{t.certificates}</a>
+          <a href={link("/vacancies/")}>{t.vacancies}</a>
+          <a href={link("/contact-us/")}>{t.contacts}</a>
+          <div class="mobile-menu__contacts">
+            <a href={`tel:${company.salesPhone.replace(/[^+\d]/g, "")}`}>{company.salesPhone}</a>
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<BaseLayout title="Страница не найдена — Седьмой Легион" description="Запрошенная страница не найдена." noindex>
+  <PageHero
+    eyebrow="Ошибка 404"
+    title="Такой страницы"
+    titleAccent="здесь нет"
+    lead="Возможно, адрес изменился. Перейдите в каталог или на главную страницу."
+    statValue="404"
+    statLabel="код ошибки"
+    statNote="страница не найдена"
+    class="not-found-page"
+  >
+    <div slot="actions" class="home-hero__actions"><a class="button button--red" href="/shop/">Открыть каталог <Icon name="arrow" size={18} /></a><a class="button button--ghost" href="/">На главную</a></div>
+  </PageHero>
+</BaseLayout>

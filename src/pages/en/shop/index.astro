@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import CatalogExplorer from "../../../components/CatalogExplorer.astro";
+import ContactCta from "../../../components/ContactCta.astro";
+import { englishCategories, englishProducts } from "../../../lib/english-products";
+import { formatCount } from "../../../lib/i18n";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Frozen meat catalog",
+  description: "Wholesale frozen meat products from Seventh Legion.",
+  url: "https://7legion.com/en/shop/",
+};
+---
+
+<BaseLayout
+  title="Frozen meat catalog — Seventh Legion"
+  description={`${formatCount(englishProducts.length, "en")} products: pork, beef, poultry, offal, lamb, rabbit and semi-finished products. Wholesale supply from our warehouse.`}
+  schema={schema}
+>
+  <PageHero
+    eyebrow="Wholesale warehouse · Russia"
+    title="Frozen meat"
+    titleAccent="catalog"
+    lead="Browse the full assortment, filter by category and build a working purchase list for your next shipment."
+    statValue={formatCount(englishProducts.length, "en")}
+    statLabel="items in the catalog"
+    statNote="prices and availability on request"
+    breadcrumb="Catalog"
+  />
+
+  <CatalogExplorer products={englishProducts} locale="en" categoryList={englishCategories} catalogIndex="/en/catalog-index.json" />
+
+  <ContactCta
+    title="Need a price for a specific product?"
+    text="Wholesale prices depend on volume, brand and shipping conditions. Contact our commercial team for a calculation."
+    primaryLabel="Request a price"
+  />
+</BaseLayout>

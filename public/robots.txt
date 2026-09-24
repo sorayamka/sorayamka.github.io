@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cart/
+
+Sitemap: https://7legion.com/sitemap-index.xml

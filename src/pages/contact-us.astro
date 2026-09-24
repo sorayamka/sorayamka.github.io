@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactCta from "../components/ContactCta.astro";
+import Icon from "../components/Icon.astro";
+import { company, siteImages } from "../data/site";
+---
+
+<BaseLayout title="Контакты — Седьмой Легион" description="Телефоны, email, офис и склад ООО «Седьмой Легион» в Москве и Химках." image={siteImages["cold-chain"]}>
+  <PageHero
+    eyebrow="Москва · Химки"
+    title="Контакты"
+    lead="Свяжитесь с коммерческим отделом по поставкам, ценам, логистике и документообороту."
+    statValue="7Л"
+    statLabel="Прямой контакт"
+    statNote="коммерческий отдел и склад"
+    breadcrumb="Контакты"
+  />
+
+  <section class="section">
+    <div class="shell">
+      <div class="contact-grid">
+        <a class="contact-card contact-card--dark" href={`tel:${company.salesPhone.replace(/[^+\d]/g, "")}`} data-reveal><span>Отдел продаж</span><strong>{company.salesPhone}</strong><p>По наличию, ценам и условиям оптовой поставки</p></a>
+        <a class="contact-card" href={`mailto:${company.email}`} data-reveal><span>Электронная почта</span><strong>{company.email}</strong><p>Общие вопросы, документы и коммерческие предложения</p></a>
+        <div class="contact-card" data-reveal><span>Офис</span><strong>{company.office}</strong><p>ИНН {company.inn}<br />ОГРН {company.ogrn}</p></div>
+        <div class="contact-card" data-reveal><span>Склад</span><strong>{company.warehouse}</strong><p>Работаем {company.hours}<br />Телефон склада: {company.warehousePhone}</p></div>
+      </div>
+
+      <div class="split-feature" style="margin-top:24px">
+        <div class="split-feature__media"><img src={siteImages["cold-chain"]} srcset={`${siteImages["cold-chain-small"]} 800w, ${siteImages["cold-chain"]} 1600w`} sizes="(max-width: 1024px) 100vw, 50vw" alt="Подготовка транспортной cold-chain упаковки" width="1600" height="2133" loading="lazy" decoding="async" /></div>
+        <div class="split-feature__content" data-reveal>
+          <span class="eyebrow">Работаем не только по Москве</span>
+          <h2>Доступны для прямого контакта.</h2>
+          <p>Назовите интересующую категорию, объём и регион доставки. Мы предложим доступные позиции и формат отгрузки.</p>
+          <ul class="feature-list"><li><span>01</span>Телефон отдела продаж</li><li><span>02</span>Telegram-канал компании</li><li><span>03</span>Email для документов</li></ul>
+          <a class="button button--ghost" href={company.telegram} target="_blank" rel="noreferrer">Открыть Telegram <Icon name="arrow" size={18} /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactCta title="Проверим наличие и цену?" text="Отправьте название позиции или подготовьте корзину. Коммерческий отдел ответит по объёму и срокам." primaryLabel="Позвонить сейчас" />
+</BaseLayout>

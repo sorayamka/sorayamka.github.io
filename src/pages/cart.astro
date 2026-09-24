@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<BaseLayout title="Корзина закупки — Седьмой Легион" description="Рабочая корзина для формирования списка оптовой закупки мясной продукции." noindex>
+  <PageHero
+    eyebrow="Локальное сохранение"
+    title="Корзина"
+    lead="Список хранится только в вашем браузере и не отправляется автоматически."
+    statValue={0}
+    statLabel="единиц в списке"
+    statNote="рабочая корзина закупки"
+    breadcrumb="Корзина"
+    cartCount
+    compact
+  />
+  <section class="section cart-page"><div class="shell">
+    <div class="cart-page__header"><div><span class="eyebrow">Рабочий список</span><h2>Состав закупки</h2></div><span class="cart-page__count" data-cart-page-count>0</span></div>
+    <div class="cart-page__list" data-cart-page-items></div>
+    <noscript><p>Для работы корзины включите JavaScript. Каталог и контактные данные доступны без него.</p></noscript>
+    <div class="cart-page__empty" data-cart-page-empty hidden><span>0</span><h2>Корзина пуста</h2><p>Добавьте нужные позиции из каталога.</p><a class="button button--dark" href="/shop/">Открыть каталог <Icon name="arrow" size={18} /></a></div>
+    <div class="cart-page__footer" data-cart-page-footer hidden><p>Список можно скачать в текстовый файл. Для получения цены передайте его менеджеру по телефону или через Telegram.</p><div class="cart-page__actions"><button class="button button--outline" type="button" data-cart-clear>Очистить</button><button class="button button--red" type="button" data-cart-download><Icon name="download" size={18} />Скачать список</button></div></div>
+  </div></section>
+</BaseLayout>

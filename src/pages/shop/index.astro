@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import CatalogExplorer from "../../components/CatalogExplorer.astro";
+import ContactCta from "../../components/ContactCta.astro";
+import { formatCount, products } from "../../data/site";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Каталог мясной продукции",
+  description: "Оптовый каталог замороженной мясной продукции Седьмого Легиона.",
+  url: "https://7legion.com/shop/",
+};
+---
+
+<BaseLayout
+  title="Каталог замороженной мясной продукции — Седьмой Легион"
+  description={`${formatCount(products.length)} позиций: свинина, говядина, птица, субпродукты, баранина, крольчатина и полуфабрикаты. Оптовая поставка со склада в Москве.`}
+  schema={schema}
+>
+  <PageHero
+    eyebrow="Оптовый склад · Россия"
+    title="Каталог"
+    titleAccent="мясной продукции"
+    lead="Собрали весь ассортимент в одном месте. Фильтруйте по категории, находите нужную позицию и собирайте рабочий список закупки."
+    statValue={formatCount(products.length)}
+    statLabel="позиций в каталоге"
+    statNote="цены и наличие уточняйте у менеджера"
+    breadcrumb="Каталог"
+  />
+
+  <CatalogExplorer products={products} />
+
+  <ContactCta
+    title="Нужна цена на конкретную позицию?"
+    text="Цены на оптовые партии уточняются по объёму, бренду и условиям отгрузки. Свяжитесь с коммерческим отделом."
+    primaryLabel="Уточнить цену"
+  />
+</BaseLayout>

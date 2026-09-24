@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactCta from "../components/ContactCta.astro";
+import { siteImages } from "../data/site";
+---
+
+<BaseLayout title="Хранение замороженной продукции — Седьмой Легион" description="Правила приёмки, хранения и перемещения замороженной мясной продукции на складе Седьмого Легиона." image={siteImages.storage}>
+  <PageHero
+    eyebrow="Холодная инфраструктура"
+    title="Хранение"
+    lead="Соблюдаем температурный режим, ветеринарные регламенты и требования производителей на всём пути продукции."
+    statValue="−18°C"
+    statLabel="Режим хранения"
+    statNote="непрерывная холодная цепочка"
+    breadcrumb="Хранение"
+  />
+
+  <section class="split-feature">
+    <div class="split-feature__media"><img src={siteImages.storage} srcset={`${siteImages["storage-small"]} 800w, ${siteImages.storage} 1600w`} sizes="(max-width: 1024px) 100vw, 50vw" alt="Замороженная продукция в холодном складе" width="1600" height="1067" loading="eager" fetchpriority="high" decoding="async" /></div>
+    <div class="split-feature__content" data-reveal>
+      <span class="eyebrow">Наши правила</span>
+      <h2>Холод — это режим, а не обещание.</h2>
+      <p>Продукция проходит входной контроль и хранится в рефрижераторном оборудовании мировых производителей.</p>
+      <ul class="feature-list"><li><span>01</span>Проверка входной продукции по температурным режимам</li><li><span>02</span>Хранение по регламентам ветеринарии и производителей</li><li><span>03</span>Перевозка с соблюдением температурного режима</li><li><span>04</span>Своевременное обслуживание оборудования</li></ul>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="shell">
+      <header class="section-head" data-reveal><div><span class="eyebrow">Контроль</span><h2>Что происходит на складе</h2></div><p>Работа склада строится вокруг прослеживаемости температуры, санитарных процессов и сохранности партии.</p></header>
+      <div class="partner-steps">
+        <article class="partner-step" data-reveal><span>01</span><h3>Приёмка</h3><p>Проверяем транспорт, температуру и сопроводительные документы.</p></article>
+        <article class="partner-step" data-reveal><span>02</span><h3>Размещение</h3><p>Формируем партии и обеспечиваем корректный температурный режим.</p></article>
+        <article class="partner-step" data-reveal><span>03</span><h3>Комплектация</h3><p>Собираем заказ, оформляем документы и маркировку.</p></article>
+        <article class="partner-step" data-reveal><span>04</span><h3>Отгрузка</h3><p>Передаём продукцию в рефрижераторный транспорт без разрыва цепочки.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section"><div class="shell split-feature split-feature--reverse"><div class="split-feature__media"><img src={siteImages["cold-chain"]} srcset={`${siteImages["cold-chain-small"]} 800w, ${siteImages["cold-chain"]} 1600w`} sizes="(max-width: 1024px) 100vw, 50vw" alt="Подготовленные cold-chain контейнеры с готовой партией продукции" width="1600" height="2133" loading="lazy" decoding="async" /></div><div class="split-feature__content" data-reveal><span class="eyebrow">Результат</span><h2>Поставка в срок и в норме.</h2><p>Такой подход снижает риск потери качества и обеспечивает предсказуемость для переработчиков, HoReCa и розницы.</p><a class="button button--ghost" href="/logisticheskie-uslugi/">Логистические услуги</a></div></div></section>
+  <ContactCta title="Нужны условия хранения?" text="Уточните доступные режимы, объём партии и сроки для вашей продукции." primaryLabel="Связаться со складом" />
+</BaseLayout>

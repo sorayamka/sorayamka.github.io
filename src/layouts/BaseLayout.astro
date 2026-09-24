@@ -1,0 +1,80 @@
+---
+import "@fontsource-variable/onest";
+import "@fontsource-variable/manrope";
+import "../styles/global.css";
+import CartDrawer from "../components/CartDrawer.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { getLocale, localizedPath } from "../lib/i18n";
+import { siteImages } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  pageClass?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  image = siteImages.hero,
+  noindex = false,
+  pageClass = "",
+  schema,
+} = Astro.props;
+const locale = getLocale(Astro.url.pathname);
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const alternateRu = new URL(localizedPath(Astro.url.pathname, "ru"), Astro.site);
+const alternateEn = new URL(localizedPath(Astro.url.pathname, "en"), Astro.site);
+const socialImage = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang={locale} id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1116" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow, max-image-preview:large" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="ru" href={alternateRu} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateRu} />
+    <link rel="icon" type="image/png" href="/images/site/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/site/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={locale === "en" ? "en_US" : "ru_RU"} />
+    <meta property="og:site_name" content={locale === "en" ? "Seventh Legion" : "Седьмой Легион"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:label1" content={locale === "en" ? "English" : "Русский"} />
+    <title>{title}</title>
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body class={pageClass} data-locale={locale}>
+    <a class="skip-link" href="#main">{locale === "en" ? "Skip to content" : "Перейти к содержимому"}</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <CartDrawer />
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+    <script>
+      import "../scripts/app";
+    </script>
+  </body>
+</html>

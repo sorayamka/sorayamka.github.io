@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactCta from "../components/ContactCta.astro";
+import Icon from "../components/Icon.astro";
+import { documents } from "../data/site";
+---
+
+<BaseLayout title="Прайс-лист и коммерческое предложение — Седьмой Легион" description="Запросите актуальный прайс-лист и коммерческое предложение на оптовую поставку мясной продукции.">
+  <PageHero
+    eyebrow="Коммерческие условия"
+    title="Цены"
+    titleAccent="по запросу"
+    lead="Стоимость зависит от позиции, объёма, бренда и условий поставки."
+    statValue="₽"
+    statLabel="цена по запросу"
+    statNote="зависит от объёма и условий"
+    breadcrumb="Прайс-лист"
+  />
+  <section class="section">
+    <div class="shell">
+      <div class="price-panel" data-reveal>
+        <div><span class="eyebrow">Актуальные условия</span><h2>Коммерческое предложение</h2><p>Документ содержит действующие позиции и цены. Для крупных закупок менеджер подготовит индивидуальные условия.</p></div>
+        {documents[0] ? <a class="button button--red" href={documents[0].path} download><Icon name="download" size={18} />Скачать PDF</a> : <a class="button button--red" href="mailto:info@myaso.msk.ru">Запросить файл</a>}
+      </div>
+      <div class="metric-grid" style="margin-top:24px">
+        <div class="metric"><strong>1т</strong><span>минимальная кратность большинства позиций</span></div>
+        <div class="metric"><strong>3т</strong><span>минимальная партия доставки по Москве и области</span></div>
+        <div class="metric"><strong>500кг</strong><span>самовывоз одной позиции со склада</span></div>
+        <div class="metric"><strong>РФ</strong><span>география организации отгрузок</span></div>
+      </div>
+    </div>
+  </section>
+  <ContactCta title="Нужен расчёт под вашу партию?" text="Сформируйте корзину из нужных позиций и передайте список коммерческому отделу." primaryLabel="Получить расчёт" />
+</BaseLayout>

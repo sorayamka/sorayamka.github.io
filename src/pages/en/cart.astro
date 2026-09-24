@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import Icon from "../../components/Icon.astro";
+---
+
+<BaseLayout title="Wholesale cart — Seventh Legion" description="A local working cart for preparing a wholesale meat order." noindex>
+  <PageHero
+    eyebrow="Stored locally"
+    title="Cart"
+    lead="Your list is stored only in this browser and is not submitted automatically."
+    statValue={0}
+    statLabel="items in the list"
+    statNote="working order cart"
+    breadcrumb="Cart"
+    cartCount
+    compact
+  />
+  <section class="section cart-page"><div class="shell">
+    <div class="cart-page__header"><div><span class="eyebrow">Working list</span><h2>Order contents</h2></div><span class="cart-page__count" data-cart-page-count>0</span></div>
+    <div class="cart-page__list" data-cart-page-items></div>
+    <noscript><p>Enable JavaScript to use the cart. The catalog and contact details remain available without it.</p></noscript>
+    <div class="cart-page__empty" data-cart-page-empty hidden><span>0</span><h2>Your cart is empty</h2><p>Add the products you need from the catalog.</p><a class="button button--dark" href="/en/shop/">Open catalog <Icon name="arrow" size={18} /></a></div>
+    <div class="cart-page__footer" data-cart-page-footer hidden><p>Download the list as a text file. Send it to your sales contact by phone or Telegram to request pricing.</p><div class="cart-page__actions"><button class="button button--outline" type="button" data-cart-clear>Clear</button><button class="button button--red" type="button" data-cart-download><Icon name="download" size={18} />Download list</button></div></div>
+  </div></section>
+</BaseLayout>

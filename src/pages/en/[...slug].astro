@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import ContactCta from "../../components/ContactCta.astro";
+import { englishPages } from "../../lib/i18n";
+
+export const getStaticPaths = (() =>
+  Object.entries(englishPages).map(([slug, copy]) => ({
+    params: { slug },
+    props: { copy },
+  }))) satisfies GetStaticPaths;
+
+const { copy } = Astro.props;
+---
+
+<BaseLayout title={`${copy.title} — Seventh Legion`} description={copy.lead}>
+  <PageHero
+    eyebrow={copy.eyebrow}
+    title={copy.title}
+    lead={copy.lead}
+    statValue="23+"
+    statLabel={copy.statLabel}
+    statNote={copy.statNote}
+    breadcrumb={copy.title}
+  />
+  <section class="section">
+    <div class="shell content-grid">
+      <div>
+        <span class="eyebrow">Seventh Legion</span>
+        <h2>{copy.title}</h2>
+      </div>
+      <div class="content-grid__copy">
+        {copy.body.map((paragraph) => <p>{paragraph}</p>)}
+        <a class="button button--dark" href="/en/contact-us/">Contact our sales team</a>
+      </div>
+    </div>
+  </section>
+  <ContactCta
+    title="Need a commercial offer?"
+    text="Send us the product list, volume and delivery destination. Our team will prepare the next steps."
+    primaryLabel="Contact our sales team"
+  />
+</BaseLayout>

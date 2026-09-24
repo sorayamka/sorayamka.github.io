@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "lamb",
+    "name": "Баранина",
+    "subcategories": [],
+    "count": 8
+  },
+  {
+    "slug": "beef",
+    "name": "Говядина",
+    "subcategories": [],
+    "count": 43
+  },
+  {
+    "slug": "rabbit",
+    "name": "Крольчатина",
+    "subcategories": [],
+    "count": 8
+  },
+  {
+    "slug": "semi-finished",
+    "name": "Полуфабрикаты",
+    "subcategories": [],
+    "count": 103
+  },
+  {
+    "slug": "poultry",
+    "name": "Птица",
+    "subcategories": [
+      {
+        "slug": "turkey",
+        "name": "Индейка"
+      },
+      {
+        "slug": "chicken",
+        "name": "Курица"
+      },
+      {
+        "slug": "duck",
+        "name": "Утка"
+      }
+    ],
+    "count": 618
+  },
+  {
+    "slug": "pork",
+    "name": "Свинина",
+    "subcategories": [],
+    "count": 171
+  },
+  {
+    "slug": "offal",
+    "name": "Субпродукты",
+    "subcategories": [
+      {
+        "slug": "beef",
+        "name": "Субпродукты говядины"
+      },
+      {
+        "slug": "poultry",
+        "name": "Субпродукты птицы"
+      },
+      {
+        "slug": "pork",
+        "name": "Субпродукты свинины"
+      }
+    ],
+    "count": 169
+  }
+]

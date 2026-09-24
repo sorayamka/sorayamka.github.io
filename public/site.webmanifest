@@ -1,0 +1,18 @@
+{
+  "name": "Седьмой Легион",
+  "short_name": "7Л",
+  "description": "Оптовая поставка замороженной мясной продукции",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1116",
+  "theme_color": "#0b1116",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/images/site/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

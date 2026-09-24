@@ -1,0 +1,25 @@
+---
+import type { Brand } from "../data/types";
+
+interface Props {
+  brands: Brand[];
+  limit?: number;
+  compact?: boolean;
+}
+
+const { brands, limit, compact = false } = Astro.props;
+const visibleBrands = limit ? brands.slice(0, limit) : brands;
+---
+
+<div class:list={["brand-grid", { "brand-grid--compact": compact }]} data-brand-grid>
+  {visibleBrands.map((brand, index) => (
+    <article class="brand-card" id={`${brand.slug}-${index}`} data-brand={brand.slug} data-reveal style={`--delay:${Math.min(index, 12) * 35}ms`}>
+      {brand.logo ? (
+        <img src={brand.logo} alt={brand.name} width="320" height="220" loading="lazy" decoding="async" />
+      ) : (
+        <span class="brand-card__monogram">{brand.name.slice(0, 2).toUpperCase()}</span>
+      )}
+      <p translate="no">{brand.name}</p>
+    </article>
+  ))}
+</div>

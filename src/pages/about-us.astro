@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactCta from "../components/ContactCta.astro";
+import { company, siteImages, team } from "../data/site";
+---
+
+<BaseLayout title="О компании — Седьмой Легион" description="История, команда и принципы работы оптового поставщика замороженной мясной продукции ООО «Седьмой Легион»." image={siteImages.hero}>
+  <PageHero
+    eyebrow={`С ${company.founded} года`}
+    title="О компании"
+    lead="Развиваем сырьевую мясную отрасль и организуем поставки замороженной продукции по всей России."
+    statValue="23+"
+    statLabel="лет на рынке"
+    statNote="оптовые поставки с 2003 года"
+    breadcrumb="О компании"
+  />
+
+  <section class="section">
+    <div class="shell content-grid">
+      <div class="prose" data-reveal>
+        <span class="eyebrow">Наша история</span>
+        <h2>От куриного мяса к полной мясной матрице.</h2>
+        <p>Компания была создана в 2003 году группой единомышленников и специалистов для развития сырьевой мясной отрасли на всей территории Российской Федерации.</p>
+        <p>Изначально основным направлением была реализация замороженной птицы. По мере развития отрасли портфель расширился за счёт свинины, мяса КРС, индейки, утки, субпродуктов и мясных полуфабрикатов.</p>
+        <p>В 2014 году компания была реструктуризирована: 100% капитала и активы перешли к одному из основателей. Сегодня мы работаем с проверенными производителями, развиваем собственную складскую и логистическую инфраструктуру и помогаем региональным клиентам формировать стабильные поставки.</p>
+      </div>
+      <aside class="sticky-aside" data-reveal>
+        <div class="fact-panel"><span>Оптовый поставщик</span><strong>7</strong><p>ключевых категорий: от птицы и свинины до субпродуктов и полуфабрикатов.</p></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="shell">
+      <div class="timeline">
+        <article data-reveal><time>2003</time><h3>Основание</h3><p>Команда специалистов начинает работу на рынке замороженной птицы.</p></article>
+        <article data-reveal><time>2014</time><h3>Новый этап</h3><p>Реструктуризация компании и концентрация управления в одном владельце.</p></article>
+        <article data-reveal><time>Сегодня</time><h3>География РФ</h3><p>Собственный холодный склад, рефрижераторная логистика и широкий ассортимент.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="split-feature split-feature--reverse">
+    <div class="split-feature__media"><img src={siteImages.hero} srcset={`${siteImages["hero-small"]} 800w, ${siteImages.hero} 1600w`} sizes="(max-width: 1024px) 100vw, 50vw" alt="Современный складской комплекс с высокими стеллажами" width="1600" height="1927" loading="lazy" decoding="async" /></div>
+    <div class="split-feature__content" data-reveal>
+      <span class="eyebrow">Принцип работы</span>
+      <h2>Надёжность — это не обещание, а процесс.</h2>
+      <p>Мы контролируем входную температуру, состояние холодного оборудования, документооборот и своевременность отгрузок.</p>
+      <ul class="feature-list"><li><span>01</span>Прозрачные условия для клиентов</li><li><span>02</span>Собственная складская инфраструктура</li><li><span>03</span>Регулярные поставки и обратная связь</li></ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <header class="section-head" data-reveal><div><span class="eyebrow">Команда</span><h2>Люди, которые держат процесс.</h2></div><p>Коммерческий отдел, документооборот, логистика, склад и юридическая поддержка работают как одна команда.</p></header>
+      <div class="team-grid">
+        {team.map((person) => (
+          <article class="team-card" data-reveal>
+            <div class="team-card__photo">{person.image ? <img src={person.image} alt={person.name} width="600" height="750" loading="lazy" decoding="async" /> : <span class="product-card__placeholder">{person.name.slice(0, 2)}</span>}</div>
+            <div class="team-card__body"><h3>{person.name}</h3><p class="team-card__role">{person.role}</p><div class="team-card__contacts"><a href={`tel:${person.phone.replace(/[^+\d]/g, "")}`}>{person.phone}</a><a href={`mailto:${person.email}`}>{person.email}</a></div></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactCta title="Познакомимся ближе?" text="Обсудим вашу задачу, подберём поставщиков и рассчитаем формат регулярной оптовой поставки." primaryLabel="Связаться с компанией" />
+</BaseLayout>

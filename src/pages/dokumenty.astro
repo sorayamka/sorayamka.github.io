@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactCta from "../components/ContactCta.astro";
+import Icon from "../components/Icon.astro";
+import { documents } from "../data/site";
+
+const legal = [
+  { title: "Расписки на бланке", text: "Порядок получения расписок транспортно-экспедиционной компанией при доставке товара." },
+  { title: "Возврат первичных документов", text: "Рекомендуемый порядок и сроки возврата подписанных документов." },
+  { title: "Оформление доверенностей", text: "Требования к форме М-2 для получения товарно-материальных ценностей." },
+  { title: "Перевозка замороженной продукции", text: "Основные требования к автомобильной перевозке продукции питания." },
+];
+---
+
+<BaseLayout title="Документы — Седьмой Легион" description="Правовые документы, памятки по документообороту и правила перевозки замороженной продукции.">
+  <PageHero
+    eyebrow="Документооборот"
+    title="Документы"
+    lead="Материалы, которые помогают клиентам и перевозчикам выполнять поставки без лишних согласований."
+    statValue={documents.length}
+    statLabel="документов в архиве"
+    statNote="актуальные файлы по запросу"
+    breadcrumb="Документы"
+  />
+  <section class="section"><div class="shell"><div class="legal-list">{legal.map((item) => <article class="legal-item" data-reveal><span class="document-row__type">Памятка</span><div><h2>{item.title}</h2><p>{item.text}</p></div></article>)}</div>{documents.length > 0 && <div class="document-list" style="margin-top:70px">{documents.map((document) => <a class="document-row" href={document.path} download data-reveal><span class="document-row__type">Файл</span><div><h2>{document.name}</h2><p>Коммерческое предложение</p></div><Icon name="download" size={20} /></a>)}</div>}</div></section>
+  <ContactCta title="Нужен документ или разъяснение?" text="Свяжитесь с менеджером по документообороту — подскажем по актуальной версии файла." primaryLabel="Написать в документооборот" />
+</BaseLayout>

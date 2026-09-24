@@ -1,0 +1,710 @@
+[
+  {
+    "name": "Алтайский Бройлер",
+    "slug": "altaiskiy_broiler",
+    "logo": "/images/brands/98bfdb595a27cf.webp",
+    "sourceUrl": "https://7legion.com/product_brand/altaiskiy_broiler/"
+  },
+  {
+    "name": "АО",
+    "slug": "ao-prodo-pticefabrika-kaluzhskaja",
+    "logo": "/images/brands/1c92e0ab2f1c08.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ao-prodo-pticefabrika-kaluzhskaja/"
+  },
+  {
+    "name": "АО «АПК «Русский мрамор",
+    "slug": "ao-apk-russian-mramor",
+    "logo": "/images/brands/ff44d8ef35be07.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ao-apk-russian-mramor/"
+  },
+  {
+    "name": "АО ПРОДО Птицефабрика Калужская",
+    "slug": "brand-313685bfc1dd",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ГК АгроПром Комплектация",
+    "slug": "brand-953e1945155f",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "Дамате",
+    "slug": "damate",
+    "logo": "/images/brands/fc61bee86a0328.webp",
+    "sourceUrl": "https://7legion.com/product_brand/damate/"
+  },
+  {
+    "name": "ЗАО",
+    "slug": "zao-mjasnoj-dvor",
+    "logo": "/images/brands/b32b2d342acdd1.webp",
+    "sourceUrl": "https://7legion.com/product_brand/zao-mjasnoj-dvor/"
+  },
+  {
+    "name": "ЗАО «Байсад",
+    "slug": "zao-bajsad",
+    "logo": "/images/brands/57c3f248b0f79c.webp",
+    "sourceUrl": "https://7legion.com/product_brand/zao-bajsad/"
+  },
+  {
+    "name": "ЗАО Мясной двор",
+    "slug": "brand-5cfdbe437521",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "Индилайт",
+    "slug": "indilajt",
+    "logo": "/images/brands/4f506214d65f35.webp",
+    "sourceUrl": "https://7legion.com/product_brand/indilajt/"
+  },
+  {
+    "name": "Йошкар-Олинский Мясокомбинат",
+    "slug": "brand-07d96e4d5c9e",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "Краснобор",
+    "slug": "krasnobor",
+    "logo": "/images/brands/88451a537981ca.webp",
+    "sourceUrl": "https://7legion.com/product_brand/krasnobor/"
+  },
+  {
+    "name": "Лакомый Край",
+    "slug": "lakomyj-kraj",
+    "logo": "/images/brands/de37e2cc9ea609.webp",
+    "sourceUrl": "https://7legion.com/product_brand/lakomyj-kraj/"
+  },
+  {
+    "name": "МК Ольховский",
+    "slug": "brand-ae778b9b989f",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "МПК",
+    "slug": "uznoe",
+    "logo": "/images/brands/9b5a2cb642922a.webp",
+    "sourceUrl": "https://7legion.com/product_brand/uznoe/"
+  },
+  {
+    "name": "МПК «Полянское",
+    "slug": "mpk-poljanskoe",
+    "logo": "/images/brands/b471f1e900f016.webp",
+    "sourceUrl": "https://7legion.com/product_brand/mpk-poljanskoe/"
+  },
+  {
+    "name": "МПК Южное",
+    "slug": "brand-d5742e6d51c0",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ОАО",
+    "slug": "oao-aleksandrijskoe",
+    "logo": "/images/brands/de7d7877c447cc.webp",
+    "sourceUrl": "https://7legion.com/product_brand/oao-aleksandrijskoe/"
+  },
+  {
+    "name": "ОАО «Племрепродуктор",
+    "slug": "oao-plemreproduktor",
+    "logo": "/images/brands/8c14dc05f457c9.webp",
+    "sourceUrl": "https://7legion.com/product_brand/oao-plemreproduktor/"
+  },
+  {
+    "name": "ОАО Александрийское",
+    "slug": "brand-0cc293e4f6d3",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ОАО Приосколье",
+    "slug": "brand-3d16d648a5db",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ОМПК",
+    "slug": "ompk_gagarin_ostankino",
+    "logo": "/images/brands/268711eca222ee.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ompk_gagarin_ostankino/"
+  },
+  {
+    "name": "ОМПК Гагарин-Останкино",
+    "slug": "brand-7c0ca4687c72",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО",
+    "slug": "ooo-baltpticeprom-kaliningrad",
+    "logo": "/images/brands/829be9968c59ac.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ooo-baltpticeprom-kaliningrad/"
+  },
+  {
+    "name": "ООО «Агро-Плюс",
+    "slug": "ooo-agro-pljus",
+    "logo": "/images/brands/571d0b9ad08b2f.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ooo-agro-pljus/"
+  },
+  {
+    "name": "ООО «КРОЛБЕРРИ",
+    "slug": "ooo_krolberri",
+    "logo": "/images/brands/61e837396dd181.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ooo_krolberri/"
+  },
+  {
+    "name": "ООО «Мясной Дом Бородина",
+    "slug": "ooo-mjasnoj-dom-borodina",
+    "logo": "/images/brands/30e8665418b828.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ooo-mjasnoj-dom-borodina/"
+  },
+  {
+    "name": "ООО «ЧИКЕН ФЭКТОРИ",
+    "slug": "ooo-chiken-fjektori",
+    "logo": "/images/brands/bf64247dac842c.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ooo-chiken-fjektori/"
+  },
+  {
+    "name": "ООО АО",
+    "slug": "ooo-ao-russkaja-niva",
+    "logo": "/images/brands/1aeca7d69fcac6.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ooo-ao-russkaja-niva/"
+  },
+  {
+    "name": "ООО АО Русская Нива",
+    "slug": "brand-6f4beb6ce5a7",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО БАЛТПТИЦЕПРОМ-КАЛИНИНГРАД",
+    "slug": "brand-684196a3a866",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО Белганика",
+    "slug": "brand-f99c2f38be6a",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО Егорьевская птицефабрика",
+    "slug": "brand-e5ecc46293b3",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО Кудиновский мясной комплекс",
+    "slug": "brand-f78a954ce3e0",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО МК Казанский",
+    "slug": "brand-526682168720",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО МК Урал",
+    "slug": "brand-4ab59d438e4d",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО МПК",
+    "slug": "ooo-mpk-atjashevskij",
+    "logo": "/images/brands/044f72ec6d7329.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ooo-mpk-atjashevskij/"
+  },
+  {
+    "name": "ООО МПК Атяшевский",
+    "slug": "brand-a92bdecba665",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО МПК Богдановский",
+    "slug": "brand-d61d7cc8e3e6",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО Новомосковский мясокомбинат",
+    "slug": "brand-31e61712afac",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО Птицефабрика Улыбино",
+    "slug": "brand-3fc4f338f611",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО РАВИС-птицефабрика Сосновская",
+    "slug": "brand-aed7d1ace76a",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО Райт-К",
+    "slug": "brand-00ee1b99c81a",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ООО Тамбовский бекон",
+    "slug": "brand-6bf279e52876",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ПМК Онежские деликатесы",
+    "slug": "pmk-onezhskie-delikatesy",
+    "logo": "/images/brands/67937702557c9a.webp",
+    "sourceUrl": "https://7legion.com/product_brand/pmk-onezhskie-delikatesy/"
+  },
+  {
+    "name": "ПТИЦЕФАБРИКА НОВО-ПЕТРОВСКАЯ",
+    "slug": "ptichefabrika-novo-petrovskay",
+    "logo": "/images/brands/4d8d5b80591750.webp",
+    "sourceUrl": "https://7legion.com/product_brand/ptichefabrika-novo-petrovskay/"
+  },
+  {
+    "name": "ПФ Ганна",
+    "slug": "pf-ganna",
+    "logo": "/images/brands/pf-ganna.svg",
+    "sourceUrl": "https://7legion.com/product_brand/pf-ganna/"
+  },
+  {
+    "name": "ПФ РАССВЕТ",
+    "slug": "brand-ee6ca1abf5cf",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТК Мираторг",
+    "slug": "brand-c665226a5a35",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ",
+    "slug": "tm_agroaco",
+    "logo": "/images/brands/da71464387ba1c.webp",
+    "sourceUrl": "https://7legion.com/product_brand/tm_agroaco/"
+  },
+  {
+    "name": "ТМ An-Noor",
+    "slug": "brand-4e38f63eec04",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ La Ferme",
+    "slug": "brand-c14f0d111bbe",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Turkey Pul",
+    "slug": "brand-3e7bc73f5541",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ «Агрокомплекс",
+    "slug": "brand-918c74083267",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Агро-Белогорье",
+    "slug": "brand-133e08450d43",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Агроэко",
+    "slug": "brand-f16affd6a733",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Акашево",
+    "slug": "brand-4c0cc24e735a",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Баксанский Бройлер",
+    "slug": "brand-83e5097eb687",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Белгородская индейка",
+    "slug": "brand-67330862b154",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Бессоновская Марка",
+    "slug": "brand-a95d2f0ec46f",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Верхневолжская ПФ",
+    "slug": "brand-d1f9313243dc",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Волжанин",
+    "slug": "brand-5a983f5021f6",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Воронежский Бекон",
+    "slug": "brand-b7d98d0dcc2a",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Горин Продукт",
+    "slug": "brand-0dcb0a017f62",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ ДАМДИ ЕТ",
+    "slug": "brand-d5b63373da40",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Дары Подворья",
+    "slug": "brand-b3f458e9bd91",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Домашние Правила",
+    "slug": "brand-873e1b2fd933",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Дороничи",
+    "slug": "brand-fac29c711b5e",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Дымов",
+    "slug": "tm_dymov",
+    "logo": "/images/brands/1ddd499495b09d.webp",
+    "sourceUrl": "https://7legion.com/product_brand/tm_dymov/"
+  },
+  {
+    "name": "ТМ Золотое Зернышко",
+    "slug": "brand-98d368b75e5b",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Кировский мясокомбинат",
+    "slug": "brand-d3bacc309e62",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Коралл",
+    "slug": "brand-6548f25b3d4c",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ КОРОЛЕВА ПТИЦ ИНДИС",
+    "slug": "brand-f2785b538e13",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Кудашка",
+    "slug": "brand-c34f6960f144",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Куриное Царство",
+    "slug": "brand-a9ec5dfb9ee8",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Линдипрайм",
+    "slug": "tm-lindiprajm",
+    "logo": "/images/brands/25e380328a6567.webp",
+    "sourceUrl": "https://7legion.com/product_brand/tm-lindiprajm/"
+  },
+  {
+    "name": "ТМ Лобановская индейка",
+    "slug": "brand-44d0b9da7109",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Медновский бройлер",
+    "slug": "brand-d74cb1a38459",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Митвиль",
+    "slug": "brand-478707d5b786",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Мясокомбинат Всеволожский",
+    "slug": "brand-38054f8eb58a",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Наша Утяша",
+    "slug": "brand-47187c4905ee",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Пава-Пава",
+    "slug": "brand-788ce1d2dcb1",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Павловская Курочка",
+    "slug": "brand-ff543cab61a5",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Петруха",
+    "slug": "brand-0048304f6fae",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Птичий Городок",
+    "slug": "brand-7af6c282514c",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Ремит",
+    "slug": "brand-5fe6db45c4fa",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Ресурс-Юг",
+    "slug": "brand-043c07c4c63f",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ РОСКАР",
+    "slug": "brand-ebad0239970a",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Русский кролик",
+    "slug": "brand-9a020763aaa7",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Ряба Крымская",
+    "slug": "brand-84faa6b1ae85",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ СВОЯ",
+    "slug": "brand-90c92fb2ed44",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ СДТ-Тур",
+    "slug": "brand-66042b571487",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Семидаль",
+    "slug": "brand-603634a53bde",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Ситно",
+    "slug": "brand-a6b4120c69ba",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Славный край",
+    "slug": "brand-7e712736a807",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Союз-М",
+    "slug": "brand-810d1c5a4d73",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Старожиловская птица  (Союзптицепром)",
+    "slug": "brand-e8a6389554ba",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Тамбовский гусь",
+    "slug": "brand-9442a3a947c0",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Тимашевскмясопродукт",
+    "slug": "brand-dd6b208436cb",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Томашевская Птицефабрика",
+    "slug": "brand-710a45475417",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Утиная Ферма",
+    "slug": "brand-546ac124ecbc",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ УТКИНО",
+    "slug": "brand-5d6d136e2db7",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Фермерская",
+    "slug": "brand-f99f2c2999ba",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Хорошее Дело",
+    "slug": "brand-3431adfe7776",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Цыпа",
+    "slug": "tm-cypa",
+    "logo": "/images/brands/0fb503788cbd96.webp",
+    "sourceUrl": "https://7legion.com/product_brand/tm-cypa/"
+  },
+  {
+    "name": "ТМ Чамзинка",
+    "slug": "brand-10dad834c278",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Чебарскульская Птица",
+    "slug": "brand-a8d12f1cb033",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ ЧЕЛНЫ-БРОЙЛЕР",
+    "slug": "brand-3838422b6cd5",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Черкизово",
+    "slug": "brand-a128db39d9d5",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Эколь",
+    "slug": "brand-cd0ea1e39f1b",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ ЭкоПтица",
+    "slug": "brand-5a4c53670740",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Элинар Бройлер",
+    "slug": "brand-d3d09ac367ad",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Юрма",
+    "slug": "brand-387fdc2264f8",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМ Ярославский Бройлер",
+    "slug": "tm-jaroslavskij-brojler",
+    "logo": "/images/brands/64916aecad21bc.webp",
+    "sourceUrl": "https://7legion.com/product_brand/tm-jaroslavskij-brojler/"
+  },
+  {
+    "name": "ТМ Ясные Зори",
+    "slug": "brand-66965e2775de",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "ТМОхотно",
+    "slug": "brand-74231dca70d8",
+    "logo": "",
+    "sourceUrl": "https://7legion.com/brands/"
+  },
+  {
+    "name": "‎ТМ» Благояр",
+    "slug": "tm-blagojar",
+    "logo": "/images/brands/f372a7272a4d62.webp",
+    "sourceUrl": "https://7legion.com/product_brand/tm-blagojar/"
+  },
+  {
+    "name": "‎ТМ»‎ Наша Птичка»‎",
+    "slug": "tm-nasha-ptichka",
+    "logo": "/images/brands/d831c275b05d05.webp",
+    "sourceUrl": "https://7legion.com/product_brand/tm-nasha-ptichka/"
+  }
+]

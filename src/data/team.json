@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Галина Зырянова",
+    "role": "Главный бухгалтер",
+    "phone": "+7 495 232-04-70",
+    "email": "g.zyryanova@myaso.msk.ru",
+    "image": ""
+  },
+  {
+    "name": "Екатерина Филимонова",
+    "role": "Менеджер коммерческого отдела",
+    "phone": "+7 910 306-75-85",
+    "email": "e.filimonova@myaso.msk.ru",
+    "image": ""
+  },
+  {
+    "name": "Екатерина Трофимова",
+    "role": "Менеджер по документообороту",
+    "phone": "+7 495 225-06-36",
+    "email": "e.mavlutova@myaso.msk.ru",
+    "image": ""
+  },
+  {
+    "name": "Елизавета Шашкова",
+    "role": "Менеджер по документообороту",
+    "phone": "+7 996 972-68-65",
+    "email": "e.shashkova@myaso.msk.ru",
+    "image": ""
+  },
+  {
+    "name": "Ксения Шубина",
+    "role": "Юрист",
+    "phone": "+7 985 887-77-07",
+    "email": "k.shubina@myaso.msk.ru",
+    "image": ""
+  },
+  {
+    "name": "Ольга Кирсанова",
+    "role": "Заместитель генерального директора",
+    "phone": "+7 967 250-07-13",
+    "email": "o.kirsanova@myaso.msk.ru",
+    "image": ""
+  },
+  {
+    "name": "Анна Марютина",
+    "role": "Менеджер по продажам",
+    "phone": "+7 985 476-82-46",
+    "email": "a.maryutina@myaso.msk.ru",
+    "image": ""
+  },
+  {
+    "name": "Анастасия Цой",
+    "role": "Менеджер по продажам",
+    "phone": "+7 919 777-79-62",
+    "email": "a.coy@myaso.msk.ru",
+    "image": ""
+  }
+]

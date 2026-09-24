@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import BrandGrid from "../components/BrandGrid.astro";
+import ContactCta from "../components/ContactCta.astro";
+import Icon from "../components/Icon.astro";
+import { brands } from "../data/site";
+---
+
+<BaseLayout title={`Каталог брендов — ${brands.length} поставщиков | Седьмой Легион`} description="Производители замороженной птицы, свинины, говядины, индейки, утки, субпродуктов и полуфабрикатов.">
+  <PageHero
+    eyebrow="Производители и партнёры"
+    title="Бренды,"
+    titleAccent="с которыми работаем"
+    lead="Поставщики из разных регионов России и производители, прошедшие отбор по качеству сырья и стабильности отгрузок."
+    statValue={brands.length}
+    statLabel="брендов в каталоге"
+    statNote="производители и поставщики"
+    breadcrumb="Бренды"
+  />
+
+  <section class="section">
+    <div class="shell">
+      <header class="section-head" data-reveal><div><span class="eyebrow">Каталог поставщиков</span><h2>Производственные бренды</h2></div><a class="button button--outline" href="/postavshhiki/">Все поставщики <Icon name="arrow" size={18} /></a></header>
+      <BrandGrid brands={brands} />
+    </div>
+  </section>
+
+  <ContactCta title="Ищете конкретного производителя?" text="Назовите бренд или необходимую категорию — проверим наличие позиций и предложим ближайшую отгрузку." primaryLabel="Запросить позиции" />
+</BaseLayout>

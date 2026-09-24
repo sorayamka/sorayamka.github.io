@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactCta from "../components/ContactCta.astro";
+import { siteImages } from "../data/site";
+---
+
+<BaseLayout title="Логистические услуги — Седьмой Легион" description="Доставка замороженной мясной продукции рефрижераторным транспортом, перегрузка, паллетирование и сопровождение отгрузок." image={siteImages.logistics}>
+  <PageHero
+    eyebrow="Доставка и обработка"
+    title="Логистика"
+    lead="Организуем доставку к вагонам, контейнерным площадкам и местам отгрузки сборных машин по России."
+    statValue="24/7"
+    statLabel="Контроль отгрузок"
+    statNote="сопровождение поставок и температурного режима"
+    breadcrumb="Логистика"
+  />
+
+  <section class="section section--white">
+    <div class="shell">
+      <div class="metric-summary">
+        <div><span class="eyebrow">Автопарк</span><h2>Транспорт под разные объёмы</h2></div>
+        <p>Используем собственный рефрижераторный транспорт с номинальной грузоподъёмностью брутто от 5 до 20 тонн.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><strong>5т</strong><span>грузоподъёмность брутто</span></div>
+        <div class="metric"><strong>10т</strong><span>грузоподъёмность брутто</span></div>
+        <div class="metric"><strong>15т</strong><span>грузоподъёмность брутто</span></div>
+        <div class="metric"><strong>20т</strong><span>грузоподъёмность брутто</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split-feature">
+    <div class="split-feature__media"><img src={siteImages.logistics} srcset={`${siteImages["logistics-small"]} 800w, ${siteImages.logistics} 1600w`} sizes="(max-width: 1024px) 100vw, 50vw" alt="Парк рефрижераторных прицепов на терминале" width="1600" height="1067" loading="lazy" decoding="async" /></div>
+    <div class="split-feature__content" data-reveal><span class="eyebrow">Доставка</span><h2>От склада до точки загрузки.</h2><p>Минимальная партия доставки — от 3 тонн по Москве и Московской области. При меньшем объёме условие обсуждается индивидуально.</p><ul class="feature-list"><li><span>01</span>Собственный рефрижераторный автотранспорт</li><li><span>02</span>Доставка к вагонам и контейнерным площадкам</li><li><span>03</span>Самовывоз от 500 кг одной позиции</li><li><span>04</span>Экспедирование и сборные отгрузки</li></ul></div>
+  </section>
+
+  <section class="section"><div class="shell"><header class="section-head" data-reveal><div><span class="eyebrow">Дополнительные операции</span><h2>Всё, что нужно между покупкой и отгрузкой</h2></div><p>Организуем складские и транспортные операции, чтобы клиент получил готовую партию.</p></header><div class="supplier-groups"><div class="supplier-group" data-reveal><h2>Погрузка и разгрузка</h2><ul><li>Разгрузка стороннего транспорта</li><li>Погрузка стороннего транспорта</li><li>Пересчёт и взвешивание</li><li>Перегрузка в контейнер</li><li>Паллетирование</li><li>Простой под охраной</li></ul></div><div class="supplier-group" data-reveal><h2>Документы</h2><ul><li>Выписка по «Меркурий»</li><li>Пакет документов поставщика</li><li>Сопровождение сторонних поставок</li><li>Документы при собственной отгрузке</li><li>Экспедиторская поддержка</li></ul></div><div class="supplier-group" data-reveal><h2>Сборка заказа</h2><ul><li>Получение продукции у производителя</li><li>Доставка на склад для сборки</li><li>Формирование готовой партии</li><li>Передача последующему перевозчику</li><li>Организация вагонной отгрузки</li></ul></div><div class="supplier-group" data-reveal><h2>Хранение</h2><ul><li>Без температурного режима</li><li>С температурным режимом</li><li>Глубокая заморозка</li><li>Ответственное хранение партий</li></ul></div></div></div></section>
+  <ContactCta title="Рассчитаем стоимость доставки?" text="Укажите вес, объём, направление и тип транспорта — подготовим условия перевозки." primaryLabel="Запросить расчёт" />
+</BaseLayout>

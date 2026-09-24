@@ -1,0 +1,63 @@
+---
+import Icon from "./Icon.astro";
+import { company, siteImages } from "../data/site";
+import { getLocale, localizedPath, ui } from "../lib/i18n";
+
+const locale = getLocale(Astro.url.pathname);
+const t = ui[locale];
+const link = (path: string) => localizedPath(path, locale);
+const year = new Date().getFullYear();
+const legalName = locale === "en" ? "LLC “Seventh Legion”" : company.legalName;
+const office = locale === "en" ? "Moscow, Leningradskoye Highway, 64, building 3, office 3-2" : company.office;
+const warehouse = locale === "en" ? "Moscow Region, Khimki, Lunyovo, 1B" : company.warehouse;
+---
+
+<footer class="site-footer">
+  <div class="shell site-footer__top">
+    <div class="site-footer__lead">
+      <a class="footer-brand" href={link("/")} aria-label="Seventh Legion">
+        <img src={siteImages.logo} alt={locale === "en" ? "Seventh Legion" : "Седьмой Легион"} width="240" height="88" loading="lazy" />
+      </a>
+      <p>{locale === "en" ? "Wholesale supply of poultry, pork, beef and semi-finished meat products across Russia." : "Оптовая поставка мяса птицы, свинины, говядины и мясных полуфабрикатов по всей России."}</p>
+      <a class="footer-call" href={`tel:${company.salesPhone.replace(/[^+\d]/g, "")}`}>{company.salesPhone}</a>
+    </div>
+
+    <div class="site-footer__nav">
+      <div>
+        <span>{t.catalog}</span>
+        <a href={link("/shop/")}>{locale === "en" ? "All products" : "Все продукты"}</a>
+        <a href={link("/brands/")}>{t.brands}</a>
+        <a href={link("/price/")}>{t.price}</a>
+        <a href={link("/cart/")}>{t.cart}</a>
+      </div>
+      <div>
+        <span>{t.company}</span>
+        <a href={link("/about-us/")}>{locale === "en" ? "About us" : "О нас"}</a>
+        <a href={link("/postavshhiki/")}>{t.suppliers}</a>
+        <a href={link("/stat-partnerom/")}>{t.partner}</a>
+        <a href={link("/vacancies/")}>{t.vacancies}</a>
+      </div>
+      <div>
+        <span>{t.services}</span>
+        <a href={link("/hranenie/")}>{t.storage}</a>
+        <a href={link("/logisticheskie-uslugi/")}>{t.logistics}</a>
+        <a href={link("/dokumenty/")}>{t.documents}</a>
+        <a href={link("/sertifikaty/")}>{t.certificates}</a>
+      </div>
+    </div>
+
+    <address class="site-footer__contacts">
+      <span>{t.contacts}</span>
+      <a href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}><Icon name="phone" size={18} />{company.phone}</a>
+      <a href={`mailto:${company.email}`}><Icon name="mail" size={18} />{company.email}</a>
+      <a href={company.telegram} target="_blank" rel="noreferrer"><Icon name="send" size={18} />{locale === "en" ? "Telegram channel" : "Telegram-канал"}</a>
+      <p>{office}</p>
+      <p>{warehouse}</p>
+    </address>
+  </div>
+  <div class="shell site-footer__bottom">
+    <p>© {year} {legalName}</p>
+    <p>INN {company.inn} · OGRN {company.ogrn}</p>
+    <a href="#top">{locale === "en" ? "Back to top" : "Наверх"} <Icon name="arrow" size={16} /></a>
+  </div>
+</footer>

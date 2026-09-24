@@ -1,0 +1,12 @@
+{
+  "logo": "/images/site/logo.png",
+  "favicon": "/images/site/favicon.png",
+  "hero-small": "/images/site/hero-800.webp",
+  "hero": "/images/site/hero-1600.webp",
+  "storage-small": "/images/site/storage-800.webp",
+  "storage": "/images/site/storage-1600.webp",
+  "logistics-small": "/images/site/logistics-800.webp",
+  "logistics": "/images/site/logistics-1600.webp",
+  "cold-chain-small": "/images/site/cold-chain-800.webp",
+  "cold-chain": "/images/site/cold-chain-1600.webp"
+}

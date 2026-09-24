@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+7legion-archive/*
+!7legion-archive/
+!7legion-archive/data/
+!7legion-archive/data/products.json
+__pycache__/
+test-results/
+.agents/

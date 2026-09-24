@@ -1,0 +1,216 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import CatalogExplorer from "../../components/CatalogExplorer.astro";
+import ContactCta from "../../components/ContactCta.astro";
+import Icon from "../../components/Icon.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import { formatCount, products } from "../../data/site";
+import type { Product } from "../../data/types";
+
+interface CategoryRoute {
+  path: string;
+  name: string;
+  categorySlug: string;
+  subcategorySlug: string;
+  items: Product[];
+}
+
+export const getStaticPaths = (() => {
+  const categoryRoutes = new Map<string, CategoryRoute>();
+  for (const product of products) {
+    const parts = product.path.replace(/^\/shop\//, "").split("/").filter(Boolean);
+    const sourceCategory = parts[0];
+    const sourceSubcategory = parts.length >= 3 ? parts[1] : "";
+    const routes = [
+      {
+        path: `/shop/${sourceCategory}/`,
+        name: product.category,
+        categorySlug: product.categorySlug,
+        subcategorySlug: "",
+      },
+    ];
+    if (sourceSubcategory) {
+      routes.push({
+        path: `/shop/${sourceCategory}/${sourceSubcategory}/`,
+        name: product.subcategory,
+        categorySlug: product.categorySlug,
+        subcategorySlug: product.subcategorySlug,
+      });
+    }
+    for (const route of routes) {
+      if (!categoryRoutes.has(route.path)) {
+        categoryRoutes.set(route.path, {
+          ...route,
+          items: products.filter((item) => item.path.startsWith(route.path)),
+        });
+      }
+    }
+  }
+  return [
+    ...products.map((product) => ({
+      params: { slug: product.path.replace(/^\/shop\/?/, "").replace(/\/$/, "") },
+      props: { product },
+    })),
+    ...[...categoryRoutes.values()].map((categoryRoute) => ({
+      params: { slug: categoryRoute.path.replace(/^\/shop\/?/, "").replace(/\/$/, "") },
+      props: { categoryRoute },
+    })),
+  ];
+}) satisfies GetStaticPaths;
+
+interface Props {
+  product?: Product;
+  categoryRoute?: CategoryRoute;
+}
+
+const { product, categoryRoute } = Astro.props;
+const related = product
+  ? products.filter((item) => item.categorySlug === product.categorySlug && item.id !== product.id).slice(0, 4)
+  : [];
+const pageTitle = categoryRoute
+  ? `${categoryRoute.name} оптом — каталог | Седьмой Легион`
+  : `${product?.name ?? "Товар"} — купить оптом | Седьмой Легион`;
+const pageDescription = categoryRoute
+  ? `${categoryRoute.name} оптом со склада: ${formatCount(categoryRoute.items.length)} позиций. Поставка замороженной мясной продукции по России.`
+  : product?.description || `${product?.name ?? "Мясная продукция"} оптом со склада. Поставка по России.`;
+const pageImage = categoryRoute?.items.find((item) => item.image)?.image || product?.image;
+const schema = categoryRoute
+  ? {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: categoryRoute.name,
+      description: pageDescription,
+      url: new URL(categoryRoute.path, Astro.site).href,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: categoryRoute.items.length,
+        itemListElement: categoryRoute.items.slice(0, 100).map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: new URL(item.path, Astro.site).href,
+          name: item.name,
+        })),
+      },
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: product?.name,
+      description: product?.description || `${product?.name} — оптовая поставка от Седьмого Легиона.`,
+      image: product?.image ? new URL(product.image, Astro.site).href : undefined,
+      sku: product?.sku || undefined,
+      category: product?.subcategory || product?.category,
+      url: new URL(product?.path ?? "/shop/", Astro.site).href,
+      brand: {
+        "@type": "Organization",
+        name: "Седьмой Легион",
+      },
+      offers: {
+        "@type": "Offer",
+        availability: product?.inStock ? "https://schema.org/InStock" : "https://schema.org/BackOrder",
+        priceCurrency: "RUB",
+        url: new URL(product?.path ?? "/shop/", Astro.site).href,
+        seller: {
+          "@type": "Organization",
+          name: "ООО «Седьмой Легион»",
+        },
+      },
+    };
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage || undefined} schema={schema}>
+  {!categoryRoute && product && (
+    <nav class="breadcrumbs product-breadcrumbs" aria-label="Хлебные крошки">
+      <div class="shell">
+        <a href="/">Главная</a><span>/</span><a href="/shop/">Каталог</a><span>/</span>
+        <a href={`/shop/?category=${product.categorySlug}`}>{product.category}</a><span>/</span>
+        <span aria-current="page">{product.name}</span>
+      </div>
+    </nav>
+  )}
+
+  {categoryRoute ? (
+    <>
+      <PageHero
+        eyebrow="Оптовая категория"
+        title={categoryRoute.name}
+        lead={`${formatCount(categoryRoute.items.length)} позиций. Цена зависит от объёма и коммерческих условий — выберите товары и сформируйте рабочий список.`}
+        statValue={String(categoryRoute.items.length).padStart(2, "0")}
+        statLabel="позиций в категории"
+        statNote="цены и наличие уточняйте у менеджера"
+        breadcrumb={categoryRoute.name}
+        parentHref={categoryRoute.subcategorySlug ? `/shop/${categoryRoute.categorySlug}/` : "/shop/"}
+        parentLabel={categoryRoute.subcategorySlug ? categoryRoute.items[0]?.category : "Каталог"}
+      />
+      <CatalogExplorer
+        products={categoryRoute.items}
+        activeCategory={categoryRoute.categorySlug}
+        activeSubcategory={categoryRoute.subcategorySlug}
+        heading={categoryRoute.name}
+        intro={`${formatCount(categoryRoute.items.length)} позиций категории «${categoryRoute.name}». Поставка со склада в Химках.`}
+      />
+      <ContactCta title="Нужен расчёт по этой категории?" text="Соберите позиции в корзине и передайте список менеджеру для расчёта объёма и стоимости поставки." primaryLabel="Получить коммерческое предложение" />
+    </>
+  ) : product ? (
+    <>
+      <section class="section product-page-section">
+        <div class="shell product-page">
+          <div class="product-gallery" data-reveal>
+            <div class="product-gallery__frame">
+              <span class="product-gallery__index">{product.sku ? `Артикул / ${product.sku}` : "Холодная поставка"}</span>
+              {product.image ? (
+                <img src={product.image} alt={product.name} width="1200" height="1200" loading="eager" fetchpriority="high" />
+              ) : (
+                <span class="product-card__placeholder">Фото<br />уточняется</span>
+              )}
+            </div>
+          </div>
+          <div class="product-detail" data-reveal>
+            <span class="product-detail__category">{product.subcategory || product.category}</span>
+            <h1 translate="no">{product.name}</h1>
+            {product.sku && <p class="product-detail__sku">Артикул: {product.sku}</p>}
+            <p class="product-detail__description">{product.description || "Информация о продукции указана на потребительской упаковке. Характеристики, вес и параметры партии уточняйте у менеджера."}</p>
+            <div class="product-detail__price">Цена по запросу</div>
+            <form class="product-buy" data-product-form>
+              <label for="product-quantity">Кол-во</label>
+              <input id="product-quantity" name="quantity" type="number" min="1" max="9999" step="1" value="1" inputmode="numeric" autocomplete="off" />
+              <button
+                class="button button--red"
+                type="submit"
+                data-add-to-cart
+                data-open-after-add="true"
+                data-product-id={product.id}
+                data-product-name={product.name}
+                data-product-path={product.path}
+                data-product-image={product.thumbnail || product.image}
+              >
+                Добавить в корзину <Icon name="plus" size={18} />
+              </button>
+            </form>
+            <div class="product-detail__meta">
+              <div><span>Наличие</span><strong>{product.inStock ? "В наличии" : "Под заказ"}</strong></div>
+              <div><span>Отгрузка</span><strong>Со склада в Химках</strong></div>
+              <div><span>Доставка</span><strong>По России</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {related.length > 0 && (
+        <section class="section section--white related-section">
+          <div class="shell">
+            <header class="section-head">
+              <div><span class="eyebrow">В этой категории</span><h2>Похожие позиции</h2></div>
+              <a class="button button--outline" href={`/shop/?category=${product.categorySlug}`}>Вся категория <Icon name="arrow" size={18} /></a>
+            </header>
+            <div class="product-grid">
+              {related.map((item, index) => <ProductCard product={item} index={index} />)}
+            </div>
+          </div>
+        </section>
+      )}
+      <ContactCta title="Нужны условия и цена?" text="Корзина — удобный способ сформировать рабочий список. Для расчёта свяжитесь с менеджером и подготовьте состав закупки." primaryLabel="Связаться с отделом продаж" />
+    </>
+  ) : null}
+</BaseLayout>

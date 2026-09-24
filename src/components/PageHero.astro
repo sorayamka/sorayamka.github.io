@@ -1,0 +1,62 @@
+---
+import { getLocale, localizedPath } from "../lib/i18n";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  titleAccent?: string;
+  lead: string;
+  statValue: string | number;
+  statLabel: string;
+  statNote: string;
+  breadcrumb?: string;
+  parentHref?: string;
+  parentLabel?: string;
+  cartCount?: boolean;
+  compact?: boolean;
+  class?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  titleAccent,
+  lead,
+  statValue,
+  statLabel,
+  statNote,
+  breadcrumb,
+  parentHref,
+  parentLabel,
+  cartCount = false,
+  compact = false,
+  class: className,
+} = Astro.props;
+const locale = getLocale(Astro.url.pathname);
+const link = (path: string) => localizedPath(path, locale);
+---
+
+<section class:list={["page-hero", { "page-hero--compact": compact }, className]}>
+  <div class="shell page-hero__inner">
+    <div class="page-hero__copy">
+      <span class="eyebrow">{eyebrow}</span>
+      <h1>{title}{titleAccent && <><br />{titleAccent}</>}</h1>
+      <p class="page-hero__lead">{lead}</p>
+      <slot name="actions" />
+    </div>
+    <aside class="page-hero__stat">
+      <span>{statLabel}</span>
+      {cartCount ? <strong data-cart-hero-count>0</strong> : <strong>{statValue}</strong>}
+      <small>{statNote}</small>
+    </aside>
+  </div>
+</section>
+{breadcrumb && (
+  <nav class="breadcrumbs" aria-label={locale === "en" ? "Breadcrumbs" : "Хлебные крошки"}>
+    <div class="shell">
+      <a href={link("/")}>{locale === "en" ? "Home" : "Главная"}</a><span>/</span>
+      {parentHref && parentLabel && <><a href={link(parentHref)}>{parentLabel}</a><span>/</span></>}
+      <span aria-current="page">{breadcrumb}</span>
+    </div>
+  </nav>
+)}

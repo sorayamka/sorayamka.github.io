@@ -1,0 +1,147 @@
+---
+import Icon from "./Icon.astro";
+import ProductCard from "./ProductCard.astro";
+import { categories as allCategories } from "../data/site";
+import { getLocale, ui, type Locale } from "../lib/i18n";
+import type { Category, Product } from "../data/types";
+
+interface Props {
+  products: Product[];
+  activeCategory?: string;
+  activeSubcategory?: string;
+  heading?: string;
+  intro?: string;
+  locale?: Locale;
+  categoryList?: Category[];
+  catalogIndex?: string;
+}
+
+const {
+  products,
+  activeCategory = "",
+  activeSubcategory = "",
+  heading,
+  intro,
+  locale: localeProp,
+  categoryList,
+  catalogIndex,
+} = Astro.props;
+const locale = localeProp ?? getLocale(Astro.url.pathname);
+const t = ui[locale];
+const count = (value: number) => new Intl.NumberFormat(locale === "en" ? "en-US" : "ru-RU").format(value);
+const availableCategories = categoryList ?? allCategories;
+const categories = availableCategories.filter((category) => products.some((product) => product.categorySlug === category.slug) || !activeCategory);
+const subcategories = [
+  ...new Map(
+    products
+      .filter((product) => product.subcategorySlug)
+      .map((product) => [`${product.categorySlug}:${product.subcategorySlug}`, product]),
+  ).values(),
+];
+const hasUnavailableProducts = products.some((product) => !product.inStock);
+const pageSize = 48;
+const pageCount = Math.max(1, Math.ceil(products.length / pageSize));
+const initialProducts = products.slice(0, pageSize);
+const catalogIndexUrl = catalogIndex ?? (locale === "en" ? "/en/catalog-index.json" : "/catalog-index.json");
+---
+
+<section class="catalog-section" data-catalog data-catalog-base={Astro.url.pathname} data-catalog-index={catalogIndexUrl} data-catalog-total={products.length} data-active-category={activeCategory} data-active-subcategory={activeSubcategory} data-locale={locale}>
+  <div class="shell">
+    <header class="catalog-heading" data-reveal>
+      <div>
+        <span class="eyebrow">{count(products.length)} {locale === "en" ? "items" : "позиций"} · {locale === "en" ? "Wholesale from stock" : "Опт со склада"}</span>
+        <h2>{heading ?? (locale === "en" ? "Frozen meat catalog" : "Каталог замороженной продукции")}</h2>
+      </div>
+      <p>{intro ?? (locale === "en" ? "Pork, beef, poultry, offal and semi-finished products from trusted manufacturers." : "Свинина, говядина, птица, субпродукты и полуфабрикаты от проверенных производителей.")}</p>
+    </header>
+
+    <div class="catalog-controls" data-reveal>
+      <label class="catalog-search">
+        <span class="sr-only">{t.searchCatalog}</span>
+        <Icon name="search" size={21} />
+        <input type="search" name="q" placeholder={t.searchPlaceholder} autocomplete="off" data-catalog-search />
+        <kbd>/</kbd>
+      </label>
+      <div class="catalog-categories" role="group" aria-label={locale === "en" ? "Product categories" : "Категории продукции"}>
+        <button class:list={["category-tab", { "is-active": !activeCategory }]} type="button" data-filter-category="" aria-pressed={!activeCategory}>{t.all}</button>
+        {categories.map((category) => (
+          <button
+            class:list={["category-tab", { "is-active": activeCategory === category.slug }]}
+            type="button"
+            data-filter-category={category.slug}
+            aria-pressed={activeCategory === category.slug}
+          >
+            {category.name}<sup>{count(category.count)}</sup>
+          </button>
+        ))}
+      </div>
+      <button class="filter-toggle" type="button" data-filter-toggle aria-expanded="false">
+        {t.filters} <Icon name="chevron" size={17} />
+      </button>
+    </div>
+
+    <div class="catalog-toolbar" data-filter-panel>
+      <div class="catalog-toolbar__status">
+        <strong data-result-count aria-live="polite" aria-atomic="true">{count(products.length)}</strong>
+        <span>{t.found}</span>
+      </div>
+      <div class="catalog-toolbar__controls">
+        <label class="select-control mobile-category-control">
+          <span>{t.category}</span>
+          <select data-category-filter>
+            <option value="" selected={!activeCategory}>{t.allCategories}</option>
+            {availableCategories.map((category) => <option value={category.slug} selected={activeCategory === category.slug}>{category.name}</option>)}
+          </select>
+        </label>
+        {subcategories.length > 0 && (
+          <label class="select-control">
+            <span>{t.subcategory}</span>
+            <select data-subcategory-filter>
+              <option value="">{t.all}</option>
+              {subcategories.map((item) => <option value={item.subcategorySlug} data-category={item.categorySlug} selected={activeSubcategory === item.subcategorySlug}>{item.subcategory}</option>)}
+            </select>
+          </label>
+        )}
+        {hasUnavailableProducts && (
+          <label class="check-control">
+            <input type="checkbox" data-stock-filter />
+            <span>{t.stock}</span>
+          </label>
+        )}
+        <label class="select-control">
+          <span>{t.sort}</span>
+          <select data-sort-select>
+            <option value="name">{t.byName}</option>
+            <option value="category">{t.byCategory}</option>
+          </select>
+        </label>
+        <button class="reset-button" type="button" data-catalog-reset>{t.reset}</button>
+      </div>
+    </div>
+
+    <div class="product-grid" data-product-grid>
+      {initialProducts.map((product, index) => <ProductCard product={product} index={index} locale={locale} />)}
+    </div>
+
+    <nav class="catalog-pagination" data-catalog-pagination aria-label={locale === "en" ? "Catalog pages" : "Страницы каталога"} hidden={products.length <= pageSize}>
+      <p>{t.shown} <span data-page-start>{count(1)}</span>–<span data-page-end>{count(Math.min(pageSize, products.length))}</span> {t.of} <span data-page-total>{count(products.length)}</span></p>
+      <div class="catalog-pagination__controls">
+        <button type="button" data-page-prev disabled>← {t.back}</button>
+        <label class="select-control">
+          <span>{t.page}</span>
+          <select data-page-select aria-label={t.page}>
+            {Array.from({ length: pageCount }, (_, index) => <option value={index + 1}>{index + 1}</option>)}
+          </select>
+        </label>
+        <button type="button" data-page-next disabled={pageCount === 1}>{t.next} →</button>
+      </div>
+    </nav>
+
+    <div class="catalog-empty" data-catalog-empty role="status" hidden>
+      <span>0</span>
+      <h3>{locale === "en" ? "Nothing found" : "Ничего не найдено"}</h3>
+      <p>{locale === "en" ? "Try changing your search or reset the filters." : "Попробуйте изменить запрос или сбросить фильтры."}</p>
+      <button class="button button--dark" type="button" data-catalog-reset>{t.resetFilters}</button>
+    </div>
+  </div>
+</section>

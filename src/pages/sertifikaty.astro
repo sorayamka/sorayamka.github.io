@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactCta from "../components/ContactCta.astro";
+import { certificates } from "../data/site";
+---
+
+<BaseLayout title="Сертификаты поставщиков — Седьмой Легион" description="Декларации и ветеринарные сертификаты поставщиков, с которыми работает Седьмой Легион.">
+  <PageHero
+    eyebrow="Документы поставщиков"
+    title="Сертификаты"
+    lead="Декларации и документы, подтверждающие качество и происхождение продукции поставщиков."
+    statValue={certificates.length}
+    statLabel="документов в архиве"
+    statNote="актуальная версия по запросу"
+    breadcrumb="Сертификаты"
+  />
+  <section class="section">
+    <div class="shell">
+      <header class="section-head" data-reveal><div><span class="eyebrow">Проверка происхождения</span><h2>Документы поставщиков</h2></div><p>Для актуальной версии конкретного документа свяжитесь с менеджером по документообороту.</p></header>
+      <div class="certificate-grid">
+        {certificates.map((certificate) => (
+          <a class="certificate-card" href={`/certificates/${certificate.slug}/`} data-reveal aria-label={`Открыть сертификат: ${certificate.name}`}>
+            {certificate.image && <img src={certificate.image} alt="" width="800" height="600" loading="lazy" decoding="async" />}
+            <h3>{certificate.name}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <ContactCta title="Нужен документ на конкретную поставку?" text="Подготовим актуальные документы по бренду, партии и типу продукции." primaryLabel="Связаться с документооборотом" />
+</BaseLayout>

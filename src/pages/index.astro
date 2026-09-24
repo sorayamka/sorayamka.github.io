@@ -1,0 +1,188 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BrandGrid from "../components/BrandGrid.astro";
+import ContactCta from "../components/ContactCta.astro";
+import Icon from "../components/Icon.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { brands, categories, company, formatCount, products, siteImages } from "../data/site";
+
+const productSource = (slug: string) => products.find((product) => product.categorySlug === slug && product.image);
+const featured = categories
+  .map((category) => productSource(category.slug))
+  .filter((product): product is (typeof products)[number] => Boolean(product));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: company.legalName,
+  url: "https://7legion.com",
+  logo: "https://7legion.com/images/site/logo.png",
+  telephone: company.phone,
+  email: company.email,
+  foundingDate: String(company.founded),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Ленинградское шоссе, 64, корпус 3, офис 3-2",
+    addressLocality: "Москва",
+    addressCountry: "RU",
+  },
+};
+---
+
+<BaseLayout
+  title="Седьмой Легион — оптовая поставка замороженного мяса"
+  description="Оптовые поставки свинины, говядины, птицы, субпродуктов и мясных полуфабрикатов по России. Собственный холодный склад, проверенные поставщики и доставка рефрижераторным транспортом."
+  image={siteImages.hero}
+  schema={schema}
+>
+  <section class="home-hero">
+    <div class="shell home-hero__inner">
+      <div class="home-hero__copy">
+        <span class="eyebrow">Оптовый поставщик с 2003 года</span>
+        <h1>Мясо,<br /><em>которое доходит.</em></h1>
+        <p class="home-hero__lead">Замороженная свинина, говядина, птица и полуфабрикаты от проверенных производителей. Собственный склад, стабильные отгрузки и доставка по России.</p>
+        <div class="home-hero__actions">
+          <a class="button button--red" href="/shop/">Открыть каталог <Icon name="arrow" size={18} /></a>
+          <a class="button button--ghost" href="/price/">Получить цены</a>
+        </div>
+        <div class="home-hero__facts">
+          <div class="home-hero__fact"><strong>23+</strong><span>года на рынке</span></div>
+          <div class="home-hero__fact"><strong>{formatCount(products.length)}</strong><span>позиций каталога</span></div>
+          <div class="home-hero__fact"><strong>РФ</strong><span>география поставок</span></div>
+        </div>
+      </div>
+      <div class="home-hero__visual">
+        <img src={siteImages.hero} srcset={`${siteImages["hero-small"]} 800w, ${siteImages.hero} 1600w`} sizes="(max-width: 1024px) 100vw, 52vw" alt="Высокотехнологичный складской комплекс с холодовой инфраструктурой" width="1600" height="1927" loading="eager" fetchpriority="high" />
+        <div class="home-hero__stamp"><span>−18° C<br />непрерывная<br />холодная цепочка</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker__track" aria-hidden="true">
+      {[0, 1].map(() => (
+        <div class="ticker__item">
+          <span>Свинина</span><span>Говядина</span><span>Птица</span><span>Субпродукты</span><span>Полуфабрикаты</span><span>Баранина</span><span>Крольчатина</span>
+        </div>
+      ))}
+    </div>
+    <button class="ticker__pause" type="button" data-ticker-toggle aria-label="Остановить движение">Ⅱ</button>
+  </div>
+
+  <section class="section category-index-section">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Направления поставок</span>
+          <h2>Один поставщик.<br />Семь категорий.</h2>
+        </div>
+        <p>Подберём ассортимент под формат вашего бизнеса: переработка, HoReCa, розничная сеть или государственные закупки.</p>
+      </header>
+      <div class="category-index">
+        {categories.map((category, index) => {
+          const source = productSource(category.slug);
+          return (
+            <a class="category-index__card" href={`/shop/?category=${category.slug}`} data-reveal style={`--delay:${index * 45}ms`}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{category.name}</h3>
+              <p>{formatCount(category.count)} позиций</p>
+              {source?.image && <img src={source.thumbnail || source.image} srcset={source.thumbnail ? `${source.thumbnail} 480w, ${source.image} 1200w` : undefined} sizes="(max-width: 720px) 44vw, (max-width: 1200px) 30vw, 22vw" alt="" width="480" height="480" loading="lazy" decoding="async" />}
+              <Icon name="arrow" size={20} />
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Выбор поставщика</span>
+          <h2>Позиции, с которых<br />начинают закупку.</h2>
+        </div>
+        <a class="button button--outline" href="/shop/">Смотреть все {formatCount(products.length)} <Icon name="arrow" size={18} /></a>
+      </header>
+      <div class="product-grid">
+        {featured.map((product, index) => <ProductCard product={product} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="split-feature">
+    <div class="split-feature__media" data-reveal>
+      <img src={siteImages.storage} srcset={`${siteImages["storage-small"]} 800w, ${siteImages.storage} 1600w`} sizes="(max-width: 1024px) 100vw, 50vw" alt="Замороженная продукция на стеллажах холодного склада" width="1600" height="1067" loading="lazy" decoding="async" />
+    </div>
+    <div class="split-feature__content" data-reveal>
+      <span class="eyebrow">Холодная инфраструктура</span>
+      <h2>Температура не должна быть зоной риска.</h2>
+      <p>Приёмка, хранение и перемещение продукции выполняются по ветеринарным регламентам и требованиям производителей.</p>
+      <ul class="feature-list">
+        <li><span>01</span>Входной контроль температурных режимов</li>
+        <li><span>02</span>Рефрижераторное оборудование для хранения и перевозки</li>
+        <li><span>03</span>Регулярное обслуживание складской техники</li>
+        <li><span>04</span>Обучение персонала и контроль процессов</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">География поставок</span>
+          <h2>Доставляем туда,<br />где нужен холод.</h2>
+        </div>
+        <p>Собственный рефрижераторный транспорт и организация отгрузок к вагонам, контейнерным площадкам и сборным машинам.</p>
+      </header>
+      <div class="metric-summary">
+        <div><span class="eyebrow">Автопарк</span><h3>Рефрижераторный транспорт</h3></div>
+        <p>Номинальная грузоподъёмность брутто транспортных единиц под разные объёмы поставки.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><strong>5т</strong><span>грузоподъёмность брутто</span></div>
+        <div class="metric"><strong>10т</strong><span>грузоподъёмность брутто</span></div>
+        <div class="metric"><strong>15т</strong><span>грузоподъёмность брутто</span></div>
+        <div class="metric"><strong>20т</strong><span>грузоподъёмность брутто</span></div>
+      </div>
+      <div class="home-logistics" data-reveal>
+        <figure class="home-logistics__visual">
+          <img src={siteImages.logistics} srcset={`${siteImages["logistics-small"]} 800w, ${siteImages.logistics} 1600w`} sizes="(max-width: 720px) 100vw, 45vw" alt="Парк рефрижераторных транспортных средств на логистическом терминале" width="1600" height="1067" loading="lazy" decoding="async" />
+          <figcaption><span>Холодная инфраструктура</span><strong>От склада к месту загрузки</strong></figcaption>
+        </figure>
+        <div class="home-logistics__copy">
+          <span>Доставка и обработка</span>
+          <h3>От перевозки до перегрузки</h3>
+          <ul>
+            <li>Доставка по Москве и области от 3 тонн</li>
+            <li>Самовывоз со склада от 500 кг одной позиции</li>
+            <li>Паллетирование, пересчёт и взвешивание</li>
+            <li>Экспедирование и оформление по «Меркурий»</li>
+          </ul>
+          <a class="button button--ghost" href="/logisticheskie-uslugi/">Все услуги <Icon name="arrow" size={18} /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Производители</span>
+          <h2>Работаем с брендами,<br />которые завоевали полку.</h2>
+        </div>
+        <p>В каталоге собраны поставщики птицы, свинины, говядины и переработанной продукции.</p>
+      </header>
+      <BrandGrid brands={brands} limit={15} compact />
+      <a class="brand-more" href="/brands/">Все {brands.length} брендов <Icon name="arrow" size={18} /></a>
+    </div>
+  </section>
+
+  <ContactCta
+    title="Нужен расчёт или образец поставки?"
+    text="Оставьте список позиций в корзине или свяжитесь с коммерческим отделом — подберём формат, объём и условия отгрузки."
+    primaryLabel="Позвонить в отдел продаж"
+  />
+</BaseLayout>
