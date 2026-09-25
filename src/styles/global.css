@@ -4103,8 +4103,8 @@ body.mobile-menu-open {
 }
 
 .home-hero__inner {
-  position: relative;
-  z-index: 1;
+  position: static;
+  z-index: auto;
   min-height: min(820px, 100svh);
   display: flex;
   align-items: center;
