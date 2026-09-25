@@ -9,6 +9,15 @@ import { siteImages } from "../../data/site";
 
 const productSource = (slug: string) => englishProducts.find((product) => product.categorySlug === slug && product.image);
 const featured = englishCategories.map((category) => productSource(category.slug)).filter((product): product is (typeof englishProducts)[number] => Boolean(product));
+const priceList = [
+  { name: "CB Eco Poultry", price: "240 RUB/kg" },
+  { name: "CB Prioskolye 8 k", price: "245 RUB/kg" },
+  { name: "Female turkey thigh", price: "190 RUB/kg" },
+  { name: "Front pork legs", price: "50 RUB/kg" },
+  { name: "Paurus breast rib", price: "275 RUB/kg" },
+  { name: "CB breast fillet monolith", price: "425 RUB/kg" },
+  { name: "Boneless beef heart", price: "340 RUB/kg" },
+];
 const schema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -76,8 +85,13 @@ const schema = {
       <div class="product-of-week__content">
         <span class="eyebrow">Product of the week</span>
         <h2>Frozen chicken<br />carcass</h2>
-        <p>A catalog product for wholesale orders. Contact our team to confirm availability, pricing and the minimum order quantity.</p>
-        <div class="product-of-week__price"><span>Wholesale price</span><strong>Price on request</strong></div>
+        <p>A catalog product for wholesale orders. Contact our team to confirm availability and the minimum order quantity.</p>
+        <div class="product-of-week__price-list">
+          <header><span>Current price list</span><small>minimum order from 1 tonne</small></header>
+          <ul>
+            {priceList.map((item) => <li><span>{item.name}</span><strong>{item.price}</strong></li>)}
+          </ul>
+        </div>
         <a class="button button--red" href="/en/shop/poultry/tushka-cyplenka-brojlera-1-sorta-2/">Open product <Icon name="arrow" size={18} /></a>
       </div>
     </div>

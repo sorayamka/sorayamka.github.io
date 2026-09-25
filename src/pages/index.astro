@@ -10,6 +10,15 @@ const productSource = (slug: string) => products.find((product) => product.categ
 const featured = categories
   .map((category) => productSource(category.slug))
   .filter((product): product is (typeof products)[number] => Boolean(product));
+const priceList = [
+  { name: "ЦБ Эко Птица", price: "240 ₽/кг" },
+  { name: "ЦБ Приосколье 8 к", price: "245 ₽/кг" },
+  { name: "Голень индейки самка", price: "190 ₽/кг" },
+  { name: "Ноги свиные передние", price: "50 ₽/кг" },
+  { name: "Ребро с грудинки Парус", price: "275 ₽/кг" },
+  { name: "Филе грудки ЦБ монолит", price: "425 ₽/кг" },
+  { name: "Сердце говяжье в/у", price: "340 ₽/кг" },
+];
 
 const schema = {
   "@context": "https://schema.org",
@@ -78,8 +87,13 @@ const schema = {
       <div class="product-of-week__content">
         <span class="eyebrow">Товар недели</span>
         <h2>Тушка цыпленка<br />замороженная</h2>
-        <p>Продукт из нашего каталога для оптовой закупки. Уточните наличие, цену и минимальную партию у менеджера.</p>
-        <div class="product-of-week__price"><span>Стоимость опта</span><strong>Цена по запросу</strong></div>
+        <p>Продукт из нашего каталога для оптовой закупки. Уточните наличие и минимальную партию у менеджера.</p>
+        <div class="product-of-week__price-list">
+          <header><span>Актуальный прайс</span><small>кратность от 1 тонны</small></header>
+          <ul>
+            {priceList.map((item) => <li><span>{item.name}</span><strong>{item.price}</strong></li>)}
+          </ul>
+        </div>
         <a class="button button--red" href="/shop/ptica/kurica/tushka-cyplenka-brojlera-1-sorta/">Открыть карточку <Icon name="arrow" size={18} /></a>
       </div>
     </div>
