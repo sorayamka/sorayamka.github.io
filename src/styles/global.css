@@ -972,6 +972,105 @@ address {
   content: "";
 }
 
+.product-of-week {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.product-of-week__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  min-height: 520px;
+}
+
+.product-of-week__media {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  background: var(--ink-light);
+}
+
+.product-of-week__media::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(5, 9, 12, 0.62));
+  content: "";
+  pointer-events: none;
+}
+
+.product-of-week__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.04);
+  transition: transform 700ms var(--ease), filter 300ms ease;
+}
+
+.product-of-week:hover .product-of-week__media img {
+  filter: saturate(0.95) contrast(1.06);
+  transform: scale(1.035);
+}
+
+.product-of-week__label {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  left: 24px;
+  padding: 8px 10px;
+  color: var(--white);
+  background: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.product-of-week__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 90px);
+  background: var(--paper);
+}
+
+.product-of-week__content h2 {
+  max-width: 560px;
+  margin-top: 18px;
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 76px);
+  font-weight: 590;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.product-of-week__content p {
+  max-width: 500px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.product-of-week__content .button {
+  align-self: flex-start;
+  margin-top: 32px;
+}
+
+@media (max-width: 720px) {
+  .product-of-week__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .product-of-week__media {
+    min-height: 0;
+    aspect-ratio: 1.2;
+  }
+
+  .product-of-week__content {
+    padding: 36px 0 12px;
+  }
+}
+
 @keyframes ticker {
   to {
     transform: translateX(-50%);

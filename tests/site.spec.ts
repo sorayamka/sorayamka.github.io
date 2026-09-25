@@ -9,7 +9,9 @@ test("homepage renders and has no horizontal overflow", async ({ page }, testInf
     if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`);
   });
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("которое доходит");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Седьмой Легион");
+  await expect(page.locator(".product-of-week")).toBeVisible();
+  await expect(page.locator(".product-of-week")).toContainText("Тушка цыпленка");
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(1);
   await page.evaluate(async () => {
