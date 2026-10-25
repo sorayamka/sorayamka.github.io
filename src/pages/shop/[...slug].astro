@@ -8,6 +8,7 @@ import Icon from "../../components/Icon.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import { formatCount, products } from "../../data/site";
 import type { Product } from "../../data/types";
+import { productDescription } from "../../lib/seo";
 
 interface CategoryRoute {
   path: string;
@@ -74,7 +75,7 @@ const pageTitle = categoryRoute
   : `${product?.name ?? "Товар"} — купить оптом | Седьмой Легион`;
 const pageDescription = categoryRoute
   ? `${categoryRoute.name} оптом со склада: ${formatCount(categoryRoute.items.length)} позиций. Поставка замороженной мясной продукции по России.`
-  : product?.description || `${product?.name ?? "Мясная продукция"} оптом со склада. Поставка по России.`;
+  : productDescription(product?.name ?? "Мясная продукция", product?.description ?? "", "ru");
 const pageImage = categoryRoute?.items.find((item) => item.image)?.image || product?.image;
 const schema = categoryRoute
   ? {
@@ -103,29 +104,25 @@ const schema = categoryRoute
       sku: product?.sku || undefined,
       category: product?.subcategory || product?.category,
       url: new URL(product?.path ?? "/shop/", Astro.site).href,
-      brand: {
-        "@type": "Organization",
-        name: "Седьмой Легион",
-      },
-      offers: {
-        "@type": "Offer",
-        availability: product?.inStock ? "https://schema.org/InStock" : "https://schema.org/BackOrder",
-        priceCurrency: "RUB",
-        url: new URL(product?.path ?? "/shop/", Astro.site).href,
-        seller: {
-          "@type": "Organization",
-          name: "ООО «Седьмой Легион»",
-        },
-      },
     };
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Главная", item: new URL("/", Astro.site).href },
+    { "@type": "ListItem", position: 2, name: "Каталог", item: new URL("/shop/", Astro.site).href },
+    ...(product ? [{ "@type": "ListItem", position: 3, name: product.category, item: new URL(`/shop/${product.path.split("/")[2]}/`, Astro.site).href }] : []),
+    { "@type": "ListItem", position: product ? 4 : 3, name: product?.name ?? categoryRoute?.name, item: new URL(product?.path ?? categoryRoute?.path ?? "/shop/", Astro.site).href },
+  ],
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} image={pageImage || undefined} schema={schema}>
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage || undefined} schema={[schema, breadcrumbs]}>
   {!categoryRoute && product && (
     <nav class="breadcrumbs product-breadcrumbs" aria-label="Хлебные крошки">
       <div class="shell">
         <a href="/">Главная</a><span>/</span><a href="/shop/">Каталог</a><span>/</span>
-        <a href={`/shop/?category=${product.categorySlug}`}>{product.category}</a><span>/</span>
+        <a href={`/shop/${product.path.split("/")[2]}/`}>{product.category}</a><span>/</span>
         <span aria-current="page">{product.name}</span>
       </div>
     </nav>
@@ -141,7 +138,7 @@ const schema = categoryRoute
         statLabel="позиций в категории"
         statNote="цены и наличие уточняйте у менеджера"
         breadcrumb={categoryRoute.name}
-        parentHref={categoryRoute.subcategorySlug ? `/shop/${categoryRoute.categorySlug}/` : "/shop/"}
+        parentHref={categoryRoute.subcategorySlug ? `/shop/${categoryRoute.path.split("/")[2]}/` : "/shop/"}
         parentLabel={categoryRoute.subcategorySlug ? categoryRoute.items[0]?.category : "Каталог"}
       />
       <CatalogExplorer

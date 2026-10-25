@@ -24,7 +24,11 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes("/cart/") && !page.endsWith(".json"),
+      filter: (page) => {
+        const path = new URL(page).pathname;
+        return !path.includes("/cart/") && !path.startsWith("/product-category/") && !/\.(?:json|html)$/.test(path)
+          && !["/vacancies-2/", "/price-list-2/", "/vse-produkty/", "/brands/sertifikaty/", "/tag/sertifikat/"].includes(path);
+      },
     }),
   ],
 });

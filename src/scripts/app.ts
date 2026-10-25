@@ -638,7 +638,8 @@ const initCatalog = (catalog: HTMLElement) => {
 
   const chooseCategory = (value: string) => {
     if (activeCategory && value !== activeCategory) {
-      location.href = value ? `/shop/?category=${encodeURIComponent(value)}` : "/shop/";
+      const catalogPath = locale === "en" ? "/en/shop/" : "/shop/";
+      location.href = value ? `${catalogPath}?category=${encodeURIComponent(value)}` : catalogPath;
       return;
     }
     category = value;

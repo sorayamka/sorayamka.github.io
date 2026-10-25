@@ -75,6 +75,21 @@ test("English locale keeps the catalog index lazy and switches back", async ({ p
   await expect(page.locator("html")).toHaveAttribute("lang", "ru");
 });
 
+test("product language alternates resolve reciprocally and schema has no unpriced offer", async ({ page }) => {
+  const russianPath = "/shop/govyadina/ribaj-iz-govjadiny/";
+  await page.goto(russianPath);
+  const englishUrl = await page.locator('link[rel="alternate"][hreflang="en"]').getAttribute("href");
+  expect(englishUrl).toBeTruthy();
+  const englishPath = new URL(englishUrl!).pathname;
+  const response = await page.goto(englishPath);
+  expect(response?.status()).toBe(200);
+  await expect(page.locator('link[rel="alternate"][hreflang="ru"]')).toHaveAttribute("href", new RegExp(`${russianPath}$`));
+  const data = await page.locator('script[type="application/ld+json"]').allTextContents();
+  const schemas = data.flatMap((text) => JSON.parse(text));
+  expect(schemas.find((schema) => schema["@type"] === "Product")?.offers).toBeUndefined();
+  expect(schemas.some((schema) => schema["@type"] === "BreadcrumbList")).toBe(true);
+});
+
 test("cart persists and supports quantity", async ({ page, context }) => {
   await page.goto("/shop/");
   const firstAdd = page.locator("[data-add-to-cart]").first();

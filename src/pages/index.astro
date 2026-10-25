@@ -41,7 +41,7 @@ const schema = {
 <BaseLayout
   title="Седьмой Легион — оптовая поставка замороженного мяса"
   description="Оптовые поставки свинины, говядины, птицы, субпродуктов и мясных полуфабрикатов по России. Собственный холодный склад, проверенные поставщики и доставка рефрижераторным транспортом."
-  image={siteImages.storage}
+  image={siteImages["hero-4k"]}
   schema={schema}
 >
   <section class="home-hero">
@@ -61,7 +61,10 @@ const schema = {
         </div>
       </div>
       <div class="home-hero__visual">
-        <img src={siteImages.storage} srcset={`${siteImages["storage-small"]} 800w, ${siteImages.storage} 1600w`} sizes="100vw" alt="Замороженная продукция на стеллажах холодного склада" width="1600" height="1067" loading="eager" fetchpriority="high" />
+        <picture>
+          <source type="image/avif" srcset="/images/site/hero-800.avif 800w, /images/site/hero-1600.avif 1600w, /images/site/hero-3840.avif 3840w" sizes="100vw" />
+        <img src={siteImages["hero-4k"]} srcset={`${siteImages["storage-small"]} 800w, ${siteImages.storage} 1600w, ${siteImages["hero-4k"]} 3840w`} sizes="100vw" alt="Замороженная продукция на стеллажах холодного склада" width="3840" height="2560" loading="eager" fetchpriority="high" />
+        </picture>
         <div class="home-hero__stamp"><span>−18° C<br />непрерывная<br />холодная цепочка</span></div>
       </div>
     </div>
@@ -112,7 +115,7 @@ const schema = {
         {categories.map((category, index) => {
           const source = productSource(category.slug);
           return (
-            <a class="category-index__card" href={`/shop/?category=${category.slug}`} data-reveal style={`--delay:${index * 45}ms`}>
+            <a class="category-index__card" href={source ? `/shop/${source.path.split("/")[2]}/` : "/shop/"} data-reveal style={`--delay:${index * 45}ms`}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{category.name}</h3>
               <p>{formatCount(category.count)} позиций</p>

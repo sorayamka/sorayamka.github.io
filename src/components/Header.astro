@@ -2,9 +2,11 @@
 import Icon from "./Icon.astro";
 import { brands, company, products, siteImages } from "../data/site";
 import { getLocale, localizedPath, ui } from "../lib/i18n";
+import { getLanguageRoutes } from "../lib/seo";
 
 const pathname = Astro.url.pathname;
 const locale = getLocale(pathname);
+const languageRoutes = getLanguageRoutes(pathname);
 const t = ui[locale];
 const link = (path: string) => localizedPath(path, locale);
 const isActive = (path: string) => {
@@ -56,8 +58,8 @@ const hours = locale === "en" ? "Mon–Fri, 9:00–18:00" : company.hours;
 
     <div class="header-actions">
       <nav class="language-switch" aria-label={t.language}>
-        <a class:list={{ "is-active": locale === "ru" }} href={localizedPath(pathname, "ru")} hreflang="ru" aria-current={locale === "ru" ? "page" : undefined}>RU</a>
-        <a class:list={{ "is-active": locale === "en" }} href={localizedPath(pathname, "en")} hreflang="en" aria-current={locale === "en" ? "page" : undefined}>EN</a>
+        {languageRoutes.ru && <a class:list={{ "is-active": locale === "ru" }} href={languageRoutes.ru} hreflang="ru" aria-current={locale === "ru" ? "page" : undefined}>RU</a>}
+        {languageRoutes.en && <a class:list={{ "is-active": locale === "en" }} href={languageRoutes.en} hreflang="en" aria-current={locale === "en" ? "page" : undefined}>EN</a>}
       </nav>
       <form class="header-search" action={link("/shop/")} method="get" role="search">
         <label class="sr-only" for="header-search-input">{t.searchCatalog}</label>

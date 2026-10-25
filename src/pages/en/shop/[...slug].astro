@@ -9,6 +9,7 @@ import ProductCard from "../../../components/ProductCard.astro";
 import { englishCategories, englishProducts } from "../../../lib/english-products";
 import { formatCount } from "../../../lib/i18n";
 import type { Product } from "../../../data/types";
+import { productDescription } from "../../../lib/seo";
 
 interface CategoryRoute {
   path: string;
@@ -59,7 +60,7 @@ const pageTitle = categoryRoute
   : `${product?.name ?? "Product"} — wholesale | Seventh Legion`;
 const pageDescription = categoryRoute
   ? `${categoryRoute.name} wholesale from our warehouse: ${formatCount(categoryRoute.items.length, "en")} products. Frozen meat supply across Russia.`
-  : product?.description || `${product?.name ?? "Frozen meat product"} supplied wholesale by Seventh Legion.`;
+  : productDescription(product?.name ?? "Frozen meat product", product?.description ?? "", "en");
 const pageImage = categoryRoute?.items.find((item) => item.image)?.image || product?.image;
 const schema = categoryRoute
   ? {
@@ -88,29 +89,25 @@ const schema = categoryRoute
       sku: product?.sku || undefined,
       category: product?.subcategory || product?.category,
       url: new URL(product?.path ?? "/en/shop/", Astro.site).href,
-      brand: {
-        "@type": "Organization",
-        name: "Seventh Legion",
-      },
-      offers: {
-        "@type": "Offer",
-        availability: product?.inStock ? "https://schema.org/InStock" : "https://schema.org/BackOrder",
-        priceCurrency: "RUB",
-        url: new URL(product?.path ?? "/en/shop/", Astro.site).href,
-        seller: {
-          "@type": "Organization",
-          name: "LLC Seventh Legion",
-        },
-      },
     };
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: new URL("/en/", Astro.site).href },
+    { "@type": "ListItem", position: 2, name: "Catalog", item: new URL("/en/shop/", Astro.site).href },
+    ...(product ? [{ "@type": "ListItem", position: 3, name: product.category, item: new URL(`/en/shop/${product.path.split("/")[3]}/`, Astro.site).href }] : []),
+    { "@type": "ListItem", position: product ? 4 : 3, name: product?.name ?? categoryRoute?.name, item: new URL(product?.path ?? categoryRoute?.path ?? "/en/shop/", Astro.site).href },
+  ],
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} image={pageImage || undefined} schema={schema}>
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage || undefined} schema={[schema, breadcrumbs]}>
   {!categoryRoute && product && (
     <nav class="breadcrumbs product-breadcrumbs" aria-label="Breadcrumbs">
       <div class="shell">
         <a href="/en/">Home</a><span>/</span><a href="/en/shop/">Catalog</a><span>/</span>
-        <a href={`/en/shop/${product.categorySlug}/`}>{product.category}</a><span>/</span>
+        <a href={`/en/shop/${product.path.split("/")[3]}/`}>{product.category}</a><span>/</span>
         <span aria-current="page">{product.name}</span>
       </div>
     </nav>

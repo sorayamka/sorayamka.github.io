@@ -92,12 +92,12 @@ server {
     }
 
     location = /catalog-index.json {
-        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        add_header Cache-Control "public, max-age=0, must-revalidate" always;
         try_files $uri =404;
     }
 
     location = /en/catalog-index.json {
-        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        add_header Cache-Control "public, max-age=0, must-revalidate" always;
         try_files $uri =404;
     }
 
