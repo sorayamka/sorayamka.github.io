@@ -29,8 +29,10 @@ test("all brand cards have individual localized pages", async ({ page, request }
 
 test("brand search and repeated whitespace return matching products", async ({ page }) => {
   await page.goto("/shop/?q=" + encodeURIComponent("Мираторг"));
+  await expect.poll(async () => Number((await page.locator("[data-result-count]").innerText()).replace(/\D/g, ""))).toBeLessThan(1120);
   await expect.poll(async () => Number((await page.locator("[data-result-count]").innerText()).replace(/\D/g, ""))).toBeGreaterThan(0);
   await page.locator("[data-catalog-search]").fill("Филе грудки");
+  await expect.poll(() => new URL(page.url()).searchParams.get("q")).toBe("Филе грудки");
   await expect.poll(async () => Number((await page.locator("[data-result-count]").innerText()).replace(/\D/g, ""))).toBeGreaterThan(0);
   const count = await page.locator("[data-result-count]").innerText();
   await page.locator("[data-catalog-search]").fill("  Филе   грудки  ");
