@@ -31,7 +31,8 @@ const canonical = new URL(Astro.url.pathname === "/404/" ? "/404.html" : Astro.u
 const languageRoutes = getLanguageRoutes(Astro.url.pathname);
 const alternateRu = languageRoutes.ru ? new URL(languageRoutes.ru, Astro.site) : undefined;
 const alternateEn = languageRoutes.en ? new URL(languageRoutes.en, Astro.site) : undefined;
-const socialImage = new URL(image, Astro.site);
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "/en/";
+const socialImage = new URL(isHome ? "/images/site/share-preview-v2.png" : image, Astro.site);
 const preventIndexing = noindex || isPreviewSite(Astro.site);
 const normalizeSchema = (value: unknown): unknown => {
   if (typeof value === "string" && /^https:\/\/(?:www\.)?7legion\.com(?:\/|$)/.test(value)) {
@@ -69,6 +70,10 @@ const serializedSchema = schema ? JSON.stringify(normalizeSchema(schema)).replac
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
+    {isHome && <meta property="og:image:width" content="1200" />}
+    {isHome && <meta property="og:image:height" content="630" />}
+    {isHome && <meta property="og:image:type" content="image/png" />}
+    <meta property="og:image:alt" content={locale === "en" ? "Seventh Legion — wholesale frozen meat supply" : "Седьмой Легион — оптовые поставки замороженной мясной продукции"} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

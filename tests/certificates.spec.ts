@@ -45,3 +45,31 @@ test("weekly product photo fits inside its frame", async ({ page }) => {
   expect(layout.padding).toBeGreaterThan(0);
   expect(layout.width).toBeLessThanOrEqual(layout.parentWidth + 1);
 });
+
+test("brand tiles navigate and certificate images respond across their full area", async ({ page, context }) => {
+  await page.goto("/brands/");
+  const brand = page.locator('a.brand-card[data-brand="damate"]');
+  await brand.click();
+  await expect(page).toHaveURL(/\/certificates\/sert-damate\/$/);
+  await expect(page.locator('.certificate-files a[href$=".pdf"]').first()).toBeVisible();
+  await page.goto("/sertifikaty/");
+  const card = page.locator(".certificate-card").first();
+  await card.scrollIntoViewIfNeeded();
+  const href = await card.locator("a").first().getAttribute("href");
+  await context.route("**/certificates/*.pdf", (route) => route.fulfill({ contentType: "text/html", body: "<h1>PDF navigation reached</h1>" }));
+  const opened = context.waitForEvent("page");
+  await card.click({ position: { x: 30, y: 40 } });
+  const document = await opened;
+  await document.waitForLoadState();
+  expect(new URL(document.url()).pathname).toBe(href);
+  await document.close();
+});
+
+test("homepage share preview is branded and mobile facts are not covered", async ({ page, request, isMobile }) => {
+  await page.goto("/");
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", /share-preview-v2\.png$/);
+  const image = await request.get("/images/site/share-preview-v2.png");
+  expect(image.status()).toBe(200);
+  expect(image.headers()["content-type"]).toContain("image/png");
+  if (isMobile) await expect(page.locator(".home-hero__stamp")).toBeHidden();
+});

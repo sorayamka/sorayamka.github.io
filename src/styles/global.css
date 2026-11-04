@@ -1756,6 +1756,16 @@ address {
   text-transform: uppercase;
 }
 
+.brand-card__action {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.brand-card:hover .brand-card__action {
+  color: var(--ice);
+}
+
 .contact-cta {
   position: relative;
   overflow: hidden;
@@ -2622,7 +2632,15 @@ address {
   position: static;
 }
 
+.certificate-card > a:first-child::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  content: "";
+}
+
 .certificate-card > a:last-child {
+  z-index: 3;
   padding: 0 24px 22px;
   color: var(--ice);
   font-size: 12px;
@@ -4287,10 +4305,7 @@ body.mobile-menu-open {
   }
 
   .home-hero__stamp {
-    right: 16px;
-    bottom: 16px;
-    width: 100px;
-    height: 100px;
+    display: none;
   }
 
   .home-hero__stamp span {
