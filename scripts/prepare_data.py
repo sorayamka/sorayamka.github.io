@@ -5,6 +5,7 @@ import html
 import json
 import re
 import shutil
+import sys
 import tempfile
 import unicodedata
 from pathlib import Path
@@ -354,6 +355,30 @@ def prepare_brands(pages: list[dict], exact: dict[str, Path], by_name: dict[str,
     return sorted(output, key=lambda item: item["name"].lower())
 
 
+def attach_certificate_files(certificates: list[dict], exact: dict[str, Path], by_name: dict[str, Path]) -> list[dict]:
+    for certificate in certificates:
+        files = []
+        seen = set()
+        source = ARCHIVE / "html" / certificate["slug"] / "index.html"
+        if source.exists():
+            soup = BeautifulSoup(source.read_text(encoding="utf-8", errors="replace"), "html.parser")
+            for anchor in soup.find_all("a", href=True):
+                url = str(anchor["href"])
+                if Path(urlsplit(url).path).suffix.lower() != ".pdf" or url in seen:
+                    continue
+                seen.add(url)
+                original = resolve_asset(url, exact, by_name)
+                if not original or not original.is_file():
+                    raise FileNotFoundError(f"Missing archived certificate: {url}")
+                destination = PUBLIC / "certificates" / original.name
+                if not copy_file(original, destination):
+                    raise OSError(f"Could not copy certificate: {original}")
+                label = normalize_text(anchor.get_text(" ", strip=True)) or unquote(Path(urlsplit(url).path).stem).replace("_", " ")
+                files.append({"name": label, "path": f"/certificates/{destination.name}", "sourceUrl": url, "bytes": destination.stat().st_size})
+        certificate["files"] = files
+    return certificates
+
+
 def prepare_certificates(pages: list[dict], exact: dict[str, Path], by_name: dict[str, Path]) -> list[dict]:
     output = []
     certificate_images = {}
@@ -427,7 +452,7 @@ def prepare_certificates(pages: list[dict], exact: dict[str, Path], by_name: dic
                 "sourceUrl": page.get("url", ""),
             }
         )
-    return output
+    return attach_certificate_files(output, exact, by_name)
 
 
 def prepare_documents(pages: list[dict], exact: dict[str, Path]) -> list[dict]:
@@ -541,4 +566,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    if "--certificates-only" in sys.argv:
+        exact, by_name = build_asset_index(load_json(DATA / "assets.json"))
+        certificates = attach_certificate_files(load_json(SOURCE_DATA / "certificates.json"), exact, by_name)
+        (SOURCE_DATA / "certificates.json").write_text(json.dumps(certificates, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"Certificate groups: {len(certificates)}; PDF links: {sum(len(item['files']) for item in certificates)}")
+    else:
+        main()

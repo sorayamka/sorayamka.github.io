@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactCta from "../../components/ContactCta.astro";
 import { englishPages } from "../../lib/i18n";
+import { certificates } from "../../data/site";
 
 export const getStaticPaths = (() =>
   Object.entries(englishPages).map(([slug, copy]) => ({
@@ -12,6 +13,7 @@ export const getStaticPaths = (() =>
   }))) satisfies GetStaticPaths;
 
 const { copy } = Astro.props;
+const showCertificates = Astro.url.pathname === "/en/sertifikaty/";
 ---
 
 <BaseLayout title={`${copy.title} — Seventh Legion`} description={copy.lead}>
@@ -36,6 +38,19 @@ const { copy } = Astro.props;
       </div>
     </div>
   </section>
+  {showCertificates && <section class="section"><div class="shell">
+    <h2>Archived supplier documents</h2>
+    <p>Original documents are available in Russian. Confirm validity for your shipment with our team.</p>
+    <div class="certificate-grid">
+      {certificates.map((certificate) => <div class="certificate-card">
+        <a href={certificate.files?.[0]?.path ?? certificate.image} target="_blank" rel="noopener">
+          <img src={certificate.image} alt={certificate.name} width="800" height="600" loading="lazy" />
+          <h3>{certificate.name}</h3>
+        </a>
+        <a href={`/certificates/${certificate.slug}/`}>All documents · {certificate.files?.length ?? 0} PDF</a>
+      </div>)}
+    </div>
+  </div></section>}
   <ContactCta
     title="Need a commercial offer?"
     text="Send us the product list, volume and delivery destination. Our team will prepare the next steps."

@@ -17,6 +17,7 @@ interface Props {
 }
 
 const { certificate } = Astro.props;
+const files = certificate.files ?? [];
 ---
 
 <BaseLayout title={`${certificate.name} — сертификат поставщика | Седьмой Легион`} description={certificate.description || `Документ поставщика ${certificate.name}. Седьмой Легион.`} image={certificate.image || undefined}>
@@ -27,7 +28,23 @@ const { certificate } = Astro.props;
       <span class="product-detail__category">Документ поставщика</span>
       <h1 translate="no">{certificate.name}</h1>
       <p class="product-detail__description">{certificate.description || "Декларация или ветеринарный документ подтверждает происхождение и качество продукции поставщика."}</p>
-      <div class="product-buy"><a class="button button--red" href="/contact-us/">Запросить документ <Icon name="arrow" size={18} /></a><a class="button button--outline" href="/sertifikaty/">Все сертификаты</a></div>
+      {files.length > 0 ? (
+        <div class="certificate-files">
+          <h2>Документы PDF · {files.length}</h2>
+          <p>Архивные документы со старого сайта. Актуальность для конкретной поставки уточняйте у менеджера.</p>
+          <ul>
+            {files.map((file, index) => (
+              <li>
+                <a href={file.path} target="_blank" rel="noopener"><strong>Открыть PDF {index + 1}</strong><span>{file.name}</span><small>{(file.bytes / 1048576).toFixed(1)} МБ</small></a>
+                <a href={file.path} download>Скачать</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p>PDF для этого производителя в архиве не найден. <a href={certificate.image} target="_blank" rel="noopener">Открыть сохранённое изображение</a>.</p>
+      )}
+      <div class="product-buy"><a class="button button--red" href={files[0]?.path ?? certificate.image} target="_blank" rel="noopener">{files.length ? "Открыть PDF" : "Открыть изображение"} <Icon name="arrow" size={18} /></a><a class="button button--outline" href="/sertifikaty/">Все сертификаты</a></div>
       <div class="product-detail__meta"><div><span>Статус</span><strong>Архив компании</strong></div><div><span>Обновление</span><strong>По запросу</strong></div><div><span>Ответственный</span><strong>Документооборот</strong></div></div>
     </div>
   </div></section>

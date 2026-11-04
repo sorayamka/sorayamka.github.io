@@ -1,24 +1,28 @@
 import { defineConfig } from "@playwright/test";
 
+const remoteURL = process.env.TEST_BASE_URL;
+const localURL = "http://127.0.0.1:4321";
+
 export default defineConfig({
   testDir: "./tests",
   timeout: 60000,
   expect: { timeout: 10000 },
   fullyParallel: false,
   retries: 0,
-  reporter: "list",
+  workers: 1,
+  reporter: [["list"], ["html", { open: "never" }]],
   use: {
-    baseURL: "http://127.0.0.1:4321",
+    baseURL: remoteURL ?? localURL,
     headless: true,
     launchOptions: {
-      executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      ...(process.platform === "win32" ? { executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" } : {}),
     },
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
   },
-  webServer: {
-    command: "npm run preview -- --host 127.0.0.1 --port 4321",
-    url: "http://127.0.0.1:4321",
+  webServer: remoteURL ? undefined : {
+    command: `npm run preview -- --host 127.0.0.1 --port 4321${process.env.TEST_OUT_DIR ? ` --outDir "${process.env.TEST_OUT_DIR}"` : ""}`,
+    url: localURL,
     reuseExistingServer: true,
     timeout: 120000,
   },

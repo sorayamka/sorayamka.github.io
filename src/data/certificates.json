@@ -5,7 +5,39 @@
     "image": "/images/certificates/sert-agro-plus.webp",
     "description": "",
     "path": "/sert-agro-plus/",
-    "sourceUrl": "https://7legion.com/sert-agro-plus/"
+    "sourceUrl": "https://7legion.com/sert-agro-plus/",
+    "files": [
+      {
+        "name": "1894 230120223114 001-1",
+        "path": "/certificates/52069888a4b6-1894_230120223114_001-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/1894_230120223114_001-1.pdf",
+        "bytes": 854714
+      },
+      {
+        "name": "gripp-2-pl-jekspertizi",
+        "path": "/certificates/8a7041e5be92-gripp-2-pl-jekspertizi.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/gripp-2-pl-jekspertizi.pdf",
+        "bytes": 1856317
+      },
+      {
+        "name": "sertifikat-o-sootvetstvii-k-tu-s-izm.1-polufabrikaty-ot-26.03.2021.",
+        "path": "/certificates/d714552dfae5-sertifikat-o-sootvetstvii-k-tu-s-izm.1-polufabrikaty-ot-26.03.2021.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/sertifikat-o-sootvetstvii-k-tu-s-izm.1-polufabrikaty-ot-26.03.2021..pdf",
+        "bytes": 1896218
+      },
+      {
+        "name": "file-indejki-bolshoe-fiz-him-dek-22",
+        "path": "/certificates/2b05ac236e56-file-indejki-bolshoe-fiz-him-dek-22.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/file-indejki-bolshoe-fiz-him-dek-22.pdf",
+        "bytes": 1535830
+      },
+      {
+        "name": "file-indejki-maloe-mikrobiologija-dek-22",
+        "path": "/certificates/cee3349818ea-file-indejki-maloe-mikrobiologija-dek-22.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/file-indejki-maloe-mikrobiologija-dek-22.pdf",
+        "bytes": 1016677
+      }
+    ]
   },
   {
     "name": "Агрокомплекс Agrocomplex",
@@ -13,7 +45,27 @@
     "image": "/images/certificates/sert-agrokompleks.webp",
     "description": "",
     "path": "/sert-agrokompleks/",
-    "sourceUrl": "https://7legion.com/sert-agrokompleks/"
+    "sourceUrl": "https://7legion.com/sert-agrokompleks/",
+    "files": [
+      {
+        "name": "golen-ns-zam-do-27.01.2026-g",
+        "path": "/certificates/3b0685643802-golen-ns-zam-do-27.01.2026-g.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/golen-ns-zam-do-27.01.2026-g.pdf",
+        "bytes": 327984
+      },
+      {
+        "name": "kv-nss-ru-na06-n-00314-24-tushki-i-chasti-zam-30.07.24",
+        "path": "/certificates/3c28268db1fc-kv-nss-ru-na06-n-00314-24-tushki-i-chasti-zam-30.07.24.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/kv-nss-ru-na06-n-00314-24-tushki-i-chasti-zam-30.07.24.pdf",
+        "bytes": 1147267
+      },
+      {
+        "name": "kv-nss-ru-na06-n-00315-24-subprodukty-ohl-i-zam-30.07.24",
+        "path": "/certificates/160efc8acdea-kv-nss-ru-na06-n-00315-24-subprodukty-ohl-i-zam-30.07.24.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/kv-nss-ru-na06-n-00315-24-subprodukty-ohl-i-zam-30.07.24.pdf",
+        "bytes": 1166427
+      }
+    ]
   },
   {
     "name": "Акашево Akashevo",
@@ -21,7 +73,57 @@
     "image": "/images/certificates/sert-akashevo.webp",
     "description": "",
     "path": "/sert-akashevo/",
-    "sourceUrl": "https://7legion.com/sert-akashevo/"
+    "sourceUrl": "https://7legion.com/sert-akashevo/",
+    "files": [
+      {
+        "name": "ds-po-tu-10.13.14-029-54899698-2017-tu-9214-029-...polufabrikaty-iz-mjasa-pishhevyh-subproduktov-pticy",
+        "path": "/certificates/82a52030b6b6-ds-po-tu-10.13.14-029-54899698-2017-tu-9214-029-...polufabrikaty-iz-mjasa-pishhe.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/ds-po-tu-10.13.14-029-54899698-2017-tu-9214-029-...polufabrikaty-iz-mjasa-pishhevyh-subproduktov-pticy.pdf",
+        "bytes": 1312085
+      },
+      {
+        "name": "spravka-na-tu-002-2",
+        "path": "/certificates/31e9c1adcd36-spravka-na-tu-002-2.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/spravka-na-tu-002-2.pdf",
+        "bytes": 1543507
+      },
+      {
+        "name": "spravka-pf-tushka-cb",
+        "path": "/certificates/0af2cb1c2fbe-spravka-pf-tushka-cb.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/spravka-pf-tushka-cb.pdf",
+        "bytes": 590161
+      },
+      {
+        "name": "spravka-subprodukty",
+        "path": "/certificates/4de99d6f6948-spravka-subprodukty.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/spravka-subprodukty.pdf",
+        "bytes": 468089
+      },
+      {
+        "name": "svidetelstvo-haljal-i-prilozhenie-jubilejnyj-2",
+        "path": "/certificates/ab65ddff2c82-svidetelstvo-haljal-i-prilozhenie-jubilejnyj-2.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/svidetelstvo-haljal-i-prilozhenie-jubilejnyj-2.pdf",
+        "bytes": 739894
+      },
+      {
+        "name": "svidetelstvo",
+        "path": "/certificates/54885a2ba8bb-svidetelstvo.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/svidetelstvo.pdf",
+        "bytes": 3770587
+      },
+      {
+        "name": "gos.-registracija-tushka-detjam-ot-30.08.2024",
+        "path": "/certificates/e673ef5a9494-gos.-registracija-tushka-detjam-ot-30.08.2024.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/gos.-registracija-tushka-detjam-ot-30.08.2024.pdf",
+        "bytes": 535379
+      },
+      {
+        "name": "gos.-registracija-chasti-tushek-detjam-ot-30.08.2024",
+        "path": "/certificates/7df5b5831459-gos.-registracija-chasti-tushek-detjam-ot-30.08.2024.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/gos.-registracija-chasti-tushek-detjam-ot-30.08.2024.pdf",
+        "bytes": 526976
+      }
+    ]
   },
   {
     "name": "Актион Агро (Дороничи)",
@@ -29,7 +131,21 @@
     "image": "/images/certificates/sert-aktion-agro.webp",
     "description": "",
     "path": "/sert-aktion-agro/",
-    "sourceUrl": "https://7legion.com/sert-aktion-agro/"
+    "sourceUrl": "https://7legion.com/sert-aktion-agro/",
+    "files": [
+      {
+        "name": "deklaracija",
+        "path": "/certificates/b70dd8f2e1c0-deklaracija.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2026/03/deklaracija.pdf",
+        "bytes": 396835
+      },
+      {
+        "name": "prilozhenija-k-dekl.-1",
+        "path": "/certificates/08a048e0d7df-prilozhenija-k-dekl.-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2026/03/prilozhenija-k-dekl.-1.pdf",
+        "bytes": 1490228
+      }
+    ]
   },
   {
     "name": "Мясной Дом Бородина Borodin’s Meat House",
@@ -37,7 +153,15 @@
     "image": "/images/certificates/sert-borodina.webp",
     "description": "",
     "path": "/sert-borodina/",
-    "sourceUrl": "https://7legion.com/sert-borodina/"
+    "sourceUrl": "https://7legion.com/sert-borodina/",
+    "files": [
+      {
+        "name": "mjasnoj-dom-borodina",
+        "path": "/certificates/0c44a4b8981c-mjasnoj-dom-borodina.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/mjasnoj-dom-borodina.pdf",
+        "bytes": 179800
+      }
+    ]
   },
   {
     "name": "Черкизово Cherkizovo",
@@ -45,7 +169,27 @@
     "image": "/images/certificates/sert-cherkizovo.webp",
     "description": "",
     "path": "/sert-cherkizovo/",
-    "sourceUrl": "https://7legion.com/sert-cherkizovo/"
+    "sourceUrl": "https://7legion.com/sert-cherkizovo/",
+    "files": [
+      {
+        "name": "otkaznoe-rakitnoe-2-suby-ne-trebujut-deklarirovanija-1",
+        "path": "/certificates/1910a5f055a8-otkaznoe-rakitnoe-2-suby-ne-trebujut-deklarirovanija-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/otkaznoe-rakitnoe-2-suby-ne-trebujut-deklarirovanija-1.pdf",
+        "bytes": 1183408
+      },
+      {
+        "name": "otkaznoe-pismo-ot-01.08.2025-ptica",
+        "path": "/certificates/b16d65a0924d-otkaznoe-pismo-ot-01.08.2025-ptica.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/08/otkaznoe-pismo-ot-01.08.2025-ptica.pdf",
+        "bytes": 1301200
+      },
+      {
+        "name": "otkaznoe-pismo-ot-01.08.2025-svinina",
+        "path": "/certificates/9be82c9a5561-otkaznoe-pismo-ot-01.08.2025-svinina.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/08/otkaznoe-pismo-ot-01.08.2025-svinina.pdf",
+        "bytes": 973759
+      }
+    ]
   },
   {
     "name": "Дамате Damate",
@@ -53,7 +197,21 @@
     "image": "/images/certificates/sert-damate.webp",
     "description": "",
     "path": "/sert-damate/",
-    "sourceUrl": "https://7legion.com/sert-damate/"
+    "sourceUrl": "https://7legion.com/sert-damate/",
+    "files": [
+      {
+        "name": "skan-sertifikat-2023-11-15t124646.012",
+        "path": "/certificates/ba7daccc65d3-skan-sertifikat-2023-11-15t124646.012.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/08/skan-sertifikat-2023-11-15t124646.012.pdf",
+        "bytes": 4113840
+      },
+      {
+        "name": "informacionnoe-pismo-po-nepererabotannoj-produkcii-tr-eajes-051",
+        "path": "/certificates/cbbfb636bcc6-informacionnoe-pismo-po-nepererabotannoj-produkcii-tr-eajes-051.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/10/informacionnoe-pismo-po-nepererabotannoj-produkcii-tr-eajes-051.pdf",
+        "bytes": 541048
+      }
+    ]
   },
   {
     "name": "Дары Подворья Dary Podvoriy",
@@ -61,7 +219,15 @@
     "image": "/images/certificates/sert-dary-podvoriy.webp",
     "description": "",
     "path": "/sert-dary-podvoriy/",
-    "sourceUrl": "https://7legion.com/sert-dary-podvoriy/"
+    "sourceUrl": "https://7legion.com/sert-dary-podvoriy/",
+    "files": [
+      {
+        "name": "amar-grupp-dary-podvorja",
+        "path": "/certificates/a11804b6a5cd-amar-grupp-dary-podvorja.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/03/amar-grupp-dary-podvorja.pdf",
+        "bytes": 4740314
+      }
+    ]
   },
   {
     "name": "Домашние правила House rules",
@@ -69,7 +235,39 @@
     "image": "/images/certificates/sert-dompravila.webp",
     "description": "",
     "path": "/sert-dompravila/",
-    "sourceUrl": "https://7legion.com/sert-dompravila/"
+    "sourceUrl": "https://7legion.com/sert-dompravila/",
+    "files": [
+      {
+        "name": "prilozhenie-1-k-sertifikatu-204-1",
+        "path": "/certificates/b3248fe2e49a-prilozhenie-1-k-sertifikatu-204-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/01/prilozhenie-1-k-sertifikatu-204-1.pdf",
+        "bytes": 8592114
+      },
+      {
+        "name": "sertifikat-tushki-i-ih-chastej",
+        "path": "/certificates/03de8f5face8-sertifikat-tushki-i-ih-chastej.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/sertifikat-tushki-i-ih-chastej.pdf",
+        "bytes": 8594069
+      },
+      {
+        "name": "sertifikat ooo kabbalkptica 1 1",
+        "path": "/certificates/a3b7dd24902c-sertifikat_ooo_kabbalkptica_1_1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2026/03/sertifikat_ooo_kabbalkptica_1_1.pdf",
+        "bytes": 1407106
+      },
+      {
+        "name": "sertifikaty-pelmeni-nagetsy-i-deklaracii-polufabrikaty",
+        "path": "/certificates/9f264844cee3-sertifikaty-pelmeni-nagetsy-i-deklaracii-polufabrikaty.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/sertifikaty-pelmeni-nagetsy-i-deklaracii-polufabrikaty.pdf",
+        "bytes": 9501909
+      },
+      {
+        "name": "sertifikat-sootvetsvija-naggetsy-i-pelmeni",
+        "path": "/certificates/b5224f053b9e-sertifikat-sootvetsvija-naggetsy-i-pelmeni.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/sertifikat-sootvetsvija-naggetsy-i-pelmeni.pdf",
+        "bytes": 1857700
+      }
+    ]
   },
   {
     "name": "Егорьевская ПФ Egorievskay PF",
@@ -77,7 +275,39 @@
     "image": "/images/certificates/sert-egorievskaya-pf.webp",
     "description": "",
     "path": "/sert-egorievskaya-pf/",
-    "sourceUrl": "https://7legion.com/sert-egorievskaya-pf/"
+    "sourceUrl": "https://7legion.com/sert-egorievskaya-pf/",
+    "files": [
+      {
+        "name": "deklaracija-sootvetstvija-2024-2027-gg.",
+        "path": "/certificates/0551e3310ca7-deklaracija-sootvetstvija-2024-2027-gg.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/03/deklaracija-sootvetstvija-2024-2027-gg..pdf",
+        "bytes": 784646
+      },
+      {
+        "name": "deklaracija-prilozhenie",
+        "path": "/certificates/d2b96103e643-deklaracija-prilozhenie.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/03/deklaracija-prilozhenie.pdf",
+        "bytes": 398047
+      },
+      {
+        "name": "deklaracija-2024",
+        "path": "/certificates/b61facfe23f9-deklaracija-2024.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/03/deklaracija-2024.pdf",
+        "bytes": 569335
+      },
+      {
+        "name": "deklaracija-sootvetstvija",
+        "path": "/certificates/bd6b0395e26d-deklaracija-sootvetstvija.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/03/deklaracija-sootvetstvija.pdf",
+        "bytes": 978212
+      },
+      {
+        "name": "shema-meroprijatij-vakcinacii",
+        "path": "/certificates/035dfd99a8d1-shema-meroprijatij-vakcinacii.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/03/shema-meroprijatij-vakcinacii.pdf",
+        "bytes": 157688
+      }
+    ]
   },
   {
     "name": "ЭкоПтица EcoPticа",
@@ -85,7 +315,21 @@
     "image": "/images/certificates/sert-ekoptica.webp",
     "description": "",
     "path": "/sert-ekoptica/",
-    "sourceUrl": "https://7legion.com/sert-ekoptica/"
+    "sourceUrl": "https://7legion.com/sert-ekoptica/",
+    "files": [
+      {
+        "name": "pismo-ob-otsutstvii-sertifikatov",
+        "path": "/certificates/0c0087d9bf40-pismo-ob-otsutstvii-sertifikatov.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/03/pismo-ob-otsutstvii-sertifikatov.pdf",
+        "bytes": 274285
+      },
+      {
+        "name": "ss-mjaso-pticy-zam.-1",
+        "path": "/certificates/87d88d21231f-ss-mjaso-pticy-zam.-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2026/06/ss-mjaso-pticy-zam.-1.pdf",
+        "bytes": 3338812
+      }
+    ]
   },
   {
     "name": "Ганна Ganna",
@@ -93,7 +337,8 @@
     "image": "/images/certificates/sert-ganna.webp",
     "description": "",
     "path": "/sert-ganna/",
-    "sourceUrl": "https://7legion.com/sert-ganna/"
+    "sourceUrl": "https://7legion.com/sert-ganna/",
+    "files": []
   },
   {
     "name": "Кролберри Krolberry",
@@ -101,7 +346,15 @@
     "image": "/images/certificates/sert-krolberry.webp",
     "description": "",
     "path": "/sert-krolberry/",
-    "sourceUrl": "https://7legion.com/sert-krolberry/"
+    "sourceUrl": "https://7legion.com/sert-krolberry/",
+    "files": [
+      {
+        "name": "sertifikat-sootvetstvija-haljal-krolik",
+        "path": "/certificates/8c482289e969-sertifikat-sootvetstvija-haljal-krolik.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/sertifikat-sootvetstvija-haljal-krolik.pdf",
+        "bytes": 773845
+      }
+    ]
   },
   {
     "name": "Лобановская индейка Lobanovskaya turkey",
@@ -109,7 +362,8 @@
     "image": "/images/certificates/sert-lobanovskaya-indeyka.webp",
     "description": "",
     "path": "/sert-lobanovskaya-indeyka/",
-    "sourceUrl": "https://7legion.com/sert-lobanovskaya-indeyka/"
+    "sourceUrl": "https://7legion.com/sert-lobanovskaya-indeyka/",
+    "files": []
   },
   {
     "name": "Байсад Baisad",
@@ -117,7 +371,15 @@
     "image": "/images/certificates/sert-miratorg-2.webp",
     "description": "",
     "path": "/sert-miratorg-2/",
-    "sourceUrl": "https://7legion.com/sert-miratorg-2/"
+    "sourceUrl": "https://7legion.com/sert-miratorg-2/",
+    "files": [
+      {
+        "name": "file-do-10.07.27",
+        "path": "/certificates/f8d293a06d45-file-do-10.07.27.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/file-do-10.07.27.pdf",
+        "bytes": 2169675
+      }
+    ]
   },
   {
     "name": "Мираторг Miratorg",
@@ -125,7 +387,8 @@
     "image": "/images/certificates/sert-miratorg.webp",
     "description": "",
     "path": "/sert-miratorg/",
-    "sourceUrl": "https://7legion.com/sert-miratorg/"
+    "sourceUrl": "https://7legion.com/sert-miratorg/",
+    "files": []
   },
   {
     "name": "МК Казанский Kazanskiy",
@@ -133,7 +396,15 @@
     "image": "/images/certificates/sert-mk-kazanskiy.webp",
     "description": "",
     "path": "/sert-mk-kazanskiy/",
-    "sourceUrl": "https://7legion.com/sert-mk-kazanskiy/"
+    "sourceUrl": "https://7legion.com/sert-mk-kazanskiy/",
+    "files": [
+      {
+        "name": "kazanskij-2",
+        "path": "/certificates/aae5ccdd3935-kazanskij-2.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/kazanskij-2.pdf",
+        "bytes": 1443197
+      }
+    ]
   },
   {
     "name": "МПК Полянское Polyanskoe",
@@ -141,7 +412,21 @@
     "image": "/images/certificates/sert-mpk-polyanskoe.webp",
     "description": "",
     "path": "/sert-mpk-polyanskoe/",
-    "sourceUrl": "https://7legion.com/sert-mpk-polyanskoe/"
+    "sourceUrl": "https://7legion.com/sert-mpk-polyanskoe/",
+    "files": [
+      {
+        "name": "sertifikat-kursk",
+        "path": "/certificates/0b2139e1e501-sertifikat-kursk.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/09/sertifikat-kursk.pdf",
+        "bytes": 3012611
+      },
+      {
+        "name": "lab-issled-avgust-22g",
+        "path": "/certificates/306b4e77fa5b-lab-issled-avgust-22g.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/lab-issled-avgust-22g.pdf",
+        "bytes": 812133
+      }
+    ]
   },
   {
     "name": "Ольховский МК Olkhovsky MK",
@@ -149,7 +434,15 @@
     "image": "/images/certificates/sert-olkhovsky-mk.webp",
     "description": "",
     "path": "/sert-olkhovsky-mk/",
-    "sourceUrl": "https://7legion.com/sert-olkhovsky-mk/"
+    "sourceUrl": "https://7legion.com/sert-olkhovsky-mk/",
+    "files": [
+      {
+        "name": "otruba-gost-02.27",
+        "path": "/certificates/6aefbb2bf316-otruba-gost-02.27.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/12/otruba-gost-02.27.pdf",
+        "bytes": 3101813
+      }
+    ]
   },
   {
     "name": "Павловская курочка Pavlovskaya chicken",
@@ -157,7 +450,33 @@
     "image": "/images/certificates/sert-pavlovskaya-kurochka.webp",
     "description": "",
     "path": "/sert-pavlovskaya-kurochka/",
-    "sourceUrl": "https://7legion.com/sert-pavlovskaya-kurochka/"
+    "sourceUrl": "https://7legion.com/sert-pavlovskaya-kurochka/",
+    "files": [
+      {
+        "name": "otkaznoe-pismo-ppf-blank",
+        "path": "/certificates/21db203ad2ff-otkaznoe-pismo-ppf-blank.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/otkaznoe-pismo-ppf-blank.pdf",
+        "bytes": 2085355
+      },
+      {
+        "name": "pavlovskaja-cypljata subprodukty",
+        "path": "/certificates/9fe293bbd22d-pavlovskaja-cypljata_subprodukty.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/pavlovskaja-cypljata_subprodukty.pdf",
+        "bytes": 960165
+      },
+      {
+        "name": "pavlovskaja-chasti-tushek-ra07.v.8007722-1",
+        "path": "/certificates/fc4d33d550bd-pavlovskaja-chasti-tushek-ra07.v.8007722-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/pavlovskaja-chasti-tushek-ra07.v.8007722-1.pdf",
+        "bytes": 353784
+      },
+      {
+        "name": "sertifikat-n 00201 -mjaso-kur-tushki",
+        "path": "/certificates/789e18d45c37-sertifikat-n_00201_-mjaso-kur-tushki.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/01/sertifikat-n_00201_-mjaso-kur-tushki.pdf",
+        "bytes": 625257
+      }
+    ]
   },
   {
     "name": "Петруха Petryha",
@@ -165,7 +484,33 @@
     "image": "/images/certificates/sert-petrukha.webp",
     "description": "",
     "path": "/sert-petrukha/",
-    "sourceUrl": "https://7legion.com/sert-petrukha/"
+    "sourceUrl": "https://7legion.com/sert-petrukha/",
+    "files": [
+      {
+        "name": "003.02-05318-ds-tu-007",
+        "path": "/certificates/4ac23a584ab2-003.02-05318-ds-tu-007.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/003.02-05318-ds-tu-007.pdf",
+        "bytes": 928621
+      },
+      {
+        "name": "novoe-otkaznoe-pismo-sa-2",
+        "path": "/certificates/db8cc5d4a449-novoe-otkaznoe-pismo-sa-2.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/novoe-otkaznoe-pismo-sa-2.pdf",
+        "bytes": 2639434
+      },
+      {
+        "name": "otkaznoe-pismo-sb-2",
+        "path": "/certificates/a12c65778cf8-otkaznoe-pismo-sb-2.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/otkaznoe-pismo-sb-2.pdf",
+        "bytes": 258645
+      },
+      {
+        "name": "sv-04-26-16ru",
+        "path": "/certificates/d2ac0d26db4d-sv-04-26-16ru.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/09/sv-04-26-16ru.pdf",
+        "bytes": 1327943
+      }
+    ]
   },
   {
     "name": "ПФ Чамзинская Chamzinskaya",
@@ -173,7 +518,27 @@
     "image": "/images/certificates/sert-pf-chamzinskaya.webp",
     "description": "",
     "path": "/sert-pf-chamzinskaya/",
-    "sourceUrl": "https://7legion.com/sert-pf-chamzinskaya/"
+    "sourceUrl": "https://7legion.com/sert-pf-chamzinskaya/",
+    "files": [
+      {
+        "name": "whatsapp-image-2025-01-15-at-09.44.55",
+        "path": "/certificates/6c35bb524fb8-whatsapp-image-2025-01-15-at-09.44.55.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/01/whatsapp-image-2025-01-15-at-09.44.55.pdf",
+        "bytes": 175364
+      },
+      {
+        "name": "chamzinka-hor-delosertifikacii",
+        "path": "/certificates/5cc3570f464a-chamzinka-hor-delosertifikacii.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/chamzinka-hor-delosertifikacii.pdf",
+        "bytes": 304393
+      },
+      {
+        "name": "whatsapp-image-2025-01-15-at-09.38.36",
+        "path": "/certificates/fbd67ab39db4-whatsapp-image-2025-01-15-at-09.38.36.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/01/whatsapp-image-2025-01-15-at-09.38.36.pdf",
+        "bytes": 193881
+      }
+    ]
   },
   {
     "name": "ПФ Ново-Петровская Novo-Petrovskay",
@@ -181,7 +546,15 @@
     "image": "/images/certificates/sert-pf-novo-petrovskaya.webp",
     "description": "",
     "path": "/sert-pf-novo-petrovskaya/",
-    "sourceUrl": "https://7legion.com/sert-pf-novo-petrovskaya/"
+    "sourceUrl": "https://7legion.com/sert-pf-novo-petrovskaya/",
+    "files": [
+      {
+        "name": "skan-sertifikat-2023-11-15t124646.012",
+        "path": "/certificates/ba7daccc65d3-skan-sertifikat-2023-11-15t124646.012.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/08/skan-sertifikat-2023-11-15t124646.012.pdf",
+        "bytes": 4113840
+      }
+    ]
   },
   {
     "name": "ПФ Славный Край Slavniy kray",
@@ -189,7 +562,15 @@
     "image": "/images/certificates/sert-pf-slavnyy-kray.webp",
     "description": "",
     "path": "/sert-pf-slavnyy-kray/",
-    "sourceUrl": "https://7legion.com/sert-pf-slavnyy-kray/"
+    "sourceUrl": "https://7legion.com/sert-pf-slavnyy-kray/",
+    "files": [
+      {
+        "name": "sertif.na-mjaso-brojlerov-2025",
+        "path": "/certificates/19cf4a1a586f-sertif.na-mjaso-brojlerov-2025.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/01/sertif.na-mjaso-brojlerov-2025.pdf",
+        "bytes": 7482856
+      }
+    ]
   },
   {
     "name": "Приосколье Prioskolye",
@@ -197,7 +578,63 @@
     "image": "/images/certificates/sert-prioskolye.webp",
     "description": "",
     "path": "/sert-prioskolye/",
-    "sourceUrl": "https://7legion.com/sert-prioskolye/"
+    "sourceUrl": "https://7legion.com/sert-prioskolye/",
+    "files": [
+      {
+        "name": "deklaracija-08127-do-29.06.2026-kolbaski-dlja-grilja",
+        "path": "/certificates/4b0315d9f074-deklaracija-08127-do-29.06.2026-kolbaski-dlja-grilja.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/deklaracija-08127-do-29.06.2026-kolbaski-dlja-grilja.pdf",
+        "bytes": 1358127
+      },
+      {
+        "name": "informacionnoe-pismo-ot-28.01.2025-prioskole",
+        "path": "/certificates/f23ce0566f05-informacionnoe-pismo-ot-28.01.2025-prioskole.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/informacionnoe-pismo-ot-28.01.2025-prioskole.pdf",
+        "bytes": 1252216
+      },
+      {
+        "name": "deklaracija-12359-pk-2",
+        "path": "/certificates/9279e036aa71-deklaracija-12359-pk-2.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/deklaracija-12359-pk-2.pdf",
+        "bytes": 1310666
+      },
+      {
+        "name": "deklaracija-87711-pk-vk-kolbasy-pk-i-vk-2",
+        "path": "/certificates/4ea81c3805c2-deklaracija-87711-pk-vk-kolbasy-pk-i-vk-2.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/deklaracija-87711-pk-vk-kolbasy-pk-i-vk-2.pdf",
+        "bytes": 352719
+      },
+      {
+        "name": "kolbasy-pk-i-vk-08921-nov.-dekl.-2",
+        "path": "/certificates/90bf0ece6ac1-kolbasy-pk-i-vk-08921-nov.-dekl.-2.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/kolbasy-pk-i-vk-08921-nov.-dekl.-2.pdf",
+        "bytes": 355588
+      },
+      {
+        "name": "deklaracija-61180-do-12.06.2023-kolbasa-varenaja-1",
+        "path": "/certificates/a1dbfeb4e5bd-deklaracija-61180-do-12.06.2023-kolbasa-varenaja-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/deklaracija-61180-do-12.06.2023-kolbasa-varenaja-1.pdf",
+        "bytes": 1362888
+      },
+      {
+        "name": "deklaracija-61341-do-12.06.2023-kolbasa-varenaja-1",
+        "path": "/certificates/b22bdc41be76-deklaracija-61341-do-12.06.2023-kolbasa-varenaja-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/deklaracija-61341-do-12.06.2023-kolbasa-varenaja-1.pdf",
+        "bytes": 1451021
+      },
+      {
+        "name": "deklaracija-subprodukty-v-mod.-atmosfere-valujki-174",
+        "path": "/certificates/843659dd20e1-deklaracija-subprodukty-v-mod.-atmosfere-valujki-174.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/deklaracija-subprodukty-v-mod.-atmosfere-valujki-174.pdf",
+        "bytes": 438199
+      },
+      {
+        "name": "deklaracija-subprodukty-v-mod.-atmosfere-holki-80349",
+        "path": "/certificates/ae95896016b6-deklaracija-subprodukty-v-mod.-atmosfere-holki-80349.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/deklaracija-subprodukty-v-mod.-atmosfere-holki-80349.pdf",
+        "bytes": 426134
+      }
+    ]
   },
   {
     "name": "Продо-Калужская Prodo-Kaluzhskaya",
@@ -205,7 +642,33 @@
     "image": "/images/certificates/sert-prodo-kaluzhskaya.webp",
     "description": "",
     "path": "/sert-prodo-kaluzhskaya/",
-    "sourceUrl": "https://7legion.com/sert-prodo-kaluzhskaya/"
+    "sourceUrl": "https://7legion.com/sert-prodo-kaluzhskaya/",
+    "files": [
+      {
+        "name": "1-subprodukty-do-s-nss-ru-ad86-n-00102-23-ot-10042023-po-09042026",
+        "path": "/certificates/44533da2d0d7-1-subprodukty-do-s-nss-ru-ad86-n-00102-23-ot-10042023-po-09042026.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/1-subprodukty-do-s-nss-ru-ad86-n-00102-23-ot-10042023-po-09042026.pdf",
+        "bytes": 811148
+      },
+      {
+        "name": "ds-sto-00508187-007-2024-mjaso-kur-i-cypljat-brojlerov-mehanicheskoj-obvalk...",
+        "path": "/certificates/0e33744a321e-ds-sto-00508187-007-2024-mjaso-kur-i-cypljat-brojlerov-mehanicheskoj-obvalk.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/ds-sto-00508187-007-2024-mjaso-kur-i-cypljat-brojlerov-mehanicheskoj-obvalk....pdf",
+        "bytes": 193191
+      },
+      {
+        "name": "1-ross-ru.pt62.n.000123-s-03.03.2025-po-02.03.2026",
+        "path": "/certificates/eb377a38199e-1-ross-ru.pt62.n.000123-s-03.03.2025-po-02.03.2026.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/1-ross-ru.pt62.n.000123-s-03.03.2025-po-02.03.2026.pdf",
+        "bytes": 992848
+      },
+      {
+        "name": "5-sert-gost-31962-2013-mjaso-kur",
+        "path": "/certificates/297ea77eae6a-5-sert-gost-31962-2013-mjaso-kur.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/5-sert-gost-31962-2013-mjaso-kur.pdf",
+        "bytes": 930263
+      }
+    ]
   },
   {
     "name": "Рассвет Rassvet",
@@ -213,7 +676,8 @@
     "image": "/images/certificates/sert-rassvet.webp",
     "description": "",
     "path": "/sert-rassvet/",
-    "sourceUrl": "https://7legion.com/sert-rassvet/"
+    "sourceUrl": "https://7legion.com/sert-rassvet/",
+    "files": []
   },
   {
     "name": "Равис Ravis",
@@ -221,7 +685,21 @@
     "image": "/images/certificates/sert-ravis.webp",
     "description": "",
     "path": "/sert-ravis/",
-    "sourceUrl": "https://7legion.com/sert-ravis/"
+    "sourceUrl": "https://7legion.com/sert-ravis/",
+    "files": [
+      {
+        "name": "dobrovolnyj-sertifikat-tushka-cb-po-01.08.2026",
+        "path": "/certificates/d8124c80fa66-dobrovolnyj-sertifikat-tushka-cb-po-01.08.2026.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/10/dobrovolnyj-sertifikat-tushka-cb-po-01.08.2026.pdf",
+        "bytes": 495205
+      },
+      {
+        "name": "svidetelstvo-tushka-haljal-do-19.05.2027",
+        "path": "/certificates/610c07f448af-svidetelstvo-tushka-haljal-do-19.05.2027.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/10/svidetelstvo-tushka-haljal-do-19.05.2027.pdf",
+        "bytes": 1383458
+      }
+    ]
   },
   {
     "name": "Ресурс Юг Resource south",
@@ -229,7 +707,63 @@
     "image": "/images/certificates/sert-resurs-yug.webp",
     "description": "",
     "path": "/sert-resurs-yug/",
-    "sourceUrl": "https://7legion.com/sert-resurs-yug/"
+    "sourceUrl": "https://7legion.com/sert-resurs-yug/",
+    "files": [
+      {
+        "name": "prilozhenie-1",
+        "path": "/certificates/0bf0274998a5-prilozhenie-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/prilozhenie-1.pdf",
+        "bytes": 1066557
+      },
+      {
+        "name": "sertifikat-00307",
+        "path": "/certificates/fcd397c115b8-sertifikat-00307.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/sertifikat-00307.pdf",
+        "bytes": 1166339
+      },
+      {
+        "name": "sertifikat-razdelka-sto-mpk",
+        "path": "/certificates/d18c344387d3-sertifikat-razdelka-sto-mpk.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/08/sertifikat-razdelka-sto-mpk.pdf",
+        "bytes": 2169447
+      },
+      {
+        "name": "sertifikat-resurs-stavr-br-gost-tushka-1",
+        "path": "/certificates/b9e32e269e48-sertifikat-resurs-stavr-br-gost-tushka-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/sertifikat-resurs-stavr-br-gost-tushka-1.pdf",
+        "bytes": 604015
+      },
+      {
+        "name": "sertifikat-sootvestvija-ross-ru.am05.h22394subprodukty-cb",
+        "path": "/certificates/4ebd40654aa2-sertifikat-sootvestvija-ross-ru.am05.h22394subprodukty-cb.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/sertifikat-sootvestvija-ross-ru.am05.h22394subprodukty-cb.pdf",
+        "bytes": 8004719
+      },
+      {
+        "name": "sertifikat-sootvestvija-ross-ru.am05.h22395tushka-cb",
+        "path": "/certificates/a5db7df59d0b-sertifikat-sootvestvija-ross-ru.am05.h22395tushka-cb.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/sertifikat-sootvestvija-ross-ru.am05.h22395tushka-cb.pdf",
+        "bytes": 4178570
+      },
+      {
+        "name": "sertifikat-razdelka-rpk",
+        "path": "/certificates/f7eb88e906b0-sertifikat-razdelka-rpk.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/08/sertifikat-razdelka-rpk.pdf",
+        "bytes": 6993007
+      },
+      {
+        "name": "sertifikat-razdelka-tpk-1",
+        "path": "/certificates/725bade6110c-sertifikat-razdelka-tpk-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/08/sertifikat-razdelka-tpk-1.pdf",
+        "bytes": 14505817
+      },
+      {
+        "name": "sertifikat-razdelka-sto-002-2023-ipk",
+        "path": "/certificates/d9438805d4da-sertifikat-razdelka-sto-002-2023-ipk.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/08/sertifikat-razdelka-sto-002-2023-ipk.pdf",
+        "bytes": 1246309
+      }
+    ]
   },
   {
     "name": "Ряба Крымская Ryaba Krymskay",
@@ -237,7 +771,57 @@
     "image": "/images/certificates/sert-ryaba-krymskaya.webp",
     "description": "",
     "path": "/sert-ryaba-krymskaya/",
-    "sourceUrl": "https://7legion.com/sert-ryaba-krymskaya/"
+    "sourceUrl": "https://7legion.com/sert-ryaba-krymskaya/",
+    "files": [
+      {
+        "name": "ds-gost-31657-2012-subprodukty",
+        "path": "/certificates/e48c22c6e882-ds-gost-31657-2012-subprodukty.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/ds-gost-31657-2012-subprodukty.pdf",
+        "bytes": 2066806
+      },
+      {
+        "name": "ds-gost-31962-2013-tushkachasti",
+        "path": "/certificates/89f82be921ad-ds-gost-31962-2013-tushkachasti.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/ds-gost-31962-2013-tushkachasti.pdf",
+        "bytes": 3157480
+      },
+      {
+        "name": "novaja-ds-k-tu-001-pf",
+        "path": "/certificates/c06e4f454805-novaja-ds-k-tu-001-pf.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/novaja-ds-k-tu-001-pf.pdf",
+        "bytes": 2125396
+      },
+      {
+        "name": "sertifikat-halal-2022-g",
+        "path": "/certificates/207f8e67ee31-sertifikat-halal-2022-g.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/sertifikat-halal-2022-g.pdf",
+        "bytes": 564254
+      },
+      {
+        "name": "ss-na-gost-31657-2012-nss-ru-os15-n-00098-21",
+        "path": "/certificates/4617f8806a7c-ss-na-gost-31657-2012-nss-ru-os15-n-00098-21.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/ss-na-gost-31657-2012-nss-ru-os15-n-00098-21.pdf",
+        "bytes": 680110
+      },
+      {
+        "name": "ds-gost-tushkapf-gost-protokoly-novaja",
+        "path": "/certificates/e59c92162a09-ds-gost-tushkapf-gost-protokoly-novaja.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/ds-gost-tushkapf-gost-protokoly-novaja.pdf",
+        "bytes": 2075109
+      },
+      {
+        "name": "ds-tu-001-pf-protokoly-novaja",
+        "path": "/certificates/a449c6b3cd07-ds-tu-001-pf-protokoly-novaja.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/ds-tu-001-pf-protokoly-novaja.pdf",
+        "bytes": 5168377
+      },
+      {
+        "name": "ss-subprodukty-novyj-2023",
+        "path": "/certificates/e39185aa6b5e-ss-subprodukty-novyj-2023.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/ss-subprodukty-novyj-2023.pdf",
+        "bytes": 953536
+      }
+    ]
   },
   {
     "name": "Семидаль Semidal",
@@ -245,7 +829,39 @@
     "image": "/images/certificates/sert-semidal.webp",
     "description": "",
     "path": "/sert-semidal/",
-    "sourceUrl": "https://7legion.com/sert-semidal/"
+    "sourceUrl": "https://7legion.com/sert-semidal/",
+    "files": [
+      {
+        "name": "sertifikat-na-otruby",
+        "path": "/certificates/f483c4fbe569-sertifikat-na-otruby.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/sertifikat-na-otruby.pdf",
+        "bytes": 3395715
+      },
+      {
+        "name": "sertifikat-na-shpiki",
+        "path": "/certificates/a7ce2e2f2a07-sertifikat-na-shpiki.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/sertifikat-na-shpiki.pdf",
+        "bytes": 1537649
+      },
+      {
+        "name": "sertifikat-na-polutushi",
+        "path": "/certificates/d4b34352aad5-sertifikat-na-polutushi.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/sertifikat-na-polutushi.pdf",
+        "bytes": 3357579
+      },
+      {
+        "name": "deklaracija-sto-do-23.11.2025-sojuz",
+        "path": "/certificates/9d7e03dadbb6-deklaracija-sto-do-23.11.2025-sojuz.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/deklaracija-sto-do-23.11.2025-sojuz.pdf",
+        "bytes": 2242986
+      },
+      {
+        "name": "deklaracija-gost-do-10.07.2026-semidal",
+        "path": "/certificates/b8a8f42ff1d2-deklaracija-gost-do-10.07.2026-semidal.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/deklaracija-gost-do-10.07.2026-semidal.pdf",
+        "bytes": 1922233
+      }
+    ]
   },
   {
     "name": "Ситно Sitno",
@@ -253,7 +869,63 @@
     "image": "/images/certificates/sert-sitno.webp",
     "description": "",
     "path": "/sert-sitno/",
-    "sourceUrl": "https://7legion.com/sert-sitno/"
+    "sourceUrl": "https://7legion.com/sert-sitno/",
+    "files": [
+      {
+        "name": "03516-24-deklaracija-prilozhenie-razdelka-cb-tu-013-do-09.01.2027",
+        "path": "/certificates/c9f5c0b2ff37-03516-24-deklaracija-prilozhenie-razdelka-cb-tu-013-do-09.01.2027.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/07/03516-24-deklaracija-prilozhenie-razdelka-cb-tu-013-do-09.01.2027.pdf",
+        "bytes": 3847219
+      },
+      {
+        "name": "npk-deklaracija-tushkarazdelka-do25.05.2026-1",
+        "path": "/certificates/f8433c9fda45-npk-deklaracija-tushkarazdelka-do25.05.2026-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/07/npk-deklaracija-tushkarazdelka-do25.05.2026-1.pdf",
+        "bytes": 961279
+      },
+      {
+        "name": "tushka-npk-81356-22-do-25.05.25",
+        "path": "/certificates/8e28c4fa9bbd-tushka-npk-81356-22-do-25.05.25.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/07/tushka-npk-81356-22-do-25.05.25.pdf",
+        "bytes": 961279
+      },
+      {
+        "name": "tushka-npk-81356-22-5",
+        "path": "/certificates/d5432828ef92-tushka-npk-81356-22-5.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/tushka-npk-81356-22-5.pdf",
+        "bytes": 961279
+      },
+      {
+        "name": "mpk-83468-23-tushka-cb-gost-do-19.11.2026",
+        "path": "/certificates/969383c1d28d-mpk-83468-23-tushka-cb-gost-do-19.11.2026.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/07/mpk-83468-23-tushka-cb-gost-do-19.11.2026.pdf",
+        "bytes": 1276314
+      },
+      {
+        "name": "deklaracija-30414-22-subprodukty-gost-31657-2012",
+        "path": "/certificates/b2165dac948d-deklaracija-30414-22-subprodukty-gost-31657-2012.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/deklaracija-30414-22-subprodukty-gost-31657-2012.pdf",
+        "bytes": 1113889
+      },
+      {
+        "name": "deklaracijaprilozhenie-78858-22-polufabrikaty-iz-mjasa-i-pishhevyh-subproduktov-pticy-tu-013",
+        "path": "/certificates/65c57644c612-deklaracijaprilozhenie-78858-22-polufabrikaty-iz-mjasa-i-pishhevyh-subproduktov-.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/deklaracijaprilozhenie-78858-22-polufabrikaty-iz-mjasa-i-pishhevyh-subproduktov-pticy-tu-013.pdf",
+        "bytes": 3292051
+      },
+      {
+        "name": "mpk-deklaracija-tushkarazdelka-do-19.11.2026-1",
+        "path": "/certificates/c8bf1ae0cd15-mpk-deklaracija-tushkarazdelka-do-19.11.2026-1.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/07/mpk-deklaracija-tushkarazdelka-do-19.11.2026-1.pdf",
+        "bytes": 1276314
+      },
+      {
+        "name": "mpk-83468-23-tushka-cb-gost-do-19.11.2026",
+        "path": "/certificates/bb9e4877c7dc-mpk-83468-23-tushka-cb-gost-do-19.11.2026.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/mpk-83468-23-tushka-cb-gost-do-19.11.2026.pdf",
+        "bytes": 1276314
+      }
+    ]
   },
   {
     "name": "Союз м Souz m",
@@ -261,7 +933,51 @@
     "image": "/images/certificates/sert-soyuz-m.webp",
     "description": "",
     "path": "/sert-soyuz-m/",
-    "sourceUrl": "https://7legion.com/sert-soyuz-m/"
+    "sourceUrl": "https://7legion.com/sert-soyuz-m/",
+    "files": [
+      {
+        "name": "otruby-iz-svininy-beskostnye-i-na-kosti-torgovoj-marki-sojuz-m-06.02.2027",
+        "path": "/certificates/007fb707b6c5-otruby-iz-svininy-beskostnye-i-na-kosti-torgovoj-marki-sojuz-m-06.02.2027.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/otruby-iz-svininy-beskostnye-i-na-kosti-torgovoj-marki-sojuz-m-06.02.2027.pdf",
+        "bytes": 939934
+      },
+      {
+        "name": "polufabrikaty-sojuzm-govjadina-gost-08.03.2026-7",
+        "path": "/certificates/aa6bed7a2e15-polufabrikaty-sojuzm-govjadina-gost-08.03.2026-7.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/polufabrikaty-sojuzm-govjadina-gost-08.03.2026-7.pdf",
+        "bytes": 737588
+      },
+      {
+        "name": "govjadina-zamorozhennaja-oguzok-gost-do-27.05.2028",
+        "path": "/certificates/728b22890f29-govjadina-zamorozhennaja-oguzok-gost-do-27.05.2028.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/govjadina-zamorozhennaja-oguzok-gost-do-27.05.2028.pdf",
+        "bytes": 511521
+      },
+      {
+        "name": "govjadina-zamorozhennaja-lopatka-gost-do-27.05.2028",
+        "path": "/certificates/aa7e24114ba6-govjadina-zamorozhennaja-lopatka-gost-do-27.05.2028.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/govjadina-zamorozhennaja-lopatka-gost-do-27.05.2028.pdf",
+        "bytes": 501994
+      },
+      {
+        "name": "tazobedrennyj-otrub-bez-goljashki-gost-do-27.05.2028",
+        "path": "/certificates/55df615ba5c6-tazobedrennyj-otrub-bez-goljashki-gost-do-27.05.2028.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/tazobedrennyj-otrub-bez-goljashki-gost-do-27.05.2028.pdf",
+        "bytes": 503560
+      },
+      {
+        "name": "bokovaja-chast-tazobedrennogo-otruba-okovalok-gost-do-27.05.2028",
+        "path": "/certificates/29da82bc8ad7-bokovaja-chast-tazobedrennogo-otruba-okovalok-gost-do-27.05.2028.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/bokovaja-chast-tazobedrennogo-otruba-okovalok-gost-do-27.05.2028.pdf",
+        "bytes": 506514
+      },
+      {
+        "name": "tazobedrennyj-otrub-beskostnyj-gost-do-27.05.2028",
+        "path": "/certificates/0dcc9c339a4e-tazobedrennyj-otrub-beskostnyj-gost-do-27.05.2028.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/06/tazobedrennyj-otrub-beskostnyj-gost-do-27.05.2028.pdf",
+        "bytes": 507854
+      }
+    ]
   },
   {
     "name": "Тамбовский бекон Tambov bacon",
@@ -269,7 +985,15 @@
     "image": "/images/certificates/sert-tambov-bekon.webp",
     "description": "",
     "path": "/sert-tambov-bekon/",
-    "sourceUrl": "https://7legion.com/sert-tambov-bekon/"
+    "sourceUrl": "https://7legion.com/sert-tambov-bekon/",
+    "files": [
+      {
+        "name": "tambovskij-bekon",
+        "path": "/certificates/6561de2fb820-tambovskij-bekon.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/01/tambovskij-bekon.pdf",
+        "bytes": 2855954
+      }
+    ]
   },
   {
     "name": "Верхневолжская Verkhnevolzhskaya",
@@ -277,7 +1001,33 @@
     "image": "/images/certificates/sert-verhnevolzhskaya.webp",
     "description": "",
     "path": "/sert-verhnevolzhskaya/",
-    "sourceUrl": "https://7legion.com/sert-verhnevolzhskaya/"
+    "sourceUrl": "https://7legion.com/sert-verhnevolzhskaya/",
+    "files": [
+      {
+        "name": "ss-14-tushki-i-chasti-tushek-kur-i-c b-gost-31962-2013",
+        "path": "/certificates/2c5ecc37b3a8-ss-14-tushki-i-chasti-tushek-kur-i-c_b-gost-31962-2013.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/ss-14-tushki-i-chasti-tushek-kur-i-c_b-gost-31962-2013.pdf",
+        "bytes": 198399
+      },
+      {
+        "name": "polufabrikaty-naturalnye-iz-mjasa-kur-i-cypljat-brojlerov",
+        "path": "/certificates/a880b92462bf-polufabrikaty-naturalnye-iz-mjasa-kur-i-cypljat-brojlerov.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/08/polufabrikaty-naturalnye-iz-mjasa-kur-i-cypljat-brojlerov.pdf",
+        "bytes": 953217
+      },
+      {
+        "name": "subprodukty-kur-cypljat-brojlerov-pishhevye",
+        "path": "/certificates/88c9d1b3206a-subprodukty-kur-cypljat-brojlerov-pishhevye.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/01/subprodukty-kur-cypljat-brojlerov-pishhevye.pdf",
+        "bytes": 353939
+      },
+      {
+        "name": "polufabrikaty-naturalnye-iz-mjasa-kur-i-cypljat-brojlerov",
+        "path": "/certificates/36fa904961a3-polufabrikaty-naturalnye-iz-mjasa-kur-i-cypljat-brojlerov.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2025/01/polufabrikaty-naturalnye-iz-mjasa-kur-i-cypljat-brojlerov.pdf",
+        "bytes": 953217
+      }
+    ]
   },
   {
     "name": "Воловский бройлер — Своя Volovsky broiler — svoij",
@@ -285,7 +1035,21 @@
     "image": "/images/certificates/sert-volovskiy-broyler.webp",
     "description": "",
     "path": "/sert-volovskiy-broyler/",
-    "sourceUrl": "https://7legion.com/sert-volovskiy-broyler/"
+    "sourceUrl": "https://7legion.com/sert-volovskiy-broyler/",
+    "files": [
+      {
+        "name": "13-sertifikat-svojavolovskij",
+        "path": "/certificates/b109fb5992c6-13-sertifikat-svojavolovskij.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/13-sertifikat-svojavolovskij.pdf",
+        "bytes": 818403
+      },
+      {
+        "name": "17-sertifikat-nss-ru-kd86-n-00075-24-po-06.03.2027",
+        "path": "/certificates/c0c7f04d050c-17-sertifikat-nss-ru-kd86-n-00075-24-po-06.03.2027.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/17-sertifikat-nss-ru-kd86-n-00075-24-po-06.03.2027.pdf",
+        "bytes": 1493180
+      }
+    ]
   },
   {
     "name": "Волжанин Volzhanin",
@@ -293,7 +1057,21 @@
     "image": "/images/certificates/sert-volzhanin.webp",
     "description": "",
     "path": "/sert-volzhanin/",
-    "sourceUrl": "https://7legion.com/sert-volzhanin/"
+    "sourceUrl": "https://7legion.com/sert-volzhanin/",
+    "files": [
+      {
+        "name": "kurochka-supovaja-do-28.02.2026",
+        "path": "/certificates/1dce35aa1002-kurochka-supovaja-do-28.02.2026.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/kurochka-supovaja-do-28.02.2026.pdf",
+        "bytes": 656392
+      },
+      {
+        "name": "mjaso-kur-do-volzhanin-27.06.2027",
+        "path": "/certificates/bb4b0f316623-mjaso-kur-do-volzhanin-27.06.2027.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/11/mjaso-kur-do-volzhanin-27.06.2027.pdf",
+        "bytes": 301755
+      }
+    ]
   },
   {
     "name": "Ярославский бройлер Yaroslavl broiler",
@@ -301,7 +1079,21 @@
     "image": "/images/certificates/sert-yaroslavl-broyler.webp",
     "description": "",
     "path": "/sert-yaroslavl-broyler/",
-    "sourceUrl": "https://7legion.com/sert-yaroslavl-broyler/"
+    "sourceUrl": "https://7legion.com/sert-yaroslavl-broyler/",
+    "files": [
+      {
+        "name": "pismo-o-deklariruemoj-produkcii",
+        "path": "/certificates/a82f68f75d08-pismo-o-deklariruemoj-produkcii.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/pismo-o-deklariruemoj-produkcii.pdf",
+        "bytes": 508624
+      },
+      {
+        "name": "pismo-po-pishh.neperebot",
+        "path": "/certificates/26f4d74c2840-pismo-po-pishh.neperebot.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/pismo-po-pishh.neperebot.pdf",
+        "bytes": 454231
+      }
+    ]
   },
   {
     "name": "Ясные зори Yasnie zory",
@@ -309,7 +1101,27 @@
     "image": "/images/certificates/sert-yasnie-zori.webp",
     "description": "",
     "path": "/sert-yasnie-zori/",
-    "sourceUrl": "https://7legion.com/sert-yasnie-zori/"
+    "sourceUrl": "https://7legion.com/sert-yasnie-zori/",
+    "files": [
+      {
+        "name": "deklaracija-jasnye-zori-dos-r2-do-2025-goda",
+        "path": "/certificates/d15f7c872509-deklaracija-jasnye-zori-dos-r2-do-2025-goda.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2023/12/deklaracija-jasnye-zori-dos-r2-do-2025-goda.pdf",
+        "bytes": 3565042
+      },
+      {
+        "name": "otkaznoe-rakitnoe-1-suby-ne-trebujut-deklarirovanija",
+        "path": "/certificates/dab911819d21-otkaznoe-rakitnoe-1-suby-ne-trebujut-deklarirovanija.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/otkaznoe-rakitnoe-1-suby-ne-trebujut-deklarirovanija.pdf",
+        "bytes": 1258702
+      },
+      {
+        "name": "kuskovye-beskostnye",
+        "path": "/certificates/5da9ccb7ba28-kuskovye-beskostnye.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/12/kuskovye-beskostnye.pdf",
+        "bytes": 554862
+      }
+    ]
   },
   {
     "name": "ЙОЛА YOLA",
@@ -317,7 +1129,15 @@
     "image": "/images/certificates/sert-yola.webp",
     "description": "",
     "path": "/sert-yola/",
-    "sourceUrl": "https://7legion.com/sert-yola/"
+    "sourceUrl": "https://7legion.com/sert-yola/",
+    "files": [
+      {
+        "name": "p1-tu-030",
+        "path": "/certificates/46a52dae6547-p1-tu-030.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/03/p1-tu-030.pdf",
+        "bytes": 2440130
+      }
+    ]
   },
   {
     "name": "Юрма Jurma",
@@ -325,7 +1145,27 @@
     "image": "/images/certificates/sert-yurma.webp",
     "description": "",
     "path": "/sert-yurma/",
-    "sourceUrl": "https://7legion.com/sert-yurma/"
+    "sourceUrl": "https://7legion.com/sert-yurma/",
+    "files": [
+      {
+        "name": "sertifikat-mega-jurma-mmo-s-15.12.23-po-14.12.24",
+        "path": "/certificates/d39d858e6ae3-sertifikat-mega-jurma-mmo-s-15.12.23-po-14.12.24.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/08/sertifikat-mega-jurma-mmo-s-15.12.23-po-14.12.24.pdf",
+        "bytes": 374488
+      },
+      {
+        "name": "sertifikat-mega-jurma-subprodukty-s-11.01.24-po-10.01.25",
+        "path": "/certificates/fa1d923b369a-sertifikat-mega-jurma-subprodukty-s-11.01.24-po-10.01.25.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/08/sertifikat-mega-jurma-subprodukty-s-11.01.24-po-10.01.25.pdf",
+        "bytes": 728658
+      },
+      {
+        "name": "sertifikat-mega-jurma-tushka-razdelka-s-06.02.24-po-05.02.25",
+        "path": "/certificates/682509e83219-sertifikat-mega-jurma-tushka-razdelka-s-06.02.24-po-05.02.25.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2024/08/sertifikat-mega-jurma-tushka-razdelka-s-06.02.24-po-05.02.25.pdf",
+        "bytes": 730091
+      }
+    ]
   },
   {
     "name": "Старожиловская птица (Союзптицепром)",
@@ -333,6 +1173,14 @@
     "image": "/images/certificates/starozhilovskaja-ptica-sojuzpticeprom.webp",
     "description": "",
     "path": "/starozhilovskaja-ptica-sojuzpticeprom/",
-    "sourceUrl": "https://7legion.com/starozhilovskaja-ptica-sojuzpticeprom/"
+    "sourceUrl": "https://7legion.com/starozhilovskaja-ptica-sojuzpticeprom/",
+    "files": [
+      {
+        "name": "deklaracija-19.08.2025-2028-polufabrikaty-8",
+        "path": "/certificates/4c0ff931f40d-deklaracija-19.08.2025-2028-polufabrikaty-8.pdf",
+        "sourceUrl": "https://7legion.com/wp-content/uploads/2026/09/deklaracija-19.08.2025-2028-polufabrikaty-8.pdf",
+        "bytes": 11194678
+      }
+    ]
   }
 ]

@@ -36,6 +36,7 @@ export interface Certificate {
   description: string;
   path: string;
   sourceUrl: string;
+  files: Array<{ name: string; path: string; sourceUrl: string; bytes: number }>;
 }
 
 export interface TeamMember {

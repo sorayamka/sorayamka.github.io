@@ -1,7 +1,3 @@
-@view-transition {
-  navigation: auto;
-}
-
 :root {
   --ink: #0b1116;
   --ink-soft: #111a22;
@@ -733,6 +729,14 @@ address {
   font-size: 11px;
 }
 
+.site-footer__demo {
+  padding-block: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #b8c2c8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .site-footer__bottom {
   min-height: 76px;
   display: grid;
@@ -999,16 +1003,19 @@ address {
 }
 
 .product-of-week__media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  padding: clamp(16px, 3vw, 40px);
+  object-fit: contain;
   filter: saturate(0.82) contrast(1.04);
   transition: transform 700ms var(--ease), filter 300ms ease;
 }
 
 .product-of-week:hover .product-of-week__media img {
   filter: saturate(0.95) contrast(1.06);
-  transform: scale(1.035);
+  transform: scale(1.01);
 }
 
 .product-of-week__label {
@@ -2581,7 +2588,8 @@ address {
   position: relative;
   min-height: 320px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
   background: var(--ink-soft);
 }
@@ -2601,6 +2609,66 @@ address {
   inset: 0;
   background: linear-gradient(180deg, transparent 50%, rgba(5, 9, 12, 0.88));
   content: "";
+  pointer-events: none;
+}
+
+.certificate-card > a {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.certificate-card > a:first-child {
+  position: static;
+}
+
+.certificate-card > a:last-child {
+  padding: 0 24px 22px;
+  color: var(--ice);
+  font-size: 12px;
+}
+
+.certificate-files {
+  margin-top: 28px;
+}
+
+.certificate-files > p {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.certificate-files ul {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.certificate-files li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.certificate-files li > a:first-child {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+  overflow-wrap: anywhere;
+}
+
+.certificate-files li span,
+.certificate-files li small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.certificate-files li > a:last-child {
+  flex-shrink: 0;
+  color: var(--red);
+  font-size: 13px;
 }
 
 .certificate-card:hover img {

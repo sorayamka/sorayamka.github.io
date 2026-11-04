@@ -266,8 +266,9 @@ const addToCart = (product: CartProduct, openAfterAdd = false) => {
 const updateQuantity = (id: string, delta: number) => {
   const item = cart.find((entry) => entry.id === id);
   if (!item) return;
+  const removeItem = delta < 0 && item.quantity === 1;
   item.quantity = clampQuantity(item.quantity + delta);
-  if (delta < 0 && item.quantity === 1) cart = cart.filter((entry) => entry.id !== id);
+  if (removeItem) cart = cart.filter((entry) => entry.id !== id);
   if (!saveCart()) {
     showToast(locale === "en" ? "Could not save the cart" : "Не удалось сохранить корзину");
     return;
@@ -709,6 +710,7 @@ const initCatalog = (catalog: HTMLElement) => {
 
   catalog.querySelectorAll<HTMLElement>("[data-catalog-reset]").forEach((button) => {
     button.addEventListener("click", () => {
+      category = activeCategory;
       if (search) search.value = "";
       if (stock) stock.checked = false;
       if (subcategory) subcategory.value = "";

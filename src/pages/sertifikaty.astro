@@ -11,7 +11,7 @@ import { certificates } from "../data/site";
     title="Сертификаты"
     lead="Декларации и документы, подтверждающие качество и происхождение продукции поставщиков."
     statValue={certificates.length}
-    statLabel="документов в архиве"
+    statLabel="производителя в архиве"
     statNote="актуальная версия по запросу"
     breadcrumb="Сертификаты"
   />
@@ -20,10 +20,13 @@ import { certificates } from "../data/site";
       <header class="section-head" data-reveal><div><span class="eyebrow">Проверка происхождения</span><h2>Документы поставщиков</h2></div><p>Для актуальной версии конкретного документа свяжитесь с менеджером по документообороту.</p></header>
       <div class="certificate-grid">
         {certificates.map((certificate) => (
-          <a class="certificate-card" href={`/certificates/${certificate.slug}/`} data-reveal aria-label={`Открыть сертификат: ${certificate.name}`}>
+          <div class="certificate-card" data-reveal>
+            <a href={certificate.files?.[0]?.path ?? certificate.image} target="_blank" rel="noopener" aria-label={`Открыть документ: ${certificate.name}`}>
             {certificate.image && <img src={certificate.image} alt="" width="800" height="600" loading="lazy" decoding="async" />}
             <h3>{certificate.name}</h3>
-          </a>
+            </a>
+            <a href={`/certificates/${certificate.slug}/`}>{certificate.files?.length ? `Все документы · ${certificate.files.length} PDF` : "Сведения об архиве"}</a>
+          </div>
         ))}
       </div>
     </div>

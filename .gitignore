@@ -7,4 +7,5 @@ dist/
 !7legion-archive/data/products.json
 __pycache__/
 test-results/
+playwright-report/
 .agents/
