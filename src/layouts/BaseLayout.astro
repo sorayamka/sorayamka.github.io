@@ -31,7 +31,7 @@ const canonical = new URL(Astro.url.pathname === "/404/" ? "/404.html" : Astro.u
 const languageRoutes = getLanguageRoutes(Astro.url.pathname);
 const alternateRu = languageRoutes.ru ? new URL(languageRoutes.ru, Astro.site) : undefined;
 const alternateEn = languageRoutes.en ? new URL(languageRoutes.en, Astro.site) : undefined;
-const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "/en/";
+const isHome = ["/", "/en/", "/demo/"].includes(Astro.url.pathname);
 const socialImage = new URL(isHome ? "/images/site/share-preview-v2.png" : image, Astro.site);
 const preventIndexing = noindex || isPreviewSite(Astro.site);
 const normalizeSchema = (value: unknown): unknown => {

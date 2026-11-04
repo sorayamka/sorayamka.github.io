@@ -27,7 +27,7 @@ export default defineConfig({
       filter: (page) => {
         const path = new URL(page).pathname;
         return !path.includes("/cart/") && !path.startsWith("/product-category/") && !/\.(?:json|html)$/.test(path)
-          && !["/vacancies-2/", "/price-list-2/", "/vse-produkty/", "/brands/sertifikaty/", "/tag/sertifikat/"].includes(path);
+          && !["/demo/", "/vacancies-2/", "/price-list-2/", "/vse-produkty/", "/brands/sertifikaty/", "/tag/sertifikat/"].includes(path);
       },
     }),
   ],
