@@ -1,6 +1,7 @@
 import archiveProductsJson from "../../7legion-archive/data/products.json";
 import { categories as russianCategories, products as russianProducts } from "../data/site";
 import type { Category, Product } from "../data/types";
+import { getProductBrandSearch } from "./brands";
 
 interface ArchiveProduct {
   name?: string;
@@ -269,5 +270,5 @@ export const englishCatalogIndex = englishProducts.map((product, index) => ({
   subcategory: product.subcategory,
   subcategorySlug: product.subcategorySlug,
   inStock: product.inStock,
-  search: `${product.name} ${product.subcategory} ${product.category}`.toLocaleLowerCase("en-US"),
+  search: `${product.name} ${product.subcategory} ${product.category} ${getProductBrandSearch(product.id)}`.toLocaleLowerCase("en-US").replace(/\s+/g, " "),
 }));

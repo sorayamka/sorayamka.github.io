@@ -50,7 +50,7 @@ test("brand tiles navigate and certificate images respond across their full area
   await page.goto("/brands/");
   const brand = page.locator('a.brand-card[data-brand="damate"]');
   await brand.click();
-  await expect(page).toHaveURL(/\/certificates\/sert-damate\/$/);
+  await expect(page).toHaveURL(/\/brands\/damate\/$/);
   await expect(page.locator('.certificate-files a[href$=".pdf"]').first()).toBeVisible();
   await page.goto("/sertifikaty/");
   const card = page.locator(".certificate-card").first();

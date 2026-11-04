@@ -197,9 +197,10 @@ const loadCart = (): CartItem[] => {
 
 let cart = loadCart();
 
-const saveCart = () => {
+const saveCart = (nextCart: CartItem[] = cart) => {
   try {
-    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    localStorage.setItem(CART_KEY, JSON.stringify(nextCart));
+    cart = nextCart;
     return true;
   } catch {
     return false;
@@ -270,13 +271,10 @@ const addToCart = (product: CartProduct, openAfterAdd = false) => {
   const path = safeLocalPath(product.path, ["/shop/", "/en/shop/"]);
   if (!path) return;
   const quantity = clampQuantity(product.quantity);
-  const existing = cart.find((item) => item.id === product.id);
-  if (existing) {
-    existing.quantity = clampQuantity(existing.quantity + quantity);
-  } else {
-    cart.push({ ...product, path, image: safeLocalPath(product.image, ["/images/"]), quantity });
-  }
-  if (!saveCart()) {
+  const nextCart = cart.some((item) => item.id === product.id)
+    ? cart.map((item) => item.id === product.id ? { ...item, quantity: clampQuantity(item.quantity + quantity) } : item)
+    : [...cart, { ...product, path, image: safeLocalPath(product.image, ["/images/"]), quantity }];
+  if (!saveCart(nextCart)) {
     showToast(locale === "en" ? "Could not save the cart" : "Не удалось сохранить корзину");
     return;
   }
@@ -292,9 +290,9 @@ const updateQuantity = (id: string, delta: number) => {
   const item = cart.find((entry) => entry.id === id);
   if (!item) return;
   const removeItem = delta < 0 && item.quantity === 1;
-  item.quantity = clampQuantity(item.quantity + delta);
-  if (removeItem) cart = cart.filter((entry) => entry.id !== id);
-  if (!saveCart()) {
+  const nextCart = removeItem ? cart.filter((entry) => entry.id !== id)
+    : cart.map((entry) => entry.id === id ? { ...entry, quantity: clampQuantity(entry.quantity + delta) } : entry);
+  if (!saveCart(nextCart)) {
     showToast(locale === "en" ? "Could not save the cart" : "Не удалось сохранить корзину");
     return;
   }
@@ -305,8 +303,7 @@ const removeFromCart = (id: string) => {
   const item = cart.find((entry) => entry.id === id);
   if (!item) return;
   if (!window.confirm(locale === "en" ? `Remove “${item.name}” from the cart?` : `Удалить «${item.name}» из корзины?`)) return;
-  cart = cart.filter((entry) => entry.id !== id);
-  if (!saveCart()) {
+  if (!saveCart(cart.filter((entry) => entry.id !== id))) {
     showToast(locale === "en" ? "Could not save the cart" : "Не удалось сохранить корзину");
     return;
   }
@@ -317,8 +314,7 @@ const removeFromCart = (id: string) => {
 const clearCart = () => {
   if (cart.length === 0) return;
   if (!window.confirm(locale === "en" ? "Clear the entire cart?" : "Очистить всю корзину?")) return;
-  cart = [];
-  if (!saveCart()) {
+  if (!saveCart([])) {
     showToast(locale === "en" ? "Could not save the cart" : "Не удалось сохранить корзину");
     return;
   }
@@ -475,7 +471,7 @@ window.addEventListener("storage", (event) => {
   renderCart();
 });
 
-const normalize = (value: string) => value.trim().toLocaleLowerCase(locale === "en" ? "en-US" : "ru-RU");
+const normalize = (value: string) => value.trim().replace(/\s+/g, " ").toLocaleLowerCase(locale === "en" ? "en-US" : "ru-RU");
 
 const initCatalog = (catalog: HTMLElement) => {
   const pageSize = 48;
@@ -612,7 +608,7 @@ const initCatalog = (catalog: HTMLElement) => {
     const selectedStock = Boolean(stock?.checked);
     const selectedSubcategory = subcategory?.value ?? "";
     const visible = products.filter((product) => {
-      const matchesSearch = !term || product.search.includes(term);
+      const matchesSearch = !term || normalize(product.search).includes(term);
       const matchesCategory = !category || product.categorySlug === category;
       const matchesSubcategory = !selectedSubcategory || product.subcategorySlug === selectedSubcategory;
       const matchesStock = !selectedStock || product.inStock;

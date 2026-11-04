@@ -4,7 +4,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactCta from "../../components/ContactCta.astro";
 import { englishPages } from "../../lib/i18n";
-import { certificates } from "../../data/site";
+import { brands, certificates } from "../../data/site";
+import BrandGrid from "../../components/BrandGrid.astro";
 
 export const getStaticPaths = (() =>
   Object.entries(englishPages).map(([slug, copy]) => ({
@@ -38,6 +39,7 @@ const showCertificates = Astro.url.pathname === "/en/sertifikaty/";
       </div>
     </div>
   </section>
+  {Astro.url.pathname === "/en/brands/" && <section class="section"><div class="shell"><BrandGrid brands={brands} /></div></section>}
   {showCertificates && <section class="section"><div class="shell">
     <h2>Archived supplier documents</h2>
     <p>Original documents are available in Russian. Confirm validity for your shipment with our team.</p>

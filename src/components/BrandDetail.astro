@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "./PageHero.astro";
+import ProductCard from "./ProductCard.astro";
+import { products } from "../data/site";
+import { englishProducts } from "../lib/english-products";
+import { brandRelations, getBrandCertificates, getBrandRelations } from "../lib/brands";
+import type { Brand } from "../data/types";
+interface Props { brand: Brand; locale?: "ru" | "en" }
+const { brand, locale = "ru" } = Astro.props;
+const en = locale === "en";
+const aliases = new Set(getBrandRelations(brand));
+const items = (en ? englishProducts : products).filter((product) => brandRelations[product.id]?.some((item) => aliases.has(item.slug)));
+const documents = getBrandCertificates(brand);
+---
+<BaseLayout title={`${brand.name} — ${en ? "products and documents | Seventh Legion" : "товары и документы | Седьмой Легион"}`} description={en ? `Products and archived supplier documents for ${brand.name}.` : `Продукция и архивные документы производителя ${brand.name}.`}>
+  <PageHero title={brand.name} eyebrow={en ? "Manufacturer" : "Производитель"} lead={en ? "Products and documents linked from the archived supplier data." : "Продукция и документы по подтверждённым связям из архива поставщика."} breadcrumb={brand.name} parentHref={en ? "/en/brands/" : "/brands/"} parentLabel={en ? "Brands" : "Бренды"} statValue={items.length} statLabel={en ? "linked products" : "связанных товаров"} statNote={en ? "archived supplier data" : "по данным архива"} />
+  <section class="section"><div class="shell">
+    <h2>{en ? "Supplier documents" : "Документы производителя"}</h2>
+    {documents.length ? <div class="certificate-files"><ul>{documents.map((document) => <li><a href={`/certificates/${document.slug}/`}><strong>{document.name}</strong><span>{en ? "All archived documents" : "Все архивные документы"}</span></a>{document.files[0] && <a href={document.files[0].path} target="_blank" rel="noopener">{en ? "Open PDF" : "Открыть PDF"}</a>}</li>)}</ul></div> : <p>{en ? "No confirmed documents are linked to this manufacturer yet. Please request them from our team." : "Подтверждённые документы этого производителя пока не привязаны. Запросите их у менеджера."}</p>}
+    <div class="section-head"><div><h2>{en ? "Products" : "Товары"} · {items.length}</h2></div></div>
+    {items.length ? <div class="product-grid">{items.map((product, index) => <ProductCard product={product} index={index} locale={locale} />)}</div> : <p>{en ? "Product links for this manufacturer are being verified." : "Привязка товаров к этому производителю уточняется."}</p>}
+  </div></section>
+</BaseLayout>

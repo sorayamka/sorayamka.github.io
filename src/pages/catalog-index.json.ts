@@ -1,4 +1,5 @@
 import { products } from "../data/site";
+import { getProductBrandSearch } from "../lib/brands";
 
 export const prerender = true;
 
@@ -14,7 +15,7 @@ const catalogIndex = products.map((product, index) => ({
   subcategory: product.subcategory,
   subcategorySlug: product.subcategorySlug,
   inStock: product.inStock,
-  search: `${product.name} ${product.subcategory} ${product.category}`.toLocaleLowerCase("ru-RU"),
+  search: `${product.name} ${product.subcategory} ${product.category} ${getProductBrandSearch(product.id)}`.toLocaleLowerCase("ru-RU").replace(/\s+/g, " "),
 }));
 
 export function GET() {

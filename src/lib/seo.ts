@@ -1,4 +1,4 @@
-import { products } from "../data/site";
+import { brands, products } from "../data/site";
 import { englishProducts } from "./english-products";
 import { englishPages } from "./i18n";
 
@@ -12,6 +12,7 @@ register({ ru: "/", en: "/en/" });
 register({ ru: "/shop/", en: "/en/shop/" });
 register({ ru: "/cart/", en: "/en/cart/" });
 for (const slug of Object.keys(englishPages)) register({ ru: `/${slug}/`, en: `/en/${slug}/` });
+for (const brand of brands) register({ ru: `/brands/${brand.slug}/`, en: `/en/brands/${brand.slug}/` });
 const englishById = new Map(englishProducts.map((product) => [product.id, product]));
 for (const product of products) {
   const translated = englishById.get(product.id);

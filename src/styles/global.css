@@ -4325,6 +4325,33 @@ body.mobile-menu-open {
   }
 }
 
+@media (max-width: 359px) {
+  .site-header__inner {
+    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .brand {
+    width: 120px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .cart-button,
+  .mobile-menu > summary {
+    width: 36px;
+    height: 36px;
+  }
+
+  .catalog-pagination__controls {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
   ::view-transition-old(*),

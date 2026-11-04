@@ -1,6 +1,5 @@
 ---
 import type { Brand } from "../data/types";
-import { certificates } from "../data/site";
 import { getLocale } from "../lib/i18n";
 
 interface Props {
@@ -12,32 +11,19 @@ interface Props {
 const { brands, limit, compact = false } = Astro.props;
 const visibleBrands = limit ? brands.slice(0, limit) : brands;
 const locale = getLocale(Astro.url.pathname);
-const certificateLink = (brand: Brand) => {
-  const key = `${brand.slug} ${brand.name}`.toLowerCase();
-  const aliases: Array<[RegExp, string]> = [
-    [/priosk|приоск/, "sert-prioskolye"], [/cherkiz|черкиз/, "sert-cherkizovo"],
-    [/miratorg|мираторг/, "sert-miratorg-2"], [/damate|дамате|indilajt|индилайт/, "sert-damate"],
-    [/kaluzh|калуж/, "sert-prodo-kaluzhskaya"], [/petruh|petrukh|петрух/, "sert-petrukha"],
-    [/jasnye|yasnie|ясные/, "sert-yasnie-zori"], [/borodin|бородин/, "sert-borodina"],
-    [/volzhan|волжан/, "sert-volzhanin"], [/ravi|равис/, "sert-ravis"],
-    [/akashev|акаш/, "sert-akashevo"], [/agrokompleks|агрокомплекс/, "sert-agrokompleks"],
-  ];
-  const slug = aliases.find(([pattern]) => pattern.test(key))?.[1];
-  const certificate = certificates.find((item) => item.slug === slug);
-  return certificate ? `/certificates/${certificate.slug}/` : locale === "en" ? "/en/sertifikaty/" : "/sertifikaty/";
-};
+const brandLink = (brand: Brand) => `${locale === "en" ? "/en" : ""}/brands/${brand.slug}/`;
 ---
 
 <div class:list={["brand-grid", { "brand-grid--compact": compact }]} data-brand-grid>
   {visibleBrands.map((brand, index) => (
-    <a class="brand-card" href={certificateLink(brand)} id={`${brand.slug}-${index}`} data-brand={brand.slug} data-reveal style={`--delay:${Math.min(index, 12) * 35}ms`}>
+    <a class="brand-card" href={brandLink(brand)} id={`${brand.slug}-${index}`} data-brand={brand.slug} data-reveal style={`--delay:${Math.min(index, 12) * 35}ms`}>
       {brand.logo ? (
         <img src={brand.logo} alt={brand.name} width="320" height="220" loading="lazy" decoding="async" />
       ) : (
         <span class="brand-card__monogram">{brand.name.slice(0, 2).toUpperCase()}</span>
       )}
       <p translate="no">{brand.name}</p>
-      <span class="brand-card__action">{locale === "en" ? "View certificates →" : "Сертификаты →"}</span>
+      <span class="brand-card__action">{locale === "en" ? "Products and documents →" : "Товары и документы →"}</span>
     </a>
   ))}
 </div>

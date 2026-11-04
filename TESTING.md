@@ -57,7 +57,9 @@ installed Google Chrome; elsewhere install the Playwright Chromium browser.
 - Catalog index network failure, locale-preserving product navigation and 404s.
 - Full-width hero and actual 800/1600/3840 px responsive AVIF selection.
 
-Latest local run: 80 passed, 6 device-specific skips. Includes all 127 archived
+Latest local run: 88 passed, 6 device-specific skips. Includes 320px navigation,
+118 individual brand pages per locale, brand/whitespace search, storage rollback,
+and all 127 archived
 PDF resources, mobile certificate taps, safe stored URLs, catalog retry after
 network recovery and invalid pagination parameter normalization.
 Fixed defects: decreasing
