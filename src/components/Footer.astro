@@ -60,7 +60,7 @@ const warehouse = locale === "en" ? "Moscow Region, Khimki, Lunyovo, 1B" : compa
   </div>
   <div class="shell site-footer__bottom">
     <p>© {year} {legalName}</p>
-    <p>INN {company.inn} · OGRN {company.ogrn}</p>
+    <p>{locale === "en" ? "INN" : "ИНН"} {company.inn} · {locale === "en" ? "OGRN" : "ОГРН"} {company.ogrn}</p>
     <a href="#top">{locale === "en" ? "Back to top" : "Наверх"} <Icon name="arrow" size={16} /></a>
   </div>
 </footer>
