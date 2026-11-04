@@ -119,6 +119,10 @@ const catalogIndexUrl = catalogIndex ?? (locale === "en" ? "/en/catalog-index.js
       </div>
     </div>
 
+    <div class="catalog-load-error" data-catalog-load-error role="status" hidden>
+      <p>{locale === "en" ? "The full catalog could not be loaded. Only the initial products are available." : "Полный каталог не загрузился. Пока доступны только первые товары."}</p>
+      <button class="button button--outline" type="button" data-catalog-retry>{locale === "en" ? "Try again" : "Повторить загрузку"}</button>
+    </div>
     <div class="product-grid" data-product-grid>
       {initialProducts.map((product, index) => <ProductCard product={product} index={index} locale={locale} />)}
     </div>

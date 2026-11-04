@@ -3488,7 +3488,19 @@ body.mobile-menu-open {
 
 .home-hero__copy > *,
 .home-hero__visual {
-  animation: hero-in 900ms var(--ease) both;
+  animation: none;
+}
+
+.catalog-load-error {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.catalog-load-error p {
+  margin-bottom: 12px;
+  color: var(--muted);
 }
 
 .home-hero__copy > :nth-child(2) {

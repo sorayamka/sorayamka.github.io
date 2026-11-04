@@ -144,6 +144,23 @@ const createCatalogProduct = (product: CatalogProduct, locale: Locale) => {
 
 const clampQuantity = (value: unknown) => Math.max(1, Math.min(9999, Math.trunc(Number(value) || 1)));
 
+const safeLocalPath = (value: string, prefixes: string[]): string => {
+  try {
+    const decoded = decodeURIComponent(value);
+    if (!value.startsWith("/") || value.startsWith("//") || /[\\\u0000-\u0020\u007f]/.test(decoded)) return "";
+    const url = new URL(value, location.origin);
+    if (url.origin !== location.origin || !prefixes.some((prefix) => url.pathname.startsWith(prefix))) return "";
+    return url.pathname;
+  } catch {
+    return "";
+  }
+};
+
+const parseCatalogPage = (value: unknown): number => {
+  const number = Number(value);
+  return Number.isSafeInteger(number) && number > 0 ? number : 1;
+};
+
 const itemWord = (value: number) => {
   if (locale === "en") return value === 1 ? "item" : "items";
   const mod10 = value % 10;
@@ -166,7 +183,13 @@ const loadCart = (): CartItem[] => {
           typeof item?.image === "string" &&
           Number.isFinite(item?.quantity),
       )
-      .map((item) => ({ ...item, quantity: clampQuantity(item.quantity) }));
+      .map((item) => ({
+        ...item,
+        path: safeLocalPath(item.path, ["/shop/", "/en/shop/"]),
+        image: safeLocalPath(item.image, ["/images/"]),
+        quantity: clampQuantity(item.quantity),
+      }))
+      .filter((item) => Boolean(item.path));
   } catch {
     return [];
   }
@@ -244,12 +267,14 @@ const renderCart = () => {
 };
 
 const addToCart = (product: CartProduct, openAfterAdd = false) => {
+  const path = safeLocalPath(product.path, ["/shop/", "/en/shop/"]);
+  if (!path) return;
   const quantity = clampQuantity(product.quantity);
   const existing = cart.find((item) => item.id === product.id);
   if (existing) {
     existing.quantity = clampQuantity(existing.quantity + quantity);
   } else {
-    cart.push({ ...product, quantity });
+    cart.push({ ...product, path, image: safeLocalPath(product.image, ["/images/"]), quantity });
   }
   if (!saveCart()) {
     showToast(locale === "en" ? "Could not save the cart" : "Не удалось сохранить корзину");
@@ -470,6 +495,8 @@ const initCatalog = (catalog: HTMLElement) => {
   const pageSelect = catalog.querySelector<HTMLSelectElement>("[data-page-select]");
   const previousPage = catalog.querySelector<HTMLButtonElement>("[data-page-prev]");
   const nextPage = catalog.querySelector<HTMLButtonElement>("[data-page-next]");
+  const loadError = catalog.querySelector<HTMLElement>("[data-catalog-load-error]");
+  const retryButton = catalog.querySelector<HTMLButtonElement>("[data-catalog-retry]");
   const initialCards = [...catalog.querySelectorAll<HTMLElement>("[data-product-card]")];
   const initialProducts = initialCards.map((card, index) => ({
     id: card.dataset.id ?? String(index),
@@ -491,30 +518,40 @@ const initCatalog = (catalog: HTMLElement) => {
   const base = catalog.dataset.catalogBase ?? "/shop/";
   let products: CatalogProduct[] = [];
   let catalogReady = false;
+  let catalogComplete = false;
   let catalogRequest: Promise<CatalogProduct[]> | null = null;
   let category = activeCategory || new URLSearchParams(location.search).get("category") || "";
-  let currentPage = Math.max(1, Number(new URLSearchParams(location.search).get("page")) || 1);
+  let currentPage = parseCatalogPage(new URLSearchParams(location.search).get("page"));
   let timer = 0;
   let historyMode: "push" | "replace" = "replace";
   let syncingUrl = false;
 
   const loadProducts = async () => {
-    if (catalogReady) return products;
+    if (catalogComplete) return products;
     if (!catalogRequest) {
       catalogRequest = (async () => {
-        if (!catalogIndex) return initialProducts;
+        if (!catalogIndex) {
+          catalogComplete = true;
+          return initialProducts;
+        }
         try {
           const response = await fetch(catalogIndex, { credentials: "same-origin" });
           if (!response.ok) throw new Error(`Catalog index request failed: ${response.status}`);
           const parsed: unknown = await response.json();
-          return Array.isArray(parsed) && parsed.length > 0 ? (parsed as CatalogProduct[]) : initialProducts;
+          if (!Array.isArray(parsed) || parsed.length === 0) throw new Error("Invalid catalog index");
+          catalogComplete = true;
+          if (loadError) loadError.hidden = true;
+          return parsed as CatalogProduct[];
         } catch {
+          if (loadError) loadError.hidden = false;
           return initialProducts;
         }
       })().then((nextProducts) => {
         products = nextProducts;
         catalogReady = true;
         return products;
+      }).finally(() => {
+        catalogRequest = null;
       });
     }
     return catalogRequest;
@@ -650,7 +687,7 @@ const initCatalog = (catalog: HTMLElement) => {
   };
 
   const goToPage = (value: number) => {
-    currentPage = Math.max(1, value);
+    currentPage = parseCatalogPage(value);
     historyMode = "push";
     void loadProducts().then(() => {
       update();
@@ -662,7 +699,7 @@ const initCatalog = (catalog: HTMLElement) => {
     syncingUrl = true;
     const next = new URLSearchParams(location.search);
     category = activeCategory || next.get("category") || "";
-    currentPage = Math.max(1, Number(next.get("page")) || 1);
+    currentPage = parseCatalogPage(next.get("page"));
     if (search) search.value = next.get("q") ?? "";
     if (stock) stock.checked = next.get("stock") === "1";
     if (sort) sort.value = next.get("sort") ?? "name";
@@ -701,6 +738,15 @@ const initCatalog = (catalog: HTMLElement) => {
   });
   categorySelect?.addEventListener("change", () => chooseCategory(categorySelect.value));
   pageSelect?.addEventListener("change", () => goToPage(Number(pageSelect.value)));
+  const retryCatalog = () => {
+    if (catalogComplete) return;
+    if (retryButton) retryButton.disabled = true;
+    void loadProducts().then(() => update()).finally(() => {
+      if (retryButton) retryButton.disabled = false;
+    });
+  };
+  retryButton?.addEventListener("click", retryCatalog);
+  window.addEventListener("online", retryCatalog);
   previousPage?.addEventListener("click", () => goToPage(currentPage - 1));
   nextPage?.addEventListener("click", () => goToPage(currentPage + 1));
 

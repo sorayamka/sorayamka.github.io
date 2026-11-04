@@ -57,7 +57,10 @@ installed Google Chrome; elsewhere install the Playwright Chromium browser.
 - Catalog index network failure, locale-preserving product navigation and 404s.
 - Full-width hero and actual 800/1600/3840 px responsive AVIF selection.
 
-Latest local run: 69 passed, 5 device-specific skips. Fixed defects: decreasing
+Latest local run: 80 passed, 6 device-specific skips. Includes all 127 archived
+PDF resources, mobile certificate taps, safe stored URLs, catalog retry after
+network recovery and invalid pagination parameter normalization.
+Fixed defects: decreasing
 two units to one previously removed the item; reset left the selected category
 active on the main catalog. Removed unstable cross-document View Transitions
 that emitted Chrome invalid-state exceptions during normal navigation.
@@ -65,4 +68,4 @@ that emitted Chrome invalid-state exceptions during normal navigation.
 This is not exhaustive coverage of every product or every browser. Mobile tests
 are device emulation, not physical iPhone/Safari testing. External applications,
 real customer message delivery and server-side order processing are not tested.
-Live testing is blocked while the repository's Pages endpoint returns HTTP 404.
+GitHub Pages publication has been restored for the public demo repository.

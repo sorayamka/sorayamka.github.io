@@ -175,6 +175,13 @@ for (const locale of ["ru", "en"] as const) {
     await expect(page.locator("[data-product-card]")).toHaveCount(48);
     await page.locator("[data-add-to-cart]").first().click();
     await expect(page.locator("[data-cart-count]").first()).toHaveText("1");
+    await expect(page.locator("[data-catalog-load-error]")).toBeVisible();
+    await page.unroute("**/catalog-index.json");
+    await page.locator("[data-catalog-retry]").click();
+    await expect(page.locator("[data-catalog-load-error]")).toBeHidden();
+    await expect(page.locator("[data-result-count]")).toHaveText(/1[\s,]*120/);
+    await page.locator("[data-page-select]").selectOption("24");
+    await expect(page.locator("[data-product-card]")).toHaveCount(16);
   });
 
   test(`${locale}: all main navigation pages and category links load`, async ({ page, request }) => {
@@ -200,6 +207,30 @@ for (const locale of ["ru", "en"] as const) {
     await expect(page.locator("html")).toHaveAttribute("lang", locale);
   });
 }
+
+test("unsafe saved cart links cannot execute or leave the origin", async ({ page }) => {
+  await page.goto("/cart/");
+  await page.evaluate(() => {
+    const paths = ["javascript:window.__unsafeCart=1", "//example.com/shop/item/", "/shop/\\example.com", "data:text/html,test", "/shop/%0aitem/", "/shop/govyadina/ribaj-iz-govjadiny/"];
+    localStorage.setItem("seventh-legion-cart:v1", JSON.stringify(paths.map((path, index) => ({ id: String(index), name: "Saved item", path, image: "javascript:alert(1)", quantity: 1 }))));
+  });
+  await page.reload();
+  await expect(page.locator("[data-cart-page-items] .cart-line")).toHaveCount(1);
+  await expect(page.locator("[data-cart-page-items] .cart-line__body > a")).toHaveAttribute("href", "/shop/govyadina/ribaj-iz-govjadiny/");
+  await expect(page.locator("[data-cart-page-items] img")).toHaveCount(0);
+});
+
+test("invalid page parameters normalize to valid integer pages", async ({ page }) => {
+  for (const value of ["1.5", "-2", "Infinity", "NaN", "9007199254740992"]) {
+    await page.goto(`/shop/?page=${value}`);
+    await expect(page.locator("[data-page-select]")).toHaveValue("1");
+    await expect(page.locator("[data-page-start]")).toHaveText("1");
+    await expect(page).toHaveURL(/\/shop\/$/);
+  }
+  await page.goto("/shop/?page=99999");
+  await expect(page.locator("[data-page-select]")).toHaveValue("24");
+  await expect(page.locator("[data-product-card]")).toHaveCount(16);
+});
 
 test("product language switch preserves item and cart across locales", async ({ page }) => {
   await page.goto("/shop/govyadina/ribaj-iz-govjadiny/");
